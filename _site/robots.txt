@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Disallow admin areas and temporary files
+Disallow: /_site/
+Disallow: /_backup/
+Disallow: /assets/js/
+Disallow: /assets/css/
+Disallow: *.css$
+Disallow: *.js$
+
+# Allow important assets
+Allow: /assets/images/
+Allow: /assets/videos/
+
+# Sitemap location
+Sitemap: {{ site.url }}/sitemap.xml
+
+# Crawl delay (optional - be careful with this)
+# Crawl-delay: 1
