@@ -142,8 +142,7 @@ main {
 
 <header class="header-fixed shadow-sm">
   <nav class="navbar navbar-expand-lg navbar-light bg-white py-2">
-    <div class="container-fluid">
-      <a class="navbar-brand d-flex align-items-center" href="/">
+    <div class="container-fluid">      <a class="navbar-brand d-flex align-items-center" href="{{ site.baseurl }}/">
         <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Logo" class="header-logo me-2">
         <span class="company-name">Heinrich Safety Soulutions</span>
       </a>      <button class="navbar-toggler" type="button" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -152,7 +151,7 @@ main {
       <div class="collapse navbar-collapse" id="mainNavbar">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
           <li class="nav-item">
-            <a class="nav-link" href="/about.html">About Us</a>
+            <a class="nav-link" href="{{ site.baseurl }}/about.html">About Us</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -161,26 +160,26 @@ main {
             </a>
             <ul class="dropdown-menu" aria-labelledby="productsDropdown">
               
-              <li><a class="dropdown-item" href="/ppe.html">Personal Protective Equipment</a></li>
-              <li><a class="dropdown-item" href="/life-line-system.html">Life Line System</a></li>
-              <li><a class="dropdown-item" href="/fall-arrest-system.html">Fall Arrest System</a></li>
-              <li><a class="dropdown-item" href="/roof-top-guardrail.html">Rooftop Guardrail</a></li>
-              <li><a class="dropdown-item" href="/skylight-protection-cover.html">Skylight Protection Cover</a></li>
+              <li><a class="dropdown-item" href="{{ site.baseurl }}/ppe.html">Personal Protective Equipment</a></li>
+              <li><a class="dropdown-item" href="{{ site.baseurl }}/life-line-system.html">Life Line System</a></li>
+              <li><a class="dropdown-item" href="{{ site.baseurl }}/fall-arrest-system.html">Fall Arrest System</a></li>
+              <li><a class="dropdown-item" href="{{ site.baseurl }}/roof-top-guardrail.html">Rooftop Guardrail</a></li>
+              <li><a class="dropdown-item" href="{{ site.baseurl }}/skylight-protection-cover.html">Skylight Protection Cover</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/services.html">Services</a>
+            <a class="nav-link" href="{{ site.baseurl }}/services.html">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/contact-us.html">Contact Us</a>
+            <a class="nav-link" href="{{ site.baseurl }}/contact-us.html">Contact Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/promo-offers.html">Promo & Offers</a>
+            <a class="nav-link" href="{{ site.baseurl }}/promo-offers.html">Promo & Offers</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/career.html">Career</a>
+            <a class="nav-link" href="{{ site.baseurl }}/career.html">Career</a>
           </li>          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-            <form class="search-box" action="/search.html" method="get" role="search" id="headerSearchForm">
+            <form class="search-box" action="{{ site.baseurl }}/search.html" method="get" role="search" id="headerSearchForm">
               <input class="form-control search-input" type="search" name="q" placeholder="Search Products..." aria-label="Search" id="headerSearchInput">
               <button class="search-btn" type="submit"><i class="fas fa-search"></i></button>
             </form>
