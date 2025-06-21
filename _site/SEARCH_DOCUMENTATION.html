@@ -4,7 +4,7 @@
   <!-- Basic Meta Tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Corner Unit | HSSPL Component</title>
+<title>HSSPL Search Functionality Documentation</title>
 <meta name="description" content="HSSPL - Height Safety Solutions Provider">
 
 <!-- Bootstrap & Required Libraries -->
@@ -410,194 +410,179 @@ function initializeSearch() {
 
   
   <main>
-    <style>
-/* Hero section styles with high specificity */
-section.hero-section.hero-corner-unit {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('/assets/images/lifeline_hero.png') !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-attachment: fixed !important;
-    padding-top: 140px !important;
-    padding-bottom: 80px !important;
-    color: white !important;
-    min-height: 50vh !important;
-    position: relative !important;
-}
+    <h1 id="hsspl-search-functionality-documentation">HSSPL Search Functionality Documentation</h1>
 
-/* Breadcrumb styles with high specificity */
-section.hero-section .breadcrumb.breadcrumb-custom {
-    background: transparent !important;
-    border-radius: 0 !important;
-    padding: 8px 20px !important;
-    justify-content: center !important;
-    margin-bottom: 1.5rem !important;
-}
+<h2 id="overview">Overview</h2>
+<p>This document explains the comprehensive search functionality implemented for Heinrich Safety Solutions website. The search system allows users to find products across all 5 main categories:</p>
 
-section.hero-section .breadcrumb.breadcrumb-custom a {
-    color: #fff !important;
-    text-decoration: none !important;
-    transition: color 0.3s !important;
-}
+<ol>
+  <li>Personal Protective Equipment (PPE)</li>
+  <li>Life Line System</li>
+  <li>Fall Arrest System</li>
+  <li>Rooftop Guardrail</li>
+  <li>Skylight Protection Cover</li>
+</ol>
 
-section.hero-section .breadcrumb.breadcrumb-custom a:hover {
-    color: #ffd700 !important;
-}
+<h2 id="features">Features</h2>
 
-section.hero-section .breadcrumb.breadcrumb-custom .breadcrumb-item.active {
-    color: #ffd700 !important;
-}
+<h3 id="1-header-search-bar">1. Header Search Bar</h3>
+<ul>
+  <li>Located in the navigation header on every page</li>
+  <li>Auto-complete suggestions as you type</li>
+  <li>Quick search for immediate results</li>
+  <li>Redirects to dedicated search results page</li>
+</ul>
 
-section.hero-section .breadcrumb.breadcrumb-custom .breadcrumb-item + .breadcrumb-item::before {
-    color: #fff !important;
-}
-</style>
+<h3 id="2-search-results-page-searchhtml">2. Search Results Page (<code class="language-plaintext highlighter-rouge">/search.html</code>)</h3>
+<ul>
+  <li>Comprehensive search results display</li>
+  <li>Category filters to narrow down results</li>
+  <li>Real-time result count</li>
+  <li>Detailed product information with features</li>
+  <li>Direct links to product pages</li>
+</ul>
 
-<!-- Hero Section -->
-<section class="hero-section hero-corner-unit d-flex align-items-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <!-- Breadcrumb Navigation -->
-                <nav aria-label="breadcrumb" class="mb-4">
-                    <ol class="breadcrumb breadcrumb-custom">
-                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item"><a href="products.html">Products</a></li>
-                        <li class="breadcrumb-item"><a href="life-line-system.html">Lifeline System</a></li>
-                        <li class="breadcrumb-item"><a href="horizontal-life-line-system.html">Horizontal Life Line</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Corner Unit</li>
-                    </ol>
-                </nav>
-                <!-- Hero Content -->
-                <div class="text-center">
-                    <h1 class="display-4 fw-bold mb-3" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
-                        Corner Unit
-                    </h1>
-                    <p class="lead mb-0 mx-auto" style="font-size: 1.3rem; max-width: 600px; text-shadow: 1px 1px 2px rgba(0,0,0,0.8);">
-                        Critical component in fall protection systems, allowing the lifeline to navigate corners and maintain continuous safety
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<h3 id="3-advanced-search-capabilities">3. Advanced Search Capabilities</h3>
+<ul>
+  <li><strong>Keyword Matching</strong>: Searches product titles, descriptions, features, and keywords</li>
+  <li><strong>Category Filtering</strong>: Filter by specific product categories</li>
+  <li><strong>Relevance Scoring</strong>: Results sorted by relevance to search query</li>
+  <li><strong>Fuzzy Matching</strong>: Finds products even with partial matches</li>
+</ul>
 
-<!-- Component Detail Section -->
-<section class="py-5" style="background: #ffffff; margin-top: 0;">
-    <div class="container">
-        <div class="row">
-            <!-- Left Column - Images (2/6 width) -->
-            <div class="col-lg-4 mb-4 mb-lg-0">
-                <!-- First Image -->
-                <div class="mb-4" style="border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 20px rgba(25, 118, 210, 0.15); border: 2px solid #e3f0ff;">
-                    <div style="position: relative;">
-                        <img src="/assets/images/corner_unit.jpg" alt="Corner Unit" style="width: 100%; height: 280px; object-fit: contain; display: block; background: #f8faff; padding: 10px;">
-                    </div>
-                    <!-- Premium Quality Caption -->
-                    <div style="background: rgba(220, 53, 69, 0.9); color: white; padding: 0.8rem 1rem; text-align: center; margin: 0;">
-                        <h6 style="margin: 0; font-size: 1rem; font-weight: 700; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Premium Quality</h6>
-                    </div>
-                </div>
-                <!-- Second Image -->
-                <div style="border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 20px rgba(25, 118, 210, 0.15); border: 2px solid #e3f0ff;">
-                    <div style="position: relative;">
-                        <img src="/assets/images/corner_unit_02.jpg" alt="Corner Unit Detail" style="width: 100%; height: 280px; object-fit: contain; display: block; background: #f8faff; padding: 10px;">
-                    </div>
-                    <!-- Smart Design Caption -->
-                    <div style="background: rgba(40, 167, 69, 0.9); color: white; padding: 0.8rem 1rem; text-align: center; margin: 0;">
-                        <h6 style="margin: 0; font-size: 1rem; font-weight: 700; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Smart Design</h6>
-                    </div>
-                </div>
-            </div>
+<h2 id="how-to-use">How to Use</h2>
 
-            <!-- Right Column - Content and Features (4/6 width) -->
-            <div class="col-lg-8">
-                <div class="row">
-                    <!-- Content Section (3/6 of total width) -->
-                    <div class="col-lg-9">
-                        <div style="background: #fff; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 20px rgba(25, 118, 210, 0.1);">
-                            <p style="font-size: 1.1rem; color: #666; line-height: 1.6; margin-bottom: 1.5rem;">This lifeline corner unit is a critical component in fall protection systems, allowing the lifeline to navigate corners and maintain continuous safety. It is typically designed to be a sub-assembly with corner anchors, mounting brackets, bolts, locknuts, and a corner tube. This Corner unit specially designed to ensuring workers can move smoothly and safely around corners.</p>
-                            
-                            <!-- Specifications Table -->
-                            <div style="background: #f8faff; border-radius: 0.8rem; padding: 1.5rem; border: 1px solid #e3f0ff;">
-                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0; border-bottom: 1px solid #e3f0ff;">
-                                    <span style="font-weight: 600; color: #1976d2; font-size: 0.9rem;">Standard:</span>
-                                    <span style="font-weight: 500; color: #333; font-size: 0.9rem;">EN 795 : 2012</span>
-                                </div>
-                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0; border-bottom: 1px solid #e3f0ff;">
-                                    <span style="font-weight: 600; color: #1976d2; font-size: 0.9rem;">Material:</span>
-                                    <span style="font-weight: 500; color: #333; font-size: 0.9rem;">AISI 304 / 304L / 316</span>
-                                </div>
-                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0; border-bottom: 1px solid #e3f0ff;">
-                                    <span style="font-weight: 600; color: #1976d2; font-size: 0.9rem;">Allowable Working Load:</span>
-                                    <span style="font-weight: 500; color: #333; font-size: 0.9rem;">12 kN</span>
-                                </div>
-                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0; border-bottom: 1px solid #e3f0ff;">
-                                    <span style="font-weight: 600; color: #1976d2; font-size: 0.9rem;">Breaking Strength:</span>
-                                    <span style="font-weight: 500; color: #333; font-size: 0.9rem;">25 kN</span>
-                                </div>
-                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0;">
-                                    <span style="font-weight: 600; color: #1976d2; font-size: 0.9rem;">Component Code:</span>
-                                    <span style="font-weight: 500; color: #333; font-size: 0.9rem;">HHLC-06</span>
-                                </div>
-                            </div>
-                            
-                            <!-- Talk to Expert Button -->
-                            <div style="text-align: center; margin: 2rem 0;">
-                                <a href="contact-us.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.8rem 2rem; border-radius: 0.5rem; font-weight: 600; box-shadow: 0 4px 12px rgba(25, 118, 210, 0.2);">
-                                    <i class="bi bi-chat-dots-fill me-2"></i>Talk to a Safety Expert
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Key Features Section (1/6 of total width) -->
-                    <div class="col-lg-3">
-                        <div style="padding: 1rem;">
-                            <h3 style="color: #1976d2; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.8rem; text-align: center;">Key Features</h3>
-                            <div style="display: flex; flex-direction: column; gap: 0.6rem;">
-                                <div style="display: flex; flex-direction: column; align-items: center; gap: 0.4rem; padding: 0.6rem; text-align: center;">
-                                    <i class="bi bi-shield-check" style="width: 24px; height: 24px; background: #1976d2; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; flex-shrink: 0;"></i>
-                                    <div>
-                                        <h6 style="margin: 0; font-size: 0.8rem; font-weight: 600; color: #1976d2; line-height: 1.2;">Continuous Safety</h6>
-                                        <small style="color: #666; font-size: 0.7rem;">EN 795:2012</small>
-                                    </div>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items: center; gap: 0.4rem; padding: 0.6rem; text-align: center;">
-                                    <i class="bi bi-arrow-90deg-right" style="width: 24px; height: 24px; background: #1976d2; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; flex-shrink: 0;"></i>
-                                    <div>
-                                        <h6 style="margin: 0; font-size: 0.8rem; font-weight: 600; color: #1976d2; line-height: 1.2;">Corner Navigation</h6>
-                                        <small style="color: #666; font-size: 0.7rem;">Smooth transitions</small>
-                                    </div>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items: center; gap: 0.4rem; padding: 0.6rem; text-align: center;">
-                                    <i class="bi bi-tools" style="width: 24px; height: 24px; background: #1976d2; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; flex-shrink: 0;"></i>
-                                    <div>
-                                        <h6 style="margin: 0; font-size: 0.8rem; font-weight: 600; color: #1976d2; line-height: 1.2;">Sub-Assembly</h6>
-                                        <small style="color: #666; font-size: 0.7rem;">Complete system</small>
-                                    </div>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items: center; gap: 0.4rem; padding: 0.6rem; text-align: center;">
-                                    <i class="bi bi-gem" style="width: 24px; height: 24px; background: #1976d2; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; flex-shrink: 0;"></i>
-                                    <div>
-                                        <h6 style="margin: 0; font-size: 0.8rem; font-weight: 600; color: #1976d2; line-height: 1.2;">Durable</h6>
-                                        <small style="color: #666; font-size: 0.7rem;">Weather resistant</small>
-                                    </div>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items: center; gap: 0.4rem; padding: 0.6rem; text-align: center;">
-                                    <i class="bi bi-award" style="width: 24px; height: 24px; background: #1976d2; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; flex-shrink: 0;"></i>
-                                    <div>
-                                        <h6 style="margin: 0; font-size: 0.8rem; font-weight: 600; color: #1976d2; line-height: 1.2;">AISI 304/304L/316</h6>
-                                        <small style="color: #666; font-size: 0.7rem;">Premium grade</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<h3 id="for-users">For Users:</h3>
+<ol>
+  <li><strong>Basic Search</strong>: Type in the search bar and press Enter or click search button</li>
+  <li><strong>Use Suggestions</strong>: Click on autocomplete suggestions while typing</li>
+  <li><strong>Filter Results</strong>: Use category buttons to filter search results</li>
+  <li><strong>Navigate</strong>: Click on any result to go to the specific product page</li>
+</ol>
+
+<h3 id="search-examples">Search Examples:</h3>
+<ul>
+  <li>“safety helmet” - finds all helmets and head protection</li>
+  <li>“gloves” - finds all types of safety gloves</li>
+  <li>“lifeline” - finds all lifeline system components</li>
+  <li>“anchor” - finds all anchor plates and attachment points</li>
+  <li>“fall arrest” - finds fall protection equipment</li>
+</ul>
+
+<h2 id="technical-implementation">Technical Implementation</h2>
+
+<h3 id="files-createdmodified">Files Created/Modified:</h3>
+
+<ol>
+  <li><strong><code class="language-plaintext highlighter-rouge">/search.html</code></strong> - Main search results page
+    <ul>
+      <li>Complete search interface</li>
+      <li>Result display and filtering</li>
+      <li>Category navigation</li>
+    </ul>
+  </li>
+  <li><strong><code class="language-plaintext highlighter-rouge">/assets/js/search.js</code></strong> - Core search functionality
+    <ul>
+      <li>Product database with comprehensive product info</li>
+      <li>Search algorithms</li>
+      <li>Autocomplete functionality</li>
+      <li>Relevance scoring</li>
+    </ul>
+  </li>
+  <li><strong><code class="language-plaintext highlighter-rouge">/_includes/head.html</code></strong> - Enhanced header search
+    <ul>
+      <li>Added search form with proper routing</li>
+      <li>Autocomplete dropdown integration</li>
+      <li>Keyboard navigation support</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="product-categories">Product Categories:</h3>
+
+<p><strong>Personal Protective Equipment (ppe) - 17 products:</strong></p>
+<ul>
+  <li>Reflective Jacket, Reflective Strap, Face Shield</li>
+  <li>Safety Gloves (Rubber &amp; Leather), Safety Mask</li>
+  <li>Safety Eye Glass, Safety Helmet, Safety Shoes</li>
+  <li>Eyewash Bottles (500ml &amp; 1 Liter), PPE Bag, Bump Cap</li>
+  <li>Davit Arm System, Painting Kit, Parapet Wall Anchor, Tripod</li>
+</ul>
+
+<p><strong>Life Line System (lifeline) - 37 products:</strong></p>
+<ul>
+  <li><strong>Main Systems (4):</strong> Horizontal, Vertical, Overhead, Custom Life Line Systems</li>
+  <li><strong>Horizontal Components (12):</strong> Anchor Attachment Plate, End Anchor, Shock Absorber Spring, Tensioner, Intermediate Anchor, Corner Unit, Wire End Connector, Eye Connector, Wire Rope, Traveler Glider, Carabiner Hook, Fasteners</li>
+  <li><strong>Vertical Components (10):</strong> Rope Suspension Clamps (Top &amp; Bottom), Anchor Plates (Top &amp; Bottom), Shock Absorber Suspension, Vertical Fall Arrester, Wire Rope, Carabiner Hook, Fasteners, Vertical Anchor Plate Bottom</li>
+  <li><strong>Overhead Components (10):</strong> End Anchor, Eye Connector, Shock Absorber Spring, Tensioner, Wire Rope, Tandem Speed Pulley, Carabiner Hook, Retractable Fall Arrester, Wire End Connector, Fasteners</li>
+  <li><strong>Additional Component (1):</strong> Vertical Anchor Plate (Bottom)</li>
+</ul>
+
+<p><strong>Fall Arrest System (fall-arrest) - 4 products:</strong></p>
+<ul>
+  <li>Complete Fall Arrest System</li>
+  <li>Retractable Fall Arrester Block, Vertical Fall Arrester</li>
+  <li>Ascender &amp; Descender, Spiderman Kits</li>
+</ul>
+
+<p><strong>Rooftop Guardrail (guardrail) - 1 product:</strong></p>
+<ul>
+  <li>Complete rooftop guardrail system</li>
+</ul>
+
+<p><strong>Skylight Protection (skylight) - 1 product:</strong></p>
+<ul>
+  <li>Skylight protection covers and screens</li>
+</ul>
+
+<p><strong>Total Products: 60 products across all categories</strong></p>
+
+<h2 id="search-algorithm">Search Algorithm</h2>
+
+<p>The search system uses a multi-layered approach:</p>
+
+<ol>
+  <li><strong>Term Matching</strong>: Searches across title, description, category, keywords, and features</li>
+  <li><strong>Relevance Scoring</strong>:
+    <ul>
+      <li>Title matches: 10 points (15 if starts with search term)</li>
+      <li>Category matches: 8 points</li>
+      <li>Description matches: 5 points</li>
+      <li>Keyword matches: 3 points</li>
+      <li>Feature matches: 2 points</li>
+    </ul>
+  </li>
+  <li><strong>Results Sorting</strong>: Higher scored results appear first</li>
+  <li><strong>Category Filtering</strong>: Can be combined with search terms</li>
+</ol>
+
+<h2 id="browser-support">Browser Support</h2>
+<ul>
+  <li>Modern browsers (Chrome, Firefox, Safari, Edge)</li>
+  <li>Mobile responsive design</li>
+  <li>Touch-friendly interface</li>
+  <li>Keyboard navigation support</li>
+</ul>
+
+<h2 id="future-enhancements">Future Enhancements</h2>
+<ul>
+  <li>Search analytics and popular searches</li>
+  <li>Advanced filters (price range, features, etc.)</li>
+  <li>Search result highlighting</li>
+  <li>Recently viewed products</li>
+  <li>Product comparison from search results</li>
+</ul>
+
+<h2 id="maintenance">Maintenance</h2>
+<p>To add new products:</p>
+<ol>
+  <li>Add product information to the <code class="language-plaintext highlighter-rouge">HSSPL_SEARCH.products</code> array in <code class="language-plaintext highlighter-rouge">/assets/js/search.js</code></li>
+  <li>Include relevant keywords for better searchability</li>
+  <li>Ensure proper categorization</li>
+  <li>Test search functionality with new products</li>
+</ol>
+
+<p>For any issues or enhancements, refer to the JavaScript console for debugging information.</p>
 
   </main>
 
