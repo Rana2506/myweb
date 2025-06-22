@@ -12,9 +12,8 @@ permalink: /about.html
     align-items: center;
     justify-content: center;
     position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-    background-image: url('/assets/images/about_us_hero.png') !important;
+    overflow: hidden;    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    background-image: url('{{ "/assets/images/about_us_hero.png" | relative_url }}') !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
@@ -258,19 +257,18 @@ permalink: /about.html
   </div>
 </div>
 
-<div class="about-container">
-  <div class="about-left">
+<div class="about-container">  <div class="about-left">
     <div style="position:relative; overflow:hidden; border-radius:18px; height:340px;">
-      <img src="/assets/images/about_us_main_updated.png" alt="Our Team in Action" class="about-img-main">
+      <img src="{{ '/assets/images/about_us_main_updated.png' | relative_url }}" alt="Our Team in Action" class="about-img-main">
       <div class="about-img-caption" style="background:rgba(60,60,200,0.85);">Our Team in Action</div>
     </div>
     <div class="about-img-row">
       <div style="position:relative; flex:0 0 auto; display:flex; justify-content:center;">
-        <img src="/assets/images/about_us_landscape_01.png" alt="Creative Workspace" class="about-img-small">
+        <img src="{{ '/assets/images/about_us_landscape_01.png' | relative_url }}" alt="Creative Workspace" class="about-img-small">
         <div class="about-img-caption red">Creative Workspace</div>
       </div>
       <div style="position:relative; flex:0 0 auto; display:flex; justify-content:center;">
-        <img src="/assets/images/about_us_landscape_02.png" alt="Global Connections" class="about-img-small">
+        <img src="{{ '/assets/images/about_us_landscape_02.png' | relative_url }}" alt="Global Connections" class="about-img-small">
         <div class="about-img-caption green">Global Connections</div>
       </div>
     </div>
@@ -321,14 +319,13 @@ permalink: /about.html
         <div class="about-stat-value">Pan India Service</div>
         <div class="about-stat-label">Nationwide Reach</div>
       </div>
-    </div>
-    <div class="about-img-row" style="margin-top:18px; justify-content:center; display:flex; gap:12px;">
+    </div>    <div class="about-img-row" style="margin-top:18px; justify-content:center; display:flex; gap:12px;">
       <div style="position:relative; flex:0 0 auto; display:flex; justify-content:center;">
-        <img src="/assets/images/about_us_landscape_03.png" alt="Guardrail" class="about-img-small">
+        <img src="{{ '/assets/images/about_us_landscape_03.png' | relative_url }}" alt="Guardrail" class="about-img-small">
         <div class="about-img-caption red">Guardrail</div>
       </div>
       <div style="position:relative; flex:0 0 auto; display:flex; justify-content:center;">
-        <img src="/assets/images/about_us_landscape_04.png" alt="Skylight Protection" class="about-img-small">
+        <img src="{{ '/assets/images/about_us_landscape_04.png' | relative_url }}" alt="Skylight Protection" class="about-img-small">
         <div class="about-img-caption green">Skylight Protection</div>
       </div>
     </div>
