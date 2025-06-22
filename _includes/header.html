@@ -1,0 +1,88 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+<style>
+  .navbar-brand span { color: #e30613; font-weight: 700; font-family: 'Segoe UI', Arial, sans-serif; font-size: 1.5rem; }
+  .navbar-nav .nav-link {
+    color: #000 !important;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-right: 1rem;
+    padding: .25rem .75rem;
+    transition: all .3s ease;
+    text-decoration: none !important;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    box-sizing: border-box;
+  }
+  .navbar-nav .nav-link:hover {
+    color: #e30613 !important;
+    background-color: #fff;
+    border-color: #e30613;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: .25rem;
+    transform: translateY(-2px);
+    text-decoration: none !important;
+  }
+  .navbar-nav .nav-link:focus {
+    text-decoration: none !important;
+    outline: none;
+  }
+  .search-input { width: 250px; height: 38px; border: 1px solid #ccc !important; border-radius: 20px 0 0 20px; padding: 0 12px; }
+  .btn-search {
+    width: 38px;
+    height: 38px;
+    background-color: #e30613;
+    border-left: 1px solid #ccc;
+    border-radius: 0 20px 20px 0;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid transparent;
+    transition: all .3s ease;
+    box-sizing: border-box;
+  }
+  .btn-search:hover {
+    background-color: #fff;
+    border-color: #e30613;
+    color: #e30613;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+  }
+</style>
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="{{ site.baseurl }}/">
+      <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Heinrich Safety Solutions Logo" style="height: 40px; width: auto;">
+      <span class="ms-3">Heinrich Safety Solutions</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ site.baseurl }}/about.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ site.baseurl }}/products.html">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ site.baseurl }}/services.html">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ site.baseurl }}/contact-us.html">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ site.baseurl }}/promo-offers.html">Promo and Offers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ site.baseurl }}/career.html">Career</a>
+        </li>
+      </ul>
+      <form class="d-flex align-items-center" action="{{ site.baseurl }}/search.html" method="get">
+        <input class="form-control me-2 search-input" type="search" placeholder="Search Products..." aria-label="Search" name="query">
+        <button class="btn btn-search" type="submit" aria-label="Search"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+  </div>
+</nav>

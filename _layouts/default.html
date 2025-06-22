@@ -5,18 +5,18 @@
 </head>
 <body>
 
-  
+  {% include header.html %}
+
   <main>
     {{ content }}
   </main>
 
-  
-
-  
   {% if page.url == "/" %}
     {% include footer-home.html %}
   {% else %}
     {% include footer-standard.html %}
   {% endif %}
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

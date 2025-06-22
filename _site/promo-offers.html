@@ -7,6 +7,11 @@
 <title>Promo & Offers</title>
 <meta name="description" content="HSSPL - Height Safety Solutions Provider">
 
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
 <!-- Bootstrap & Required Libraries -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
@@ -15,400 +20,99 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="/assets/css/style.css">
-
-<style>
-.header-fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1030;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-  padding: 0;
-}
-
-/* Add top padding to body to account for fixed header */
-body {
-  padding-top: 80px;
-}
-
-/* Ensure main content starts below header */
-main {
-  position: relative;
-}
-
-/* Responsive body padding */
-@media (max-width: 768px) {
-  body {
-    padding-top: 75px;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    padding-top: 70px;
-  }
-}
-.header-logo {
-  height: 48px;
-  width: auto;
-}
-@media (max-width: 768px) {
-  .header-logo {
-    height: 40px;
-  }
-}
-.company-name {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #e30613;
-  margin-left: 12px;
-  letter-spacing: 1px;
-  white-space: nowrap;
-}
-@media (max-width: 991.98px) {
-  .company-name { 
-    font-size: 1.1rem;
-    margin-left: 8px;
-  }
-}
-@media (max-width: 576px) {
-  .company-name { 
-    font-size: 1rem;
-    margin-left: 6px;
-  }
-}
-.navbar-nav .nav-link {
-  font-weight: 500;
-  color: #222;
-  margin-right: 8px;
-  white-space: nowrap;
-  padding: 0.5rem 0.75rem;
-}
-.navbar-nav .nav-link.active, .navbar-nav .nav-link:focus, .navbar-nav .nav-link:hover {
-  color: #e30613;
-}
-.navbar-nav {
-  align-items: center;
-}
-@media (min-width: 1200px) {
-  .navbar-nav .nav-link {
-    margin-right: 12px;
-    padding: 0.5rem 1rem;
-  }
-}
-.dropdown-menu {
-  min-width: 220px;
-}
-.search-box {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  white-space: nowrap;
-}
-.search-input {
-  border-radius: 20px 0 0 20px;
-  border: 1px solid #ced4da;
-  padding: 0.375rem 1rem;
-  min-width: 140px;
-  flex-shrink: 0;
-}
-.search-btn {
-  border-radius: 0 20px 20px 0;
-  background: #e30613;
-  color: #fff;
-  border: none;
-  padding: 0.375rem 1rem;
-  flex-shrink: 0;
-}
-.search-btn:hover, .search-btn:focus, .search-btn:active {
-  background: #c50410 !important;
-  color: #fff !important;
-  border: none !important;
-}
-/* Remove default button focus outline */
-.search-btn:focus {
-  box-shadow: none !important;
-  outline: none !important;
-}
-/* Fix navbar toggler (burger) button colors */
-.navbar-toggler {
-  border: 1px solid #e30613 !important;
-  padding: 0.25rem 0.5rem !important;
-}
-.navbar-toggler:focus, .navbar-toggler:active, .navbar-toggler:hover {
-  background-color: transparent !important;
-  border: 1px solid #e30613 !important;
-  box-shadow: 0 0 0 0.25rem rgba(227, 6, 19, 0.25) !important;
-  outline: none !important;
-}
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23e30613' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-}
-@media (max-width: 1199.98px) {
-  .search-box { 
-    width: 100%; 
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid #dee2e6;
-  }
-  .search-input { 
-    min-width: 0; 
-    width: 100%; 
-  }
-  .navbar-nav {
-    padding-top: 1rem;
-  }
-  .nav-item {
-    margin-bottom: 0.5rem;
-  }
-  .dropdown-menu {
-    border: none;
-    box-shadow: none;
-    background-color: #f8f9fa;
-    margin-left: 1rem;
-  }
-}
-/* Ensure dropdown works on all screens */
-@media (min-width: 1200px) {
-  .dropdown:hover .dropdown-menu {
-    display: block;
-    margin-top: 0;
-  }
-}
-</style>
-
-<header class="header-fixed shadow-sm">
-  <nav class="navbar navbar-expand-xl navbar-light bg-white py-2">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="/">
-        <img src="/assets/images/logo.png" alt="Logo" class="header-logo me-2">
-        <span class="company-name">Heinrich Safety Solutions</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNavbar">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
-          <li class="nav-item">
-            <a class="nav-link" href="/about.html">About Us</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <span id="productsLink" style="cursor:pointer;">Products</span>
-              <span class="ms-1 dropdown-caret"></span>
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="productsDropdown">
-              
-              <li><a class="dropdown-item" href="/ppe.html">Personal Protective Equipment</a></li>
-              <li><a class="dropdown-item" href="/life-line-system.html">Life Line System</a></li>
-              <li><a class="dropdown-item" href="/fall-arrest-system.html">Fall Arrest System</a></li>
-              <li><a class="dropdown-item" href="/roof-top-guardrail.html">Rooftop Guardrail</a></li>
-              <li><a class="dropdown-item" href="/skylight-protection-cover.html">Skylight Protection Cover</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/services.html">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/contact-us.html">Contact Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/promo-offers.html">Promo & Offers</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/career.html">Career</a>
-          </li>          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-            <form class="search-box" action="/search.html" method="get" role="search" id="headerSearchForm">
-              <input class="form-control search-input" type="search" name="q" placeholder="Search Products..." aria-label="Search" id="headerSearchInput">
-              <button class="search-btn" type="submit"><i class="fas fa-search"></i></button>
-            </form>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
-
-<!-- Bootstrap JS (for dropdowns and navbar toggler) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/assets/js/search.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Desktop: show dropdown on hover
-  if (window.innerWidth >= 1200) {
-    var dropdown = document.querySelector('.nav-item.dropdown');
-    if (dropdown) {
-      dropdown.addEventListener('mouseenter', function() {
-        this.classList.add('show');
-        this.querySelector('.dropdown-menu').classList.add('show');
-      });
-      dropdown.addEventListener('mouseleave', function() {
-        this.classList.remove('show');
-        this.querySelector('.dropdown-menu').classList.remove('show');
-      });
-    }
-  }
-  
-  // Handle products link click
-  document.getElementById('productsLink').addEventListener('click', function(e) {
-    if (window.innerWidth >= 1200) {
-      window.location.href = 'products.html';
-      e.stopPropagation(); // Prevent dropdown from opening
-    }
-  });
-
-  // Enhanced search functionality
-  initializeSearch();
-});
-
-// Search functionality for header
-function initializeSearch() {
-  const searchInput = document.getElementById('headerSearchInput');
-  const searchForm = document.getElementById('headerSearchForm');
-  
-  if (!searchInput || !searchForm) return;
-
-  // Create suggestions dropdown
-  const suggestionsDiv = document.createElement('div');
-  suggestionsDiv.className = 'search-suggestions';
-  suggestionsDiv.style.cssText = `
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: white;
-    border: 1px solid #ddd;
-    border-top: none;
-    border-radius: 0 0 8px 8px;
-    max-height: 300px;
-    overflow-y: auto;
-    z-index: 1000;
-    display: none;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  `;
-  
-  // Make search container relative
-  const searchBox = document.querySelector('.search-box');
-  searchBox.style.position = 'relative';
-  searchBox.appendChild(suggestionsDiv);
-
-  // Search suggestions data
-  const searchSuggestions = [
-    'Safety Helmet', 'Safety Gloves', 'Reflective Jacket', 'Face Shield', 'Safety Shoes',
-    'Lifeline System', 'Horizontal Lifeline', 'Vertical Lifeline', 'Fall Arrest',
-    'Anchor Plate', 'Wire Rope', 'Carabiner Hook', 'Shock Absorber',
-    'Rooftop Guardrail', 'Skylight Protection', 'PPE', 'Personal Protective Equipment',
-    'Safety Mask', 'Eye Protection', 'Tensioner', 'End Anchor', 'Corner Unit'
-  ];
-
-  // Show suggestions on focus
-  searchInput.addEventListener('focus', function() {
-    if (this.value.length > 0) {
-      showSuggestions(this.value);
-    }
-  });
-
-  // Hide suggestions on blur (with delay for clicking)
-  searchInput.addEventListener('blur', function() {
-    setTimeout(() => {
-      suggestionsDiv.style.display = 'none';
-    }, 200);
-  });
-
-  // Show suggestions while typing
-  searchInput.addEventListener('input', function() {
-    const query = this.value.trim();
-    if (query.length > 0) {
-      showSuggestions(query);
-    } else {
-      suggestionsDiv.style.display = 'none';
-    }
-  });
-
-  // Handle keyboard navigation
-  searchInput.addEventListener('keydown', function(e) {
-    const suggestions = suggestionsDiv.querySelectorAll('.suggestion-item');
-    const activeSuggestion = suggestionsDiv.querySelector('.suggestion-item.active');
-    
-    if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      if (activeSuggestion) {
-        activeSuggestion.classList.remove('active');
-        const next = activeSuggestion.nextElementSibling;
-        if (next) {
-          next.classList.add('active');
-        } else {
-          suggestions[0]?.classList.add('active');
-        }
-      } else {
-        suggestions[0]?.classList.add('active');
-      }
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      if (activeSuggestion) {
-        activeSuggestion.classList.remove('active');
-        const prev = activeSuggestion.previousElementSibling;
-        if (prev) {
-          prev.classList.add('active');
-        } else {
-          suggestions[suggestions.length - 1]?.classList.add('active');
-        }
-      } else {
-        suggestions[suggestions.length - 1]?.classList.add('active');
-      }
-    } else if (e.key === 'Enter') {
-      if (activeSuggestion) {
-        e.preventDefault();
-        searchInput.value = activeSuggestion.textContent;
-        suggestionsDiv.style.display = 'none';
-        searchForm.submit();
-      }
-    } else if (e.key === 'Escape') {
-      suggestionsDiv.style.display = 'none';
-      searchInput.blur();
-    }
-  });
-
-  function showSuggestions(query) {
-    const filteredSuggestions = searchSuggestions.filter(suggestion =>
-      suggestion.toLowerCase().includes(query.toLowerCase())
-    ).slice(0, 8);
-
-    if (filteredSuggestions.length > 0) {
-      suggestionsDiv.innerHTML = filteredSuggestions.map(suggestion => `
-        <div class="suggestion-item" style="
-          padding: 10px 15px;
-          cursor: pointer;
-          border-bottom: 1px solid #f0f0f0;
-          transition: background-color 0.2s;
-          font-size: 0.9rem;
-        " onmouseover="this.style.backgroundColor='#f8f9fa'"
-           onmouseout="this.style.backgroundColor=''"
-           onclick="selectSuggestion('${suggestion}')">
-          <i class="fas fa-search text-muted me-2"></i>${suggestion}
-        </div>
-      `).join('');
-      suggestionsDiv.style.display = 'block';
-    } else {
-      suggestionsDiv.style.display = 'none';
-    }
-  }
-
-  // Global function to select suggestion
-  window.selectSuggestion = function(suggestion) {
-    searchInput.value = suggestion;
-    suggestionsDiv.style.display = 'none';
-    searchForm.submit();
-  };
-}
-</script>
-
 </head>
 <body>
 
-  
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+<style>
+  .navbar-brand span { color: #e30613; font-weight: 700; font-family: 'Segoe UI', Arial, sans-serif; font-size: 1.5rem; }
+  .navbar-nav .nav-link {
+    color: #000 !important;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-right: 1rem;
+    padding: .25rem .75rem;
+    transition: all .3s ease;
+    text-decoration: none !important;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    box-sizing: border-box;
+  }
+  .navbar-nav .nav-link:hover {
+    color: #e30613 !important;
+    background-color: #fff;
+    border-color: #e30613;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: .25rem;
+    transform: translateY(-2px);
+    text-decoration: none !important;
+  }
+  .navbar-nav .nav-link:focus {
+    text-decoration: none !important;
+    outline: none;
+  }
+  .search-input { width: 250px; height: 38px; border: 1px solid #ccc !important; border-radius: 20px 0 0 20px; padding: 0 12px; }
+  .btn-search {
+    width: 38px;
+    height: 38px;
+    background-color: #e30613;
+    border-left: 1px solid #ccc;
+    border-radius: 0 20px 20px 0;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid transparent;
+    transition: all .3s ease;
+    box-sizing: border-box;
+  }
+  .btn-search:hover {
+    background-color: #fff;
+    border-color: #e30613;
+    color: #e30613;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+  }
+</style>
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="/">
+      <img src="/assets/images/logo.png" alt="Heinrich Safety Solutions Logo" style="height: 40px; width: auto;">
+      <span class="ms-3">Heinrich Safety Solutions</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/about.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/products.html">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/services.html">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact-us.html">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/promo-offers.html">Promo and Offers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/career.html">Career</a>
+        </li>
+      </ul>
+      <form class="d-flex align-items-center" action="/search.html" method="get">
+        <input class="form-control me-2 search-input" type="search" placeholder="Search Products..." aria-label="Search" name="query">
+        <button class="btn btn-search" type="submit" aria-label="Search"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
   <main>
     <section class="position-relative d-flex flex-column justify-content-center align-items-center" style="min-height: 100vh; height: auto; overflow: hidden; padding: 0; margin: 0;">
     <!-- Full-page background image -->
@@ -471,9 +175,6 @@ html, body {
   </main>
 
   
-
-  
-  
     <footer class="footer pt-3 pb-3" style="background-color: #001f4d;">
     <div class="text-center text-warning">
         &copy; 2024 Heinrich Safety Solutions Private Limited (HSSPL). All rights reserved.          |           Designed with <i class="fas fa-heart" style="color: #e57200;"></i> for workplace safety</p>
@@ -485,5 +186,7 @@ html, body {
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 <script src="search.js"></script>
   
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
