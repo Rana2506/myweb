@@ -165,6 +165,14 @@ title: Home | HSSPL
         border-color: #475569;
         transform: translateY(-1px);
         text-decoration: none;
+    }    /* Hero buttons container */
+    .hero-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 2rem;
     }
 
     /* Responsive button sizing */
@@ -172,20 +180,118 @@ title: Home | HSSPL
         .hero .btn {
             padding: 12px 25px;
             font-size: 14px;
-            margin: 0 5px 10px 0;
-            min-width: 130px;
+            margin: 5px;
+            min-width: 140px;
+            flex: 0 1 auto;
+        }
+        
+        .hero-buttons {
+            gap: 8px;
+            justify-content: center;
+        }
+        
+        /* Fix border radius conflicts on tablet */
+        .hero .btn-primary {
+            border-radius: 25px;
+        }
+        
+        .hero .btn-warning {
+            border-radius: 25px;
         }
     }
 
     @media (max-width: 480px) {
         .hero .btn {
-            padding: 10px 20px;
-            font-size: 13px;
-            margin: 5px 0;
+            padding: 12px 20px;
+            font-size: 14px;
+            margin: 8px 0;
             display: block;
-            width: 80%;
+            width: 100%;
+            max-width: 280px;
             margin-left: auto;
             margin-right: auto;
+            text-align: center;
+            border-radius: 25px !important;
+        }
+        
+        .hero-buttons {
+            flex-direction: column;
+            gap: 8px;
+            width: 100%;
+            padding: 0 20px;
+        }
+        
+        /* Override specific button styles for mobile */
+        .hero .btn-primary,
+        .hero .btn-warning,
+        .hero .btn-light {
+            border-radius: 25px !important;
+            min-width: auto;
+        }
+        
+        /* Ensure hero content is properly centered on mobile */
+        .hero-content {
+            padding: 0 15px;
+            max-width: 100%;
+        }
+    }
+
+    /* Extra small mobile devices */
+    @media (max-width: 375px) {
+        .hero-buttons {
+            padding: 0 10px;
+        }
+        
+        .hero .btn,
+        .hero .btn-lg {
+            max-width: 260px !important;
+            font-size: 0.85rem !important;
+            padding: 0.65rem 1.25rem !important;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            padding: 0 5px;
+        }
+        
+        .hero p {
+            font-size: 0.95rem;
+            padding: 0 10px;
+        }
+    }
+
+    /* Handle large buttons in hero sections */
+    .hero .btn-lg {
+        padding: 0.75rem 2.5rem;
+        font-size: 1rem;
+        border-radius: 2rem;
+    }
+
+    /* Mobile styles for hero large buttons */
+    @media (max-width: 768px) {
+        .hero .btn-lg {
+            padding: 0.65rem 2rem;
+            font-size: 0.95rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero .btn-lg {
+            padding: 0.75rem 1.5rem !important;
+            font-size: 0.9rem !important;
+            border-radius: 25px !important;
+            margin: 8px 0 !important;
+            display: block !important;
+            width: 100% !important;
+            max-width: 280px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+            text-align: center !important;
+        }
+        
+        /* Override inline styles for mobile */
+        .hero .btn-lg[style*="margin-right"] {
+            margin-right: auto !important;
         }
     }
 
@@ -802,6 +908,530 @@ img[src*="{{ site.baseurl }}"] {
   }
 }
 
+/* Service Section Styles */
+#services {
+    background: #f8f9fa;
+    padding: 60px 0;
+}
+
+.service-icon {
+    font-size: 2.5rem;
+
+    margin-bottom: 1rem;
+}
+
+.card {
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.card h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #22325a;
+}
+
+.card p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* Responsive adjustments for service cards */
+@media (max-width: 768px) {
+    .service-icon {
+        font-size: 2rem;
+    }
+
+    .card h5 {
+        font-size: 1.1rem;
+    }
+
+    .card p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .service-header-title {
+        font-size: 2rem;
+    }
+    .service-header-desc {
+        font-size: 0.98rem;
+    }
+}
+.hero.hero-slide-2 {
+  background: linear-gradient(70deg, rgba(20, 20, 20, 0.7) 0%, rgba(0, 196, 180, 0.35) 100%),
+    url('assets/images/hero_image_final_2.png'); /* hero slide 2 */
+  background-size: cover;
+  background-position: center;
+}
+.hero.hero-slide-3 {
+  background: linear-gradient(70deg, rgba(255, 87, 34, 0.8) 0%, rgba(255, 193, 7, 0.4) 100%),
+    url('assets/images/hero_image_final_3.png'); /* Worker with PPE gear */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Video background styles for third slide */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  min-height: 100vh;
+}
+
+.hero-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(70deg, rgba(255, 87, 34, 0.6) 0%, rgba(255, 193, 7, 0.3) 100%);
+  z-index: -1;
+  min-height: 100vh;
+}
+
+/* Ensure hero section maintains height with video */
+.hero.hero-slide-3.video-active {
+  background-image: none;
+  height: 100vh;
+  min-height: 700px;
+}
+
+/* Responsive hero height fixes */
+@media (max-width: 768px) {
+  .hero {
+    height: 100vh;
+    min-height: 600px;
+  }
+  
+  .hero-video,
+  .hero-video-overlay {
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 100vh;
+    min-height: 500px;
+  }
+}
+
+.hero-content {
+  transition: opacity 0.7s cubic-bezier(.4,2,.6,1), transform 0.7s cubic-bezier(.4,2,.6,1);
+}
+.hero-content.hide {
+  opacity: 0;
+  transform: translateX(-60px);
+  pointer-events: none;
+}
+.hero-content.show {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* Specific style for the skylight cover image to fix the blurry issue */
+
+/* Remove any blurriness from Jekyll processed images */
+img[src*="{{ site.baseurl }}"] {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Modern Product Card Styles */
+.products-modern-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem 1.5rem;
+  justify-content: center;
+}
+.product-card-modern {
+  background: #fff;
+  border-radius: 1.1rem;
+  box-shadow: 0 6px 24px rgba(0,86,210,0.10);
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+  border: none;
+  width: 356px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+  will-change: transform;
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+.product-card-modern:hover {
+  transform: translateY(-7px) scale(1.03);
+  box-shadow: 0 12px 36px rgba(0,86,210,0.18);
+}
+.product-card-modern .product-img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-radius: 0 !important;
+  background: #f8f9fa;
+  display: block;
+  image-rendering: auto;
+  transition: all 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.product-card-modern .product-body {
+  padding: 1.1rem 1.1rem 1.1rem 1.1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+}
+.product-card-modern .product-title {
+  color: #22325a;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+.product-card-modern .product-desc {
+  color: #5a5a5a;
+  font-size: 1.01rem;
+  margin-bottom: 1.1rem;
+  text-align: center;
+  min-height: 48px;
+}
+.product-card-modern .product-btns {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: auto;
+}
+.product-card-modern .btn-readmore {
+  background: linear-gradient(90deg, #0056D2 0%, #00C4B4 100%);
+  color: #fff;
+  border: none;
+  border-radius: 1.5rem;
+  font-weight: 600;
+  padding: 0.45rem 1.2rem;
+  font-size: 0.98rem;
+  transition: background 0.2s;
+  text-transform: uppercase;
+  text-decoration: none !important;
+}
+.product-card-modern .btn-readmore:hover {
+  background: #333;
+}
+.product-card-modern .btn-joinnow {
+  background: linear-gradient(90deg, #09853c 0%, #0056D2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 1.5rem;
+  font-weight: 600;
+  padding: 0.45rem 1.2rem;
+  font-size: 0.98rem;
+  transition: background 0.2s;
+  text-transform: uppercase;
+  text-decoration: none !important;
+}
+.product-card-modern .btn-joinnow:hover {
+  background: #157347;
+}
+@media (max-width: 600px) {
+  .products-modern-row { gap: 1.2rem 0.5rem; }
+  .product-card-modern { width: 100%; }
+  .product-card-modern .product-img { 
+    height: 180px;
+    object-fit: contain;
+    background: #f8f9fa;
+    image-rendering: auto;
+  }
+}
+
+/* Service Section Styles */
+#services {
+    background: #f8f9fa;
+    padding: 60px 0;
+}
+
+.service-icon {
+    font-size: 2.5rem;
+
+    margin-bottom: 1rem;
+}
+
+.card {
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.card h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #22325a;
+}
+
+.card p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* Responsive adjustments for service cards */
+@media (max-width: 768px) {
+    .service-icon {
+        font-size: 2rem;
+    }
+
+    .card h5 {
+        font-size: 1.1rem;
+    }
+
+    .card p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .service-header-title {
+        font-size: 2rem;
+    }
+    .service-header-desc {
+        font-size: 0.98rem;
+    }
+}
+.hero.hero-slide-2 {
+  background: linear-gradient(70deg, rgba(20, 20, 20, 0.7) 0%, rgba(0, 196, 180, 0.35) 100%),
+    url('assets/images/hero_image_final_2.png'); /* hero slide 2 */
+  background-size: cover;
+  background-position: center;
+}
+.hero.hero-slide-3 {
+  background: linear-gradient(70deg, rgba(255, 87, 34, 0.8) 0%, rgba(255, 193, 7, 0.4) 100%),
+    url('assets/images/hero_image_final_3.png'); /* Worker with PPE gear */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Video background styles for third slide */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  min-height: 100vh;
+}
+
+.hero-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(70deg, rgba(255, 87, 34, 0.6) 0%, rgba(255, 193, 7, 0.3) 100%);
+  z-index: -1;
+  min-height: 100vh;
+}
+
+/* Ensure hero section maintains height with video */
+.hero.hero-slide-3.video-active {
+  background-image: none;
+  height: 100vh;
+  min-height: 700px;
+}
+
+/* Responsive hero height fixes */
+@media (max-width: 768px) {
+  .hero {
+    height: 100vh;
+    min-height: 600px;
+  }
+  
+  .hero-video,
+  .hero-video-overlay {
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 100vh;
+    min-height: 500px;
+  }
+}
+
+.hero-content {
+  transition: opacity 0.7s cubic-bezier(.4,2,.6,1), transform 0.7s cubic-bezier(.4,2,.6,1);
+}
+.hero-content.hide {
+  opacity: 0;
+  transform: translateX(-60px);
+  pointer-events: none;
+}
+.hero-content.show {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* Specific style for the skylight cover image to fix the blurry issue */
+
+/* Remove any blurriness from Jekyll processed images */
+img[src*="{{ site.baseurl }}"] {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Modern Product Card Styles */
+.products-modern-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem 1.5rem;
+  justify-content: center;
+}
+.product-card-modern {
+  background: #fff;
+  border-radius: 1.1rem;
+  box-shadow: 0 6px 24px rgba(0,86,210,0.10);
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+  border: none;
+  width: 356px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+  will-change: transform;
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+.product-card-modern:hover {
+  transform: translateY(-7px) scale(1.03);
+  box-shadow: 0 12px 36px rgba(0,86,210,0.18);
+}
+.product-card-modern .product-img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-radius: 0 !important;
+  background: #f8f9fa;
+  display: block;
+  image-rendering: auto;
+  transition: all 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.product-card-modern .product-body {
+  padding: 1.1rem 1.1rem 1.1rem 1.1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+}
+.product-card-modern .product-title {
+  color: #22325a;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+.product-card-modern .product-desc {
+  color: #5a5a5a;
+  font-size: 1.01rem;
+  margin-bottom: 1.1rem;
+  text-align: center;
+  min-height: 48px;
+}
+.product-card-modern .product-btns {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: auto;
+}
+.product-card-modern .btn-readmore {
+  background: linear-gradient(90deg, #0056D2 0%, #00C4B4 100%);
+  color: #fff;
+  border: none;
+  border-radius: 1.5rem;
+  font-weight: 600;
+  padding: 0.45rem 1.2rem;
+  font-size: 0.98rem;
+  transition: background 0.2s;
+  text-transform: uppercase;
+  text-decoration: none !important;
+}
+.product-card-modern .btn-readmore:hover {
+  background: #333;
+}
+.product-card-modern .btn-joinnow {
+  background: linear-gradient(90deg, #09853c 0%, #0056D2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 1.5rem;
+  font-weight: 600;
+  padding: 0.45rem 1.2rem;
+  font-size: 0.98rem;
+  transition: background 0.2s;
+  text-transform: uppercase;
+  text-decoration: none !important;
+}
+.product-card-modern .btn-joinnow:hover {
+  background: #157347;
+}
+@media (max-width: 600px) {
+  .products-modern-row { gap: 1.2rem 0.5rem; }
+  .product-card-modern { width: 100%; }
+  .product-card-modern .product-img { 
+    height: 180px;
+    object-fit: contain;
+    background: #f8f9fa;
+    image-rendering: auto;
+  }
+}
+
 /* Global responsive fixes */
     * {
         box-sizing: border-box;
@@ -876,16 +1506,21 @@ img[src*="{{ site.baseurl }}"] {
       <div class="hero-buttons">
         <a href="#about" class="btn btn-primary">ABOUT US</a>
         <a href="#services" class="btn btn-light">OUR SERVICES</a>
-        <a href="#products" class="btn btn-warning">OUR PRODUCTS</a>
-      </div>    </div><div class="hero-content" id="hero-content-2" style="display:none">
+        <a href="#products" class="btn btn-warning">OUR PRODUCTS</a>      </div>    </div><div class="hero-content" id="hero-content-2" style="display:none">
       <h1 id="hero-title-2" style="color: var(--accent);">Premium Life Line System</h1>
-      <p id="hero-desc-2" style="color: #fd3a3a;">Secure every steps - Advanced Lifeline Safety Solutions</p>      <a href="{{ site.baseurl }}/life-line-system.html" class="btn btn-light btn-lg" style="background: transparent; color: #fff; border: 2px solid #fff; font-weight: 600; border-radius: 2rem; padding: 0.75rem 2.5rem; margin-right: 1rem;">Learn More</a>
-      <a href="{{ site.baseurl }}/life-line-system.html" class="btn btn-accent btn-lg" style="background: #ffc107; color: #000; font-weight: 600; border-radius: 2rem; padding: 0.75rem 2.5rem;">Get Quote</a>
+      <p id="hero-desc-2" style="color: #fd3a3a;">Secure every steps - Advanced Lifeline Safety Solutions</p>      
+      <div class="hero-buttons">
+        <a href="{{ site.baseurl }}/life-line-system.html" class="btn btn-light btn-lg" style="background: transparent; color: #fff; border: 2px solid #fff; font-weight: 600; border-radius: 2rem; padding: 0.75rem 2.5rem;">Learn More</a>
+        <a href="{{ site.baseurl }}/life-line-system.html" class="btn btn-accent btn-lg" style="background: #ffc107; color: #000; font-weight: 600; border-radius: 2rem; padding: 0.75rem 2.5rem;">Get Quote</a>
+      </div>
     </div>
     <div class="hero-content" id="hero-content-3" style="display:none">
       <h1 id="hero-title-3" style="color: white;">Personal Protection Equipment</h1>
-      <p id="hero-desc-3" style="color: #fff;">Comprehensive PPE solutions designed to keep you safe in any workplace environment.</p>      <a href="{{ site.baseurl }}/ppe.html" class="btn btn-warning btn-lg" style="font-weight: 600; border-radius: 2rem; padding: 0.75rem 2.5rem; margin-right: 1rem;">Learn More</a>
-      <a href="{{ site.baseurl }}/contact-us.html" class="btn btn-light btn-lg" style="font-weight: 600; border-radius: 2rem; padding: 0.75rem 2.5rem;">Get Quote</a>
+      <p id="hero-desc-3" style="color: #fff;">Comprehensive PPE solutions designed to keep you safe in any workplace environment.</p>      
+      <div class="hero-buttons">
+        <a href="{{ site.baseurl }}/ppe.html" class="btn btn-warning btn-lg" style="font-weight: 600; border-radius: 2rem; padding: 0.75rem 2.5rem;">Learn More</a>
+        <a href="{{ site.baseurl }}/contact-us.html" class="btn btn-light btn-lg" style="font-weight: 600; border-radius: 2rem; padding: 0.75rem 2.5rem;">Get Quote</a>
+      </div>
     </div>
   </section>
 
