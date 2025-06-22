@@ -31,14 +31,13 @@
     font-family: 'Segoe UI', Arial, sans-serif; 
     font-size: 1.5rem; 
   }
-  
-  /* Mobile responsive adjustments */
+    /* Mobile responsive adjustments */
   @media (max-width: 575.98px) {
     .navbar-brand span { 
       font-size: 0.9rem; 
     }
     .navbar-brand img { 
-      height: 30px !important; 
+      height: 32px !important; 
     }
     .navbar-brand { 
       margin-right: 0.5rem; 
@@ -50,11 +49,20 @@
       font-size: 0.8rem; 
     }
     .navbar-brand img { 
+      height: 28px !important; 
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .navbar-brand span { 
+      font-size: 0.7rem; 
+    }
+    .navbar-brand img { 
       height: 25px !important; 
     }
   }
   
-  @media (max-width: 400px) {
+  @media (max-width: 320px) {
     .navbar-brand span { 
       display: none; 
     }
