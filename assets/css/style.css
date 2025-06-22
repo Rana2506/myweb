@@ -877,6 +877,8 @@ section + section {
     color: #e30613 !important;
 }
 
+/* Navigation link colors are now controlled in header.html inline styles */
+/*
 .navbar-light .navbar-nav .nav-link {
     color: #e30613 !important;
 }
@@ -884,6 +886,7 @@ section + section {
 .navbar-light .navbar-nav .nav-link:hover {
     color: #a8040e !important;
 }
+*/
 
 .navbar .form-control {
     color: #e30613;
