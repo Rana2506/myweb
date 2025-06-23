@@ -24,47 +24,47 @@ main > *:first-child {
     padding-top: 0 !important;
 }
 
-* {
-    box-sizing: border-box;
+/* Reduce main content margins and padding */
+main .container,
+main .container-fluid {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
 }
 
-/* Ensure images and media don't overflow */
-img, video, iframe {
-    max-width: 100%;
-    height: auto;
+/* Reduce section vertical padding */
+main section,
+main .py-5 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
 }
 
-/* Prevent any full-width elements from causing overflow */
-.full-width, .w-100, .container-fluid {
-    max-width: 100%;
-    padding-left: 10px !important;
-    padding-right: 10px !important;
-}
-.container, 
-.container-sm, 
-.container-md, 
-.container-lg, 
-.container-xl,
-.container-xxl {
-    padding-left: 10px !important;
-    padding-right: 10px !important;
+main .py-4 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
 }
 
-/* Override Bootstrap's default container padding */
-@media (min-width: 576px) {
-    .container, .container-sm { padding-left: 10px !important; padding-right: 10px !important; }
+/* Reduce product introduction section spacing */
+main .product-intro-section {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
 }
+
+/* Reduce hero section margin bottom */
+main .hero-section.mb-5,
+main .mb-5 {
+    margin-bottom: 1.5rem !important;
+}
+
+/* Reduce card padding for content sections */
+main .intro-card,
+main .newsletter-section {
+    padding: 1.5rem !important;
+}
+
 @media (min-width: 768px) {
-    .container, .container-sm, .container-md { padding-left: 10px !important; padding-right: 10px !important; }
-}
-@media (min-width: 992px) {
-    .container, .container-sm, .container-md, .container-lg { padding-left: 10px !important; padding-right: 10px !important; }
-}
-@media (min-width: 1200px) {
-    .container, .container-sm, .container-md, .container-lg, .container-xl { padding-left: 10px !important; padding-right: 10px !important; }
-}
-@media (min-width: 1400px) {
-    .container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl { padding-left: 10px !important; padding-right: 10px !important; }
+    main .intro-card {
+        padding: 2rem !important;
+    }
 }
 
 /* --- Motion Effects --- */
@@ -911,4 +911,52 @@ section + section {
 .navbar .btn-outline-success:focus {
     background-color: #e30613;
     color: #fff;
+}
+
+/* Additional spacing reductions for content areas */
+main .py-3 {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+}
+
+main .my-5,
+main .my-4 {
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+main .my-3 {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Reduce spacing for specific Bootstrap row/column gaps */
+main .row {
+    --bs-gutter-x: 1rem;
+}
+
+/* Reduce spacing around main content blocks */
+main .content-section,
+main .main-content {
+    padding: 1rem 0 !important;
+}
+
+@media (max-width: 768px) {
+    /* Even tighter spacing on mobile */
+    main .container,
+    main .container-fluid {
+        padding-left: 3px !important;
+        padding-right: 3px !important;
+    }
+    
+    main section,
+    main .py-5 {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+    
+    main .py-4 {
+        padding-top: 0.75rem !important;
+        padding-bottom: 0.75rem !important;
+    }
 }
