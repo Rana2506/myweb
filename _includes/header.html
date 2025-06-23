@@ -6,7 +6,7 @@
     font-family: 'Segoe UI', Arial, sans-serif; 
     font-size: 1.5rem; 
   }
-    /* Mobile responsive adjustments */
+  /* Mobile responsive adjustments */
   @media (max-width: 575.98px) {
     .navbar-brand span { 
       font-size: 0.9rem; 
@@ -16,30 +16,74 @@
     }
     .navbar-brand { 
       margin-right: 0.5rem; 
+      flex: 1 1 auto;
+      max-width: calc(100% - 60px);
+    }
+    .navbar-toggler {
+      margin-left: auto;
+      flex: 0 0 auto;
     }
   }
-  
-  @media (max-width: 480px) {
+    @media (max-width: 480px) {
     .navbar-brand span { 
       font-size: 0.8rem; 
     }
     .navbar-brand img { 
       height: 28px !important; 
     }
+    .navbar-brand { 
+      flex: 1 1 auto;
+      max-width: calc(100% - 60px);
+    }
+    .navbar-toggler {
+      margin-left: auto;
+      flex: 0 0 auto;
+    }
   }
-  
-  @media (max-width: 360px) {
+    @media (max-width: 360px) {
     .navbar-brand span { 
       font-size: 0.7rem; 
     }
     .navbar-brand img { 
       height: 25px !important; 
     }
-  }
-    @media (max-width: 320px) {
+    .navbar-brand { 
+      flex: 1 1 auto;
+      max-width: calc(100% - 60px);
+    }
+    .navbar-toggler {
+      margin-left: auto;
+      flex: 0 0 auto;
+    }
+  }    @media (max-width: 320px) {
     .navbar-brand span { 
       display: none; 
     }
+    .navbar-brand { 
+      flex: 1 1 auto;
+      max-width: calc(100% - 60px);
+    }
+    .navbar-toggler {
+      margin-left: auto;
+      flex: 0 0 auto;    }
+  }
+  
+  /* Navbar container flexbox layout */
+  .container-fluid {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+  }
+  
+  .navbar-brand {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  
+  .navbar-toggler {
+    flex: 0 0 auto;
+    margin-left: auto !important;
+    order: 2;
   }
   
   .navbar-light .navbar-nav .nav-link {
@@ -135,12 +179,12 @@
   }
 </style>
 
-<div class="container-fluid">
-    <a class="navbar-brand d-flex align-items-center flex-shrink-1" href="{{ site.baseurl }}/" style="max-width: calc(100% - 60px);">
+<div class="container-fluid d-flex align-items-center">
+    <a class="navbar-brand d-flex align-items-center flex-grow-1" href="{{ site.baseurl }}/" style="max-width: calc(100% - 60px);">
       <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Heinrich Safety Solutions Logo" style="height: 40px; width: auto; flex-shrink: 0;">
       <span class="ms-2 text-truncate">Heinrich Safety Solutions</span>
     </a>
-    <button class="navbar-toggler flex-shrink-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
