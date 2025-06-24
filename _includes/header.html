@@ -39,6 +39,15 @@
             flex-shrink: 0;
         }
 
+        .logo-section a {
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo-section a:hover {
+            opacity: 0.8;
+        }
+
         .logo-section img {
             height: 40px;
             width: auto;
@@ -253,11 +262,12 @@
 </head>
 <body>
     <header class="header">
-        <div class="header-container">
-            <!-- Logo and Company Name Section -->
+        <div class="header-container">            <!-- Logo and Company Name Section -->
             <div class="logo-section">
-                <img src="assets/images/logo.png" alt="Heinrich Safety Solutions Logo">
-                <span class="company-name">Heinrich Safety Solutions</span>
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="Heinrich Safety Solutions Logo">
+                </a>
+                <a href="index.html" class="company-name">Heinrich Safety Solutions</a>
             </div>
 
             <!-- Mobile Menu Toggle -->
