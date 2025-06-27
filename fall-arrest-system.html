@@ -256,6 +256,20 @@ permalink: /fall-arrest-system.html
     min-height: 3rem;
   }
 }
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset for fixed header when scrolling to anchors */
+[id]::before {
+  content: '';
+  display: block;
+  height: 100px;
+  margin-top: -100px;
+  visibility: hidden;
+}
 </style>
 <!-- Main Content: Card Grid View for Fall Arrest Products -->
 <section id="fall-arrest-products" class="py-5 bg-light">
@@ -316,7 +330,7 @@ permalink: /fall-arrest-system.html
                     </div>
                 </div>
             </div>            <!-- Card 3: Ascender & Descender -->
-            <div class="col-lg-3 col-md-6 col-sm-8">
+            <div class="col-lg-3 col-md-6 col-sm-8" id="ascender-descender">
                 <div class="card fall-arrest-card card-warning">
                     <div class="fall-arrest-card-img-container">
                         <img src="{{ site.baseurl }}/assets/images/ascender_descender.png" class="fall-arrest-card-img" alt="Ascender & Descender">
@@ -341,7 +355,7 @@ permalink: /fall-arrest-system.html
                     </div>
                 </div>
             </div>            <!-- Card 4: Spidermak Kits -->
-            <div class="col-lg-3 col-md-6 col-sm-8">
+            <div class="col-lg-3 col-md-6 col-sm-8" id="spiderman-kits">
                 <div class="card fall-arrest-card card-info">
                     <div class="fall-arrest-card-img-container">
                         <img src="{{ site.baseurl }}/assets/images/painting_kit.png" class="fall-arrest-card-img" alt="Spidermak Kits">

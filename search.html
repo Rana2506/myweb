@@ -139,6 +139,20 @@ permalink: /search.html
     padding: 15px;
   }
 }
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset for fixed header when scrolling to anchors */
+[id]::before {
+  content: '';
+  display: block;
+  height: 100px;
+  margin-top: -100px;
+  visibility: hidden;
+}
 </style>
 
 <!-- Search Hero -->
@@ -230,6 +244,9 @@ permalink: /search.html
 <script src="{{ site.baseurl }}/assets/js/search.js"></script>
 
 <script>
+// Set the base URL for proper navigation
+const SITE_BASE_URL = '{{ site.baseurl }}';
+
 // Use the centralized search functionality
 let filteredResults = [];
 let currentFilter = 'all';
@@ -281,7 +298,7 @@ function displayResults(results, query) {
   resultsContainer.innerHTML = results.map(product => `
     <div class="search-result-item" data-category="${product.category}">
       <div class="search-result-category">${product.categoryName}</div>
-      <a href="${product.url}" class="search-result-title">${product.title}</a>
+      <a href="${SITE_BASE_URL}${product.url}" class="search-result-title">${product.title}</a>
       <p class="search-result-description">${product.description}</p>
       ${product.features.length > 0 ? `
         <ul class="search-result-features">

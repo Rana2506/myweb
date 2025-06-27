@@ -725,6 +725,20 @@
         float: none;
     }
 }
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset for fixed header when scrolling to anchors */
+[id]::before {
+  content: '';
+  display: block;
+  height: 100px;
+  margin-top: -100px;
+  visibility: hidden;
+}
 </style>
 
 <section id="ppe-products" class="py-5 bg-light">  <div class="container">
@@ -735,7 +749,7 @@
       </p>
     </div>
     <div class="row g-4">      <!-- Reflective Jacket -->
-      <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="col-lg-3 col-md-4 col-sm-6" id="reflective-jacket">
         <div class="card ppe-card">
           <div class="ppe-card-img-container">
             <img src="/assets/images/reflective_jacket.png" class="ppe-card-img" alt="Reflective Jacket">
@@ -760,7 +774,7 @@
         </div>
       </div>      
       <!-- Reflective Strap -->
-      <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="col-lg-3 col-md-4 col-sm-6" id="reflective-strap">
         <div class="card ppe-card">
           <div class="ppe-card-img-container">
             <img src="/assets/images/reflective-strap.png" class="ppe-card-img" alt="Reflective Strap">
@@ -786,7 +800,7 @@
       </div>
 
       <!-- face Sheild -->
-      <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="col-lg-3 col-md-4 col-sm-6" id="face-shield">
         <div class="card ppe-card">
           <div class="ppe-card-img-container">
             <img src="/assets/images/face_sheild.png" class="ppe-card-img" alt="Safety Glass">
@@ -812,7 +826,7 @@
       </div>
 
       <!-- Rubber Safety Gloves -->
-      <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="col-lg-3 col-md-4 col-sm-6" id="safety-gloves-rubber">
         <div class="card ppe-card">
           <div class="ppe-card-img-container">
             <img src="/assets/images/safety_gloves_rubber.png" class="ppe-card-img" alt="Safety Gloves (Rubber)">
@@ -838,7 +852,7 @@
       </div>
 
       <!-- Safety Mask -->
-      <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="col-lg-3 col-md-4 col-sm-6" id="safety-mask">
         <div class="card ppe-card">
           <div class="ppe-card-img-container">
             <img src="/assets/images/face_musk.png" class="ppe-card-img" alt="Safety Mask">
@@ -864,7 +878,7 @@
       </div>
 
       <!-- Leather Safety Gloves -->
-      <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="col-lg-3 col-md-4 col-sm-6" id="safety-gloves-leather">
         <div class="card ppe-card">
           <div class="ppe-card-img-container">
             <img src="/assets/images/safety_gloves_leather.png" class="ppe-card-img" alt="Safety Gloves Leather">
@@ -890,7 +904,7 @@
       </div>
 
       <!-- Safety Glass -->
-      <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="col-lg-3 col-md-4 col-sm-6" id="safety-eye-glass">
         <div class="card ppe-card">
           <div class="ppe-card-img-container">
             <img src="/assets/images/safety_eye_glass.png" class="ppe-card-img" alt="Safety Glass">
@@ -916,7 +930,7 @@
       </div>
 
       <!-- Safety Helmet -->
-      <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="col-lg-3 col-md-4 col-sm-6" id="safety-helmet">
         <div class="card ppe-card">
           <div class="ppe-card-img-container">
             <img src="/assets/images/safety_helmet.png" class="ppe-card-img" alt="Safety Helmet White">
@@ -942,7 +956,7 @@
       </div>
 
       <!-- Safety Shoes -->
-      <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="col-lg-3 col-md-4 col-sm-6" id="safety-shoes">
         <div class="card ppe-card">
           <div class="ppe-card-img-container">
             <img src="/assets/images/safety_shoes.png" class="ppe-card-img" alt="Safety Shoes">
@@ -968,7 +982,7 @@
       </div>
     
       <!-- Eyewash Bottle (500 ml) -->
-      <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="col-lg-3 col-md-4 col-sm-6" id="eyewash-500ml">
         <div class="card ppe-card">
           <div class="ppe-card-img-container">
             <img src="/assets/images/eyewash_bottle.png" class="ppe-card-img" alt="Eyewash Bottle (500 ml)">
@@ -992,7 +1006,7 @@
           </div>
         </div>
       </div>      <!-- Eyewash Bottle (1 ltr.) -->
-      <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="col-lg-3 col-md-4 col-sm-6" id="eyewash-1liter">
         <div class="card ppe-card">
           <div class="ppe-card-img-container">
             <img src="/assets/images/eyewash_bottle.png" class="ppe-card-img" alt="Eyewash Bottle (1 ltr)">
@@ -1018,7 +1032,7 @@
       </div>
 
       <!-- Waist Tools cum PPE Bag -->
-      <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="col-lg-3 col-md-4 col-sm-6" id="ppe-bag">
         <div class="card ppe-card">
           <div class="ppe-card-img-container">
             <img src="/assets/images/waist_tools_cum_ppe_bag.png" class="ppe-card-img" alt="Waist tools cum PPE bag">
@@ -1044,7 +1058,7 @@
       </div>
 
       <!-- Bump Cap -->
-      <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="col-lg-3 col-md-4 col-sm-6" id="bump-cap">
         <div class="card ppe-card">
           <div class="ppe-card-img-container">
             <img src="/assets/images/bump_cap.png" class="ppe-card-img" alt="Bump Cap">
@@ -1070,7 +1084,7 @@
       </div>
 
       <!-- Davit Arm System -->
-      <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="col-lg-3 col-md-4 col-sm-6" id="davit-arm">
         <div class="card ppe-card">
           <div class="ppe-card-img-container">
             <img src="/assets/images/davit_arm_system.png" class="ppe-card-img" alt="Davit Arm System">
@@ -1096,7 +1110,7 @@
       </div>
 
       <!-- Painting Kit -->
-      <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="col-lg-3 col-md-4 col-sm-6" id="painting-kit">
         <div class="card ppe-card">
           <div class="ppe-card-img-container">
             <img src="/assets/images/painting_kit.png" class="ppe-card-img" alt="Painting Kit">
@@ -1122,7 +1136,7 @@
       </div>
 
       <!-- Parapet Wall Anchor -->
-      <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="col-lg-3 col-md-4 col-sm-6" id="parapet-anchor">
         <div class="card ppe-card">
           <div class="ppe-card-img-container">
             <img src="/assets/images/parapet_wall_anchor.png" class="ppe-card-img" alt="Parapet Wall Anchor">
@@ -1148,7 +1162,7 @@
       </div>
 
       <!-- Tripod -->
-      <div class="col-lg-3 col-md-4 col-sm-6">
+      <div class="col-lg-3 col-md-4 col-sm-6" id="tripod">
         <div class="card ppe-card">
           <div class="ppe-card-img-container">
             <img src="/assets/images/tripod.png" class="ppe-card-img" alt="Tripod">
