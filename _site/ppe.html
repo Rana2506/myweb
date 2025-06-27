@@ -382,7 +382,7 @@
 ">
   <div class="container text-center">
     <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" class="mb-4">
+    <nav aria-label="breadcrumb" class="mb-4 mt-5">
       <ol class="breadcrumb justify-content-center bg-transparent p-0 mb-0">
         <li class="breadcrumb-item">
           <a href="/" class="text-white text-decoration-none opacity-75 hover-opacity-100">
@@ -433,6 +433,21 @@
 }
 .hover-opacity-100:hover {
   opacity: 1 !important;
+}
+
+/* Adjust breadcrumb text size for better readability */
+.breadcrumb-item {
+  font-size: 1rem;
+}
+
+.breadcrumb-item a,
+.breadcrumb-item.active {
+  font-size: 1rem;
+}
+
+/* Adjust hero subheading size for better readability */
+.hero-section .lead.fs-4 {
+  font-size: 1.25rem !important;
 }
 
 /* Modern PPE Card Styles */
@@ -590,17 +605,17 @@
   .hero-section {
     height: 50vh;
     background-attachment: scroll;
-    /* Stronger overlay for mobile */
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), 
+    /* Use same overlay as desktop */
+    background: linear-gradient(rgba(1, 22, 206, 0.219), rgba(0, 0, 0, 0.322)), 
                 url('/assets/images/ppe_hero.png') center/cover !important;
   }
   
-  /* Add semi-transparent background behind text content */
+  /* Remove the dark background behind text content */
   .hero-section .container {
-    background: rgba(0, 0, 0, 0.4);
-    border-radius: 15px;
+    background: none !important;
+    border-radius: 0;
     padding: 2rem 1rem;
-    backdrop-filter: blur(2px);
+    backdrop-filter: none;
   }
   
   /* Make hero text more visible on mobile */
@@ -610,8 +625,19 @@
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 1), 0 0 15px rgba(0, 0, 0, 0.8);
     font-weight: 900 !important;
   }
+  
+  /* Smaller breadcrumb text on mobile */
+  .breadcrumb-item {
+    font-size: 0.8rem !important;
+  }
+
+  .breadcrumb-item a,
+  .breadcrumb-item.active {
+    font-size: 0.8rem !important;
+  }
+  
   .hero-section .lead.fs-4 {
-    font-size: 1.2rem !important; /* Slightly larger subheading */
+    font-size: 1rem !important; /* Smaller subheading on mobile */
     color: #ffffff !important;
     opacity: 1 !important; /* Remove opacity for better visibility */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 1), 0 0 12px rgba(0, 0, 0, 0.8);
@@ -651,16 +677,16 @@
 }
 
 @media (max-width: 576px) {
-  /* Stronger background for very small screens */
+  /* Use same overlay as desktop for very small screens */
   .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), 
+    background: linear-gradient(rgba(1, 22, 206, 0.219), rgba(0, 0, 0, 0.322)), 
                 url('/assets/images/ppe_hero.png') center/cover !important;
   }
   
-  /* Even stronger background behind text */
+  /* Remove dark background behind text */
   .hero-section .container {
-    background: rgba(0, 0, 0, 0.5) !important;
-    border-radius: 12px;
+    background: none !important;
+    border-radius: 0;
     padding: 1.5rem 1rem;
   }
   
@@ -671,8 +697,19 @@
     text-shadow: 4px 4px 8px rgba(0, 0, 0, 1), 0 0 20px rgba(0, 0, 0, 0.9);
     font-weight: 900 !important;
   }
+  
+  /* Even smaller breadcrumb text on very small screens */
+  .breadcrumb-item {
+    font-size: 0.75rem !important;
+  }
+
+  .breadcrumb-item a,
+  .breadcrumb-item.active {
+    font-size: 0.75rem !important;
+  }
+  
   .hero-section .lead.fs-4 {
-    font-size: 1.1rem !important; /* Larger subheading */
+    font-size: 0.9rem !important; /* Smaller subheading on very small screens */
     color: #ffffff !important;
     opacity: 1 !important; /* Remove opacity for better visibility */
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 1), 0 0 15px rgba(0, 0, 0, 0.8);
@@ -766,9 +803,9 @@ html {
               <li>Breathable fabric</li>
             </ul>
             <div class="ppe-card-footer">
-              <button class="btn ppe-card-btn">
+              <a href="/contact-us.html" class="btn ppe-card-btn">
                 <i class="fas fa-phone me-2"></i>Get Quote
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -791,9 +828,9 @@ html {
               <li>Multiple color options</li>
             </ul>
             <div class="ppe-card-footer">
-              <button class="btn ppe-card-btn">
+              <a href="/contact-us.html" class="btn ppe-card-btn">
                 <i class="fas fa-phone me-2"></i>Get Quote
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -817,9 +854,9 @@ html {
               <li>Scratch resistant</li>
             </ul>
             <div class="ppe-card-footer">
-              <button class="btn ppe-card-btn">
+              <a href="/contact-us.html" class="btn ppe-card-btn">
                 <i class="fas fa-phone me-2"></i>Get Quote
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -843,9 +880,9 @@ html {
               <li>Multiple sizes</li>
             </ul>
             <div class="ppe-card-footer">
-              <button class="btn ppe-card-btn">
+              <a href="/contact-us.html" class="btn ppe-card-btn">
                 <i class="fas fa-phone me-2"></i>Get Quote
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -869,9 +906,9 @@ html {
               <li>Disposable/reusable</li>
             </ul>
             <div class="ppe-card-footer">
-              <button class="btn ppe-card-btn">
+              <a href="/contact-us.html" class="btn ppe-card-btn">
                 <i class="fas fa-phone me-2"></i>Get Quote
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -895,9 +932,9 @@ html {
               <li>Cut resistant</li>
             </ul>
             <div class="ppe-card-footer">
-              <button class="btn ppe-card-btn">
+              <a href="/contact-us.html" class="btn ppe-card-btn">
                 <i class="fas fa-phone me-2"></i>Get Quote
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -921,9 +958,9 @@ html {
               <li>Scratch Proof</li>
             </ul>
             <div class="ppe-card-footer">
-              <button class="btn ppe-card-btn">
+              <a href="/contact-us.html" class="btn ppe-card-btn">
                 <i class="fas fa-phone me-2"></i>Get Quote
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -947,9 +984,9 @@ html {
               <li>Lightweight design</li>
             </ul>
             <div class="ppe-card-footer">
-              <button class="btn ppe-card-btn">
+              <a href="/contact-us.html" class="btn ppe-card-btn">
                 <i class="fas fa-phone me-2"></i>Get Quote
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -973,9 +1010,9 @@ html {
               <li>Electrical hazard rated</li>
             </ul>
             <div class="ppe-card-footer">
-              <button class="btn ppe-card-btn">
+              <a href="/contact-us.html" class="btn ppe-card-btn">
                 <i class="fas fa-phone me-2"></i>Get Quote
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -999,9 +1036,9 @@ html {
               <li>Easy squeeze bottle</li>
             </ul>
             <div class="ppe-card-footer">
-              <button class="btn ppe-card-btn">
+              <a href="/contact-us.html" class="btn ppe-card-btn">
                 <i class="fas fa-phone me-2"></i>Get Quote
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -1023,9 +1060,9 @@ html {
               <li>Extended use design</li>
             </ul>
             <div class="ppe-card-footer">
-              <button class="btn ppe-card-btn">
+              <a href="/contact-us.html" class="btn ppe-card-btn">
                 <i class="fas fa-phone me-2"></i>Get Quote
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -1049,9 +1086,9 @@ html {
               <li>Durable material</li>
             </ul>
             <div class="ppe-card-footer">
-              <button class="btn ppe-card-btn">
+              <a href="/contact-us.html" class="btn ppe-card-btn">
                 <i class="fas fa-phone me-2"></i>Get Quote
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -1075,9 +1112,9 @@ html {
               <li>Ventilation holes</li>
             </ul>
             <div class="ppe-card-footer">
-              <button class="btn ppe-card-btn">
+              <a href="/contact-us.html" class="btn ppe-card-btn">
                 <i class="fas fa-phone me-2"></i>Get Quote
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -1101,9 +1138,9 @@ html {
               <li>Easy installation</li>
             </ul>
             <div class="ppe-card-footer">
-              <button class="btn ppe-card-btn">
+              <a href="/contact-us.html" class="btn ppe-card-btn">
                 <i class="fas fa-phone me-2"></i>Get Quote
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -1127,9 +1164,9 @@ html {
               <li>Chemical resistant</li>
             </ul>
             <div class="ppe-card-footer">
-              <button class="btn ppe-card-btn">
+              <a href="/contact-us.html" class="btn ppe-card-btn">
                 <i class="fas fa-phone me-2"></i>Get Quote
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -1153,9 +1190,9 @@ html {
               <li>Easy installation</li>
             </ul>
             <div class="ppe-card-footer">
-              <button class="btn ppe-card-btn">
+              <a href="/contact-us.html" class="btn ppe-card-btn">
                 <i class="fas fa-phone me-2"></i>Get Quote
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -1179,9 +1216,9 @@ html {
               <li>Load tested</li>
             </ul>
             <div class="ppe-card-footer">
-              <button class="btn ppe-card-btn">
+              <a href="/contact-us.html" class="btn ppe-card-btn">
                 <i class="fas fa-phone me-2"></i>Get Quote
-              </button>
+              </a>
             </div>
           </div>
         </div>

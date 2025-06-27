@@ -382,7 +382,7 @@
 ">
   <div class="container text-center">
     <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" class="mb-4">
+    <nav aria-label="breadcrumb" class="mb-4 mt-5">
       <ol class="breadcrumb justify-content-center bg-transparent p-0 mb-0">        <li class="breadcrumb-item">
           <a href="/" class="text-white text-decoration-none opacity-75 hover-opacity-100">
             Home
@@ -429,12 +429,44 @@
 .hover-opacity-100:hover {
   opacity: 1 !important;
 }
+
+/* Adjust breadcrumb text size for better readability */
+.breadcrumb-item {
+  font-size: 1rem;
+}
+
+.breadcrumb-item a,
+.breadcrumb-item.active {
+  font-size: 1rem;
+}
+
+/* Adjust hero subheading size for better readability */
+.hero-section .lead.fs-4 {
+  font-size: 1.25rem !important;
+}
 @media (max-width: 768px) {
   .hero-section {
     height: 50vh;
     background-attachment: scroll;
-  }  .display-3 {
+  }
+  
+  .display-3 {
     font-size: 2.5rem;
+  }
+  
+  /* Smaller breadcrumb text on mobile */
+  .breadcrumb-item {
+    font-size: 0.8rem;
+  }
+
+  .breadcrumb-item a,
+  .breadcrumb-item.active {
+    font-size: 0.8rem;
+  }
+  
+  /* Smaller hero subheading on mobile */
+  .hero-section .lead.fs-4 {
+    font-size: 1rem !important;
   }
 }
 
@@ -667,9 +699,9 @@ html {
                             <li>Easy one-hand operation</li>
                         </ul>
                         <div class="fall-arrest-card-footer">
-                            <button class="btn fall-arrest-card-btn">
+                            <a href="/contact-us.html" class="btn fall-arrest-card-btn">
                                 <i class="fas fa-phone me-2"></i>Get Quote
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -692,9 +724,9 @@ html {
                             <li>Easy installation and use</li>
                         </ul>
                         <div class="fall-arrest-card-footer">
-                            <button class="btn fall-arrest-card-btn">
+                            <a href="/contact-us.html" class="btn fall-arrest-card-btn">
                                 <i class="fas fa-phone me-2"></i>Get Quote
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -717,9 +749,9 @@ html {
                             <li>Ergonomic grip design</li>
                         </ul>
                         <div class="fall-arrest-card-footer">
-                            <button class="btn fall-arrest-card-btn">
+                            <a href="/contact-us.html" class="btn fall-arrest-card-btn">
                                 <i class="fas fa-phone me-2"></i>Get Quote
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -742,9 +774,9 @@ html {
                             <li>Convenient carrying case</li>
                         </ul>
                         <div class="fall-arrest-card-footer">
-                            <button class="btn fall-arrest-card-btn">
+                            <a href="/contact-us.html" class="btn fall-arrest-card-btn">
                                 <i class="fas fa-phone me-2"></i>Get Quote
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
