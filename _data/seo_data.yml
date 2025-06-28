@@ -1,0 +1,48 @@
+# SEO Data for different page types
+products:
+  fall_arrest_system:
+    title: "Fall Arrest System - Professional Safety Equipment | HSSPL"
+    description: "High-quality fall arrest systems designed for maximum worker safety. HSSPL offers complete fall protection solutions including harnesses, lanyards, and anchor points."
+    keywords: ["fall arrest system", "fall protection equipment", "safety harness system", "industrial fall protection"]
+    
+  horizontal_lifeline:
+    title: "Horizontal Life Line System Components | HSSPL Safety Solutions"
+    description: "Professional horizontal life line systems for rooftop and industrial applications. Complete range of components including anchors, cables, and accessories."
+    keywords: ["horizontal life line", "rooftop safety system", "horizontal safety cable", "industrial life line"]
+    
+  vertical_lifeline:
+    title: "Vertical Life Line System Components | Height Safety Solutions"
+    description: "Vertical life line systems for safe access and fall protection. High-quality components designed for industrial and construction applications."
+    keywords: ["vertical life line", "vertical fall arrester", "climbing safety", "ladder safety system"]
+    
+  ppe:
+    title: "Personal Protective Equipment (PPE) | Safety Gear Supplier India"
+    description: "Comprehensive range of PPE including safety helmets, harnesses, gloves, and protective clothing. Quality assured safety equipment for industrial applications."
+    keywords: ["PPE supplier", "personal protective equipment", "safety gear India", "industrial PPE"]
+
+# Schema data for different product categories
+schema:
+  product_category:
+    "@type": "ProductGroup"
+    "category": "Safety Equipment"
+    "brand":
+      "@type": "Brand"
+      "name": "HSSPL"
+    "manufacturer":
+      "@type": "Organization"
+      "name": "Heinrich Safety Solutions Pvt. Ltd."
+
+# Local business schema
+local_business:
+  "@type": "LocalBusiness"
+  "name": "Heinrich Safety Solutions Pvt. Ltd."
+  "description": "Leading manufacturer and supplier of fall protection equipment and PPE in India"
+  "hasOfferCatalog":
+    "@type": "OfferCatalog"
+    "name": "Safety Equipment Catalog"
+    "itemListElement":
+      - "@type": "Offer"
+        "itemOffered":
+          "@type": "Product"
+          "name": "Fall Protection Equipment"
+          "category": "Safety Equipment"

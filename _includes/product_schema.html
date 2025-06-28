@@ -1,0 +1,45 @@
+<!-- Product Schema Include -->
+{% if include.product_type %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ include.product_name | default: page.title }}",
+  "description": "{{ include.description | default: page.description }}",
+  "category": "{{ include.category | default: 'Safety Equipment' }}",
+  "brand": {
+    "@type": "Brand",
+    "name": "HSSPL"
+  },
+  "manufacturer": {
+    "@type": "Organization",
+    "name": "Heinrich Safety Solutions Pvt. Ltd.",
+    "url": "{{ site.url }}"
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "INR",
+    "seller": {
+      "@type": "Organization",
+      "name": "Heinrich Safety Solutions Pvt. Ltd."
+    }
+  },
+  {% if include.features %}
+  "additionalProperty": [
+    {% for feature in include.features %}
+    {
+      "@type": "PropertyValue",
+      "name": "Feature",
+      "value": "{{ feature }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  {% endif %}
+  "isRelatedTo": {
+    "@type": "ProductGroup",
+    "name": "{{ include.product_group | default: 'Fall Protection Equipment' }}"
+  }
+}
+</script>
+{% endif %}

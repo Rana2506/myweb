@@ -2,7 +2,61 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description | default: 'HSSPL - Height Safety Solutions Provider' }}{% endif %}">
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="keywords" content="{% if page.keywords %}{{ page.keywords | join: ', ' }}{% else %}{{ site.keywords | default: 'PPE, fall protection, height safety, safety equipment, industrial safety, life line systems, anchor points, safety harness, India' }}{% endif %}">
+<meta name="author" content="{{ site.author }}">
+<meta name="robots" content="{% if page.robots %}{{ page.robots }}{% else %}index, follow{% endif %}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta property="og:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ site.baseurl }}/assets/images/og-image.png{% endif %}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:locale" content="en_IN">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ page.url | absolute_url }}">
+<meta property="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta property="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta property="twitter:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ site.baseurl }}/assets/images/og-image.png{% endif %}">
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ site.company.name }}",
+  "legalName": "{{ site.company.legal_name }}",
+  "url": "{{ site.url }}",
+  "logo": "{{ site.baseurl }}/assets/images/logo.png",
+  "description": "{{ site.description }}",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{ site.company.address.street }}",
+    "addressLocality": "{{ site.company.address.city }}",
+    "addressRegion": "{{ site.company.address.state }}",
+    "postalCode": "{{ site.company.address.postal_code }}",
+    "addressCountry": "{{ site.company.address.country }}"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "{{ site.company.phone }}",
+    "contactType": "customer service",
+    "email": "{{ site.company.email }}"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/hsspl",
+    "https://www.facebook.com/hsspl"
+  ]
+}
+</script>
+
+<!-- Jekyll SEO Tag -->
+{% seo %}
 
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="{{ site.baseurl }}/assets/images/favicon.ico">

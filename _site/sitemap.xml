@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+    
+    <url>
+      <loc>http://localhost:4000/about.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.7</priority>
+      
+      <image:image>
+        <image:loc>http://localhost:4000/assets/images/about-hsspl-team.jpg</image:loc>
+        <image:title>About HSSPL - Leading Safety Equipment Manufacturer | Heinrich Safety Solutions</image:title>
+        <image:caption>Learn about Heinrich Safety Solutions Pvt. Ltd. - ISO certified manufacturer of fall protection equipment and PPE with 15+ years of excellence in industrial safety solutions across India.</image:caption>
+      </image:image>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/anchor-attachment-plate.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/anchor-plate-bottom.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/anchor-plate-top.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/carabiner-hook.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/career.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/contact-us.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.7</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/corner-unit.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/custom-life-line-system.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/end-anchor.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/eye-connector.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/fall-arrest-system.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+      <image:image>
+        <image:loc>http://localhost:4000/assets/images/fall-arrest-system-banner.jpg</image:loc>
+        <image:title>Fall Arrest System - Complete Safety Solutions | HSSPL</image:title>
+        <image:caption>Professional fall arrest systems designed for maximum worker safety at height. Complete range includes safety harnesses, lanyards, anchor points, and shock absorbers. ISO certified quality.</image:caption>
+      </image:image>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/fasteners.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/horizontal-life-line-system.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/hsspl-new-ppe.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+      
+      <image:image>
+        <image:loc>http://localhost:4000/assets/images/hsspl-homepage-banner.jpg</image:loc>
+        <image:title>HSSPL - Leading Fall Protection &amp; PPE Manufacturer in India</image:title>
+        <image:caption>Heinrich Safety Solutions - Premier manufacturer of fall protection equipment, PPE, life line systems &amp; height safety solutions. ISO certified with 15+ years experience in industrial safety.</image:caption>
+      </image:image>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/index3.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/intermediate-anchor.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/life-line-system.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/overhead-life-line-system.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/ppe.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/products.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/promo-offers.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/retractable-fall-arrester.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/roof-top-guardrail.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/rope-suspension-clamp-bottom.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/rope-suspension-clamp-top.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/services.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/shock-absorber-spring.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/shock-absorber-suspension.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/sitemap.xml</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/skylight-protection-cover.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/tandem-speed-pulley.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/tensioner.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/traveler-glider.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/vertical-anchor-plate-bottom.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/vertical-fall-arrester.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/vertical-life-line-system.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/wire-end-connector.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/wire-rope.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/assets/css/style.css</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/GITHUB_PAGES_SETUP.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/NAVIGATION_FIX_APPLIED.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/SEARCH_DOCUMENTATION.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
+      <loc>http://localhost:4000/SEO_IMPLEMENTATION_CHECKLIST.html</loc>
+      
+      <lastmod>2025-06-28T18:34:07+05:30</lastmod>
+      
+      <changefreq>yearly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+    
+  
+</urlset>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" itemscope itemtype="https://schema.org/WebPage">
 <head>
   {% include head.html %}
 </head>
-<body>
+<body itemscope itemtype="https://schema.org/WebPage">
 
   {% include header.html %}
 
-  <main>
+  <main role="main" itemprop="mainContentOfPage">
     {{ content }}
   </main>
 
@@ -17,9 +17,20 @@
     {% include footer-standard.html %}
   {% endif %}
 
+  <!-- Product Schema if applicable -->
+  {% if page.product_type %}
+    {% include product_schema.html 
+       product_type=page.product_type 
+       product_name=page.title 
+       description=page.description 
+       category=page.category 
+       features=page.features 
+       product_group=page.product_group %}
+  {% endif %}
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  {% if page.url == "/search.html" %}
-  <script src="{{ site.baseurl }}/assets/js/search.js"></script>
+  {% if page.url == "/search.html" or page.url == "/search/" %}
+    <script src="{{ site.baseurl }}/assets/js/search.js"></script>
   {% endif %}
 </body>
 </html>

@@ -1,11 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" itemscope itemtype="https://schema.org/WebPage">
 <head>
   <!-- Basic Meta Tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Home | HSSPL</title>
-<meta name="description" content="HSSPL - Height Safety Solutions Provider">
+<title>HSSPL - Leading Fall Protection & PPE Manufacturer in India</title>
+<meta name="description" content="Heinrich Safety Solutions - Premier manufacturer of fall protection equipment, PPE, life line systems & height safety solutions. ISO certified with 15+ years experience in industrial safety.">
+<meta name="keywords" content="fall protection equipment manufacturer, PPE supplier India, height safety solutions, life line systems, industrial safety equipment, safety harness manufacturer, anchor points India, rooftop safety systems">
+<meta name="author" content="">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="http://localhost:4000/">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://localhost:4000/">
+<meta property="og:title" content="HSSPL - Leading Fall Protection & PPE Manufacturer in India">
+<meta property="og:description" content="Heinrich Safety Solutions - Premier manufacturer of fall protection equipment, PPE, life line systems & height safety solutions. ISO certified with 15+ years experience in industrial safety.">
+<meta property="og:image" content="http://localhost:4000/assets/images/hsspl-homepage-banner.jpg">
+<meta property="og:site_name" content="myweb">
+<meta property="og:locale" content="en_IN">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="http://localhost:4000/">
+<meta property="twitter:title" content="HSSPL - Leading Fall Protection & PPE Manufacturer in India">
+<meta property="twitter:description" content="Heinrich Safety Solutions - Premier manufacturer of fall protection equipment, PPE, life line systems & height safety solutions. ISO certified with 15+ years experience in industrial safety.">
+<meta property="twitter:image" content="http://localhost:4000/assets/images/hsspl-homepage-banner.jpg">
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "legalName": "",
+  "url": "http://localhost:4000",
+  "logo": "/assets/images/logo.png",
+  "description": "",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "",
+    "addressLocality": "",
+    "addressRegion": "",
+    "postalCode": "",
+    "addressCountry": ""
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "",
+    "contactType": "customer service",
+    "email": ""
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/hsspl",
+    "https://www.facebook.com/hsspl"
+  ]
+}
+</script>
+
+<!-- Jekyll SEO Tag -->
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>HSSPL - Leading Fall Protection &amp; PPE Manufacturer in India | myweb</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="HSSPL - Leading Fall Protection &amp; PPE Manufacturer in India" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Heinrich Safety Solutions - Premier manufacturer of fall protection equipment, PPE, life line systems &amp; height safety solutions. ISO certified with 15+ years experience in industrial safety." />
+<meta property="og:description" content="Heinrich Safety Solutions - Premier manufacturer of fall protection equipment, PPE, life line systems &amp; height safety solutions. ISO certified with 15+ years experience in industrial safety." />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="myweb" />
+<meta property="og:image" content="http://localhost:4000/assets/images/hsspl-homepage-banner.jpg" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/assets/images/hsspl-homepage-banner.jpg" />
+<meta property="twitter:title" content="HSSPL - Leading Fall Protection &amp; PPE Manufacturer in India" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Heinrich Safety Solutions - Premier manufacturer of fall protection equipment, PPE, life line systems &amp; height safety solutions. ISO certified with 15+ years experience in industrial safety.","headline":"HSSPL - Leading Fall Protection &amp; PPE Manufacturer in India","image":"http://localhost:4000/assets/images/hsspl-homepage-banner.jpg","name":"myweb","url":"http://localhost:4000/"}</script>
+<!-- End Jekyll SEO tag -->
+
 
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
@@ -27,7 +99,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="/assets/css/style.css">
 </head>
-<body>
+<body itemscope itemtype="https://schema.org/WebPage">
 
   <!DOCTYPE html>
 <html lang="en">
@@ -372,12 +444,12 @@
 </body>
 </html>
 
-  <main>
+  <main role="main" itemprop="mainContentOfPage">
     <!-- AOS CSS -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
-    /* Preloader styles */
+    /* Enhanced Preloader styles with mobile optimizations */
     .preloader {
         position: fixed;
         top: 0;
@@ -389,7 +461,12 @@
         justify-content: center;
         align-items: center;
         z-index: 9999;
-        transition: opacity 0.5s, visibility 0.5s;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+        /* Improve performance on older devices */
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
     }
 
     .preloader.fade-out {
@@ -397,10 +474,16 @@
         visibility: hidden;
     }
 
+    /* Fallback for when preloader gets stuck */
+    .preloader.force-hide {
+        display: none !important;
+    }
+
     .loader {
-        width: 80px;
-        height: 80px;
+        width: 60px;
+        height: 60px;
         position: relative;
+        /* Reduce animation complexity for older devices */
     }
 
     .loader:before,
@@ -410,9 +493,12 @@
         width: 100%;
         height: 100%;
         border-radius: 50%;
-        background: var(--accent);
+        background: var(--accent, #00C4B4);
         opacity: 0.6;
         animation: pulse 2s ease-out infinite;
+        /* Hardware acceleration for smoother animation */
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
     }
 
     .loader:after {
@@ -1540,269 +1626,46 @@ img[src*=""] {
   }
 }
 
-/* Service Section Styles */
-#services {
-    background: #f8f9fa;
-    padding: 60px 0;
-}
-
-.service-icon {
-    font-size: 2.5rem;
-
-    margin-bottom: 1rem;
-}
-
-.card {
-    border: none;
-    border-radius: 1rem;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    background: #fff;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-}
-
-.card h5 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-    color: #22325a;
-}
-
-.card p {
-    color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 0;
-}
-
-/* Responsive adjustments for service cards */
-@media (max-width: 768px) {
-    .service-icon {
-        font-size: 2rem;
+/* Mobile optimizations for older devices */
+    @media screen and (max-width: 768px) {
+        .preloader {
+            /* Simplify for mobile performance */
+            background: #fff;
+        }
+        
+        .loader {
+            width: 40px;
+            height: 40px;
+            /* Simpler animation for mobile */
+        }
+        
+        .loader:before,
+        .loader:after {
+            /* Reduce animation complexity */
+            animation-duration: 1.5s;
+        }
+        
+        /* Reduce motion for accessibility and performance */
+        @media (prefers-reduced-motion: reduce) {
+            .loader:before,
+            .loader:after {
+                animation: none;
+            }
+            
+            .loader {
+                border: 3px solid var(--accent, #00C4B4);
+                border-radius: 50%;
+                background: transparent;
+            }
+        }
+    }
+    
+    /* Fallback for very old browsers */
+    .no-js .preloader {
+        display: none !important;
     }
 
-    .card h5 {
-        font-size: 1.1rem;
-    }
-
-    .card p {
-        font-size: 0.85rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .service-header-title {
-        font-size: 2rem;
-    }
-    .service-header-desc {
-        font-size: 0.98rem;
-    }
-}
-.hero.hero-slide-2 {
-  background: linear-gradient(70deg, rgba(20, 20, 20, 0.7) 0%, rgba(0, 196, 180, 0.35) 100%),
-    url('assets/images/hero_image_final_2.png'); /* hero slide 2 */
-  background-size: cover;
-  background-position: center;
-}
-.hero.hero-slide-3 {
-  background: linear-gradient(70deg, rgba(255, 87, 34, 0.8) 0%, rgba(255, 193, 7, 0.4) 100%),
-    url('assets/images/hero_image_final_3.png'); /* Worker with PPE gear */
-  background-size: cover;
-  background-position: center;
-}
-
-/* Video background styles for third slide */
-.hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
-  min-height: 100vh;
-}
-
-.hero-video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(70deg, rgba(255, 87, 34, 0.6) 0%, rgba(255, 193, 7, 0.3) 100%);
-  z-index: -1;
-  min-height: 100vh;
-}
-
-/* Ensure hero section maintains height with video */
-.hero.hero-slide-3.video-active {
-  background-image: none;
-  height: 100vh;
-  min-height: 700px;
-}
-
-/* Responsive hero height fixes */
-@media (max-width: 768px) {
-  .hero {
-    height: 100vh;
-    min-height: 600px;
-  }
-  
-  .hero-video,
-  .hero-video-overlay {
-    min-height: 100vh;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    height: 100vh;
-    min-height: 500px;
-  }
-}
-
-.hero-content {
-  transition: opacity 0.7s cubic-bezier(.4,2,.6,1), transform 0.7s cubic-bezier(.4,2,.6,1);
-}
-.hero-content.hide {
-  opacity: 0;
-  transform: translateX(-60px);
-  pointer-events: none;
-}
-.hero-content.show {
-  opacity: 1;
-  transform: translateX(0);
-  pointer-events: auto;
-}
-
-/* Specific style for the skylight cover image to fix the blurry issue */
-
-/* Remove any blurriness from Jekyll processed images */
-img[src*=""] {
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-}
-
-/* Modern Product Card Styles */
-.products-modern-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem 1.5rem;
-  justify-content: center;
-}
-.product-card-modern {
-  background: #fff;
-  border-radius: 1.1rem;
-  box-shadow: 0 6px 24px rgba(0,86,210,0.10);
-  overflow: hidden;
-  transition: transform 0.25s, box-shadow 0.25s;
-  border: none;
-  width: 356px;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  position: relative;
-  will-change: transform;
-  -webkit-perspective: 1000;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  perspective: 1000;
-}
-.product-card-modern:hover {
-  transform: translateY(-7px) scale(1.03);
-  box-shadow: 0 12px 36px rgba(0,86,210,0.18);
-}
-.product-card-modern .product-img {
-  width: 100%;
-  height: 220px;
-  object-fit: contain;
-  border-top-left-radius: 0 !important;
-  border-top-right-radius: 0 !important;
-  border-radius: 0 !important;
-  background: #f8f9fa;
-  display: block;
-  image-rendering: auto;
-  transition: all 0.3s ease;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.product-card-modern .product-body {
-  padding: 1.1rem 1.1rem 1.1rem 1.1rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  height: 100%;
-}
-.product-card-modern .product-title {
-  color: #22325a;
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  text-align: center;
-}
-.product-card-modern .product-desc {
-  color: #5a5a5a;
-  font-size: 1.01rem;
-  margin-bottom: 1.1rem;
-  text-align: center;
-  min-height: 48px;
-}
-.product-card-modern .product-btns {
-  display: flex;
-  gap: 0.5rem;
-  width: 100%;
-  margin-top: auto;
-}
-.product-card-modern .btn-readmore {
-  background: linear-gradient(90deg, #0056D2 0%, #00C4B4 100%);
-  color: #fff;
-  border: none;
-  border-radius: 1.5rem;
-  font-weight: 600;
-  padding: 0.45rem 1.2rem;
-  font-size: 0.98rem;
-  transition: background 0.2s;
-  text-transform: uppercase;
-  text-decoration: none !important;
-}
-.product-card-modern .btn-readmore:hover {
-  background: #333;
-}
-.product-card-modern .btn-joinnow {
-  background: linear-gradient(90deg, #09853c 0%, #0056D2 100%);
-  color: #fff;
-  border: none;
-  border-radius: 1.5rem;
-  font-weight: 600;
-  padding: 0.45rem 1.2rem;
-  font-size: 0.98rem;
-  transition: background 0.2s;
-  text-transform: uppercase;
-  text-decoration: none !important;
-}
-.product-card-modern .btn-joinnow:hover {
-  background: #157347;
-}
-@media (max-width: 600px) {
-  .products-modern-row { gap: 1.2rem 0.5rem; }
-  .product-card-modern { width: 100%; }
-  .product-card-modern .product-img { 
-    height: 180px;
-    object-fit: contain;
-    background: #f8f9fa;
-    image-rendering: auto;
-  }
-}
-
-/* Global responsive fixes */
+    /* Global responsive fixes */
     * {
         box-sizing: border-box;
     }
@@ -1855,10 +1718,49 @@ img[src*=""] {
 </style>
 
 <body>
-  <!-- Preloader -->
+  <!-- Preloader with fallback -->
   <div class="preloader" id="preloader">
     <div class="loader"></div>
+    <!-- Fallback message for very old devices -->
+    <noscript>
+      <style>
+        .preloader { display: none !important; }
+        .js-fallback { display: block !important; text-align: center; padding: 20px; }
+      </style>
+      <div class="js-fallback">
+        <h2>Loading...</h2>
+        <p>If this page doesn't load properly, please try refreshing or enabling JavaScript.</p>
+      </div>
+    </noscript>
   </div>
+  <!-- Emergency fallback script - runs immediately -->
+  <script>
+    // Emergency timeout - runs as soon as this script loads
+    (function() {
+      var emergencyTimeout = setTimeout(function() {
+        var preloader = document.getElementById('preloader');
+        if (preloader && preloader.style.display !== 'none') {
+          console.log('Emergency fallback activated');
+          preloader.style.display = 'none';
+          preloader.classList.add('force-hide');
+        }
+      }, 8000); // 8 second absolute maximum
+      
+      // Clear emergency timeout if normal loading works
+      window.addEventListener('load', function() {
+        clearTimeout(emergencyTimeout);
+      });
+      
+      // Also clear on DOM ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          setTimeout(function() {
+            clearTimeout(emergencyTimeout);
+          }, 2000);
+        });
+      }
+    })();
+  </script>
   <!-- Hero Section -->
   <section class="hero" id="hero-section" data-aos="fade-down" data-aos-duration="1000">
     <!-- Video background for third slide -->
@@ -2102,14 +2004,57 @@ img[src*=""] {
                 offset: 50
             });
 
-            // Preloader
-            window.addEventListener('load', () => {
+            // Enhanced Preloader with mobile fallbacks
+            let preloaderHidden = false;
+            
+            function hidePreloader() {
+                if (preloaderHidden) return;
+                preloaderHidden = true;
+                
                 const preloader = document.getElementById('preloader');
-                preloader.classList.add('fade-out');
-                setTimeout(() => {
-                    preloader.style.display = 'none';
-                }, 500);
-            });            // Hero Section Code
+                if (preloader) {
+                    preloader.classList.add('fade-out');
+                    setTimeout(() => {
+                        preloader.style.display = 'none';
+                    }, 500);
+                }
+            }
+            
+            // Multiple fallback methods for hiding preloader
+            // Method 1: Normal load event
+            window.addEventListener('load', hidePreloader);
+            
+            // Method 2: DOMContentLoaded fallback (faster on slow connections)
+            document.addEventListener('DOMContentLoaded', () => {
+                setTimeout(hidePreloader, 1000); // 1 second delay after DOM ready
+            });
+            
+            // Method 3: Timeout fallback for old/slow devices (5 seconds max)
+            setTimeout(() => {
+                if (!preloaderHidden) {
+                    console.warn('Preloader timeout - hiding for mobile compatibility');
+                    hidePreloader();
+                }
+            }, 5000);
+            
+            // Method 4: Check if critical elements are loaded
+            function checkCriticalElements() {
+                const heroSection = document.getElementById('hero-section');
+                const header = document.querySelector('header') || document.querySelector('nav');
+                
+                if (heroSection && header) {
+                    setTimeout(hidePreloader, 500);
+                }
+            }
+            
+            // Check every 500ms for critical elements
+            const checkInterval = setInterval(() => {
+                if (preloaderHidden) {
+                    clearInterval(checkInterval);
+                    return;
+                }
+                checkCriticalElements();
+            }, 500);            // Hero Section Code
             let currentHero = 1;
             const heroSection = document.getElementById('hero-section');
             const heroContent1 = document.getElementById('hero-content-1');
@@ -2170,6 +2115,66 @@ img[src*=""] {
 
             // Initial state
             showHeroSlide(1);
+
+            // Mobile device detection and optimization
+            function isMobileDevice() {
+                return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            }
+            
+            function isOldDevice() {
+                const ua = navigator.userAgent;
+                // Check for older versions of mobile browsers
+                return /Android [1-4]\.|iPhone OS [1-9]_|Version\/[1-9]\./i.test(ua);
+            }
+            
+            // Error handling for older devices
+            window.addEventListener('error', function(e) {
+                console.warn('JavaScript error detected:', e.message);
+                // If there's a critical error, hide preloader anyway
+                if (!preloaderHidden) {
+                    setTimeout(hidePreloader, 1000);
+                }
+            });
+            
+            // Handle unhandled promise rejections (common on older devices)
+            window.addEventListener('unhandledrejection', function(e) {
+                console.warn('Unhandled promise rejection:', e.reason);
+                if (!preloaderHidden) {
+                    setTimeout(hidePreloader, 1000);
+                }
+            });
+            
+            // Optimize for mobile devices
+            if (isMobileDevice()) {
+                // Reduce animation duration for mobile
+                document.documentElement.style.setProperty('--animation-duration', '1s');
+                
+                // If it's an older device, be more aggressive with timeouts
+                if (isOldDevice()) {
+                    setTimeout(() => {
+                        if (!preloaderHidden) {
+                            console.log('Old mobile device detected - forcing preloader hide');
+                            hidePreloader();
+                        }
+                    }, 3000); // 3 seconds for old devices
+                }
+            }
+            
+            // Lazy loading fallback for images that might block loading
+            function optimizeImages() {
+                const images = document.querySelectorAll('img');
+                images.forEach(img => {
+                    if (!img.complete && img.naturalHeight === 0) {
+                        img.onerror = function() {
+                            // Hide broken images that might block loading
+                            this.style.display = 'none';
+                        };
+                    }
+                });
+            }
+            
+            // Run optimizations
+            document.addEventListener('DOMContentLoaded', optimizeImages);
         </script>
 </script>
   </main>
@@ -2251,6 +2256,9 @@ img[src*=""] {
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 <script src="search.js"></script>
 
+  
+
+  <!-- Product Schema if applicable -->
   
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

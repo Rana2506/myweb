@@ -1,0 +1,27 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  {% for page in site.pages %}
+    {% unless page.url contains '404' or page.url contains 'search' %}
+    <url>
+      <loc>{{ site.url }}{{ page.url }}</loc>
+      {% if page.date %}
+      <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+      {% else %}
+      <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+      {% endif %}
+      <changefreq>{% if page.url == '/' %}weekly{% elsif page.url contains 'products' or page.url contains 'services' %}monthly{% else %}yearly{% endif %}</changefreq>
+      <priority>{% if page.url == '/' %}1.0{% elsif page.url contains 'products' or page.url contains 'services' %}0.8{% elsif page.url contains 'about' or page.url contains 'contact' %}0.7{% else %}0.5{% endif %}</priority>
+      {% if page.image %}
+      <image:image>
+        <image:loc>{{ site.url }}{{ page.image }}</image:loc>
+        <image:title>{{ page.title | xml_escape }}</image:title>
+        <image:caption>{{ page.description | xml_escape }}</image:caption>
+      </image:image>
+      {% endif %}
+    </url>
+    {% endunless %}
+  {% endfor %}
+</urlset>
