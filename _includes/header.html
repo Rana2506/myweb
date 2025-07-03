@@ -264,10 +264,10 @@
     <header class="header">
         <div class="header-container">            <!-- Logo and Company Name Section -->
             <div class="logo-section">
-                <a href="index.html">
-                    <img src="assets/images/logo.png" alt="Heinrich Safety Solutions Logo">
+                <a href="{{ site.baseurl }}/">
+                    <img src="{{ site.baseurl }}/assets/images/logo.png" alt="Heinrich Safety Solutions Logo">
                 </a>
-                <a href="index.html" class="company-name">Heinrich Safety Solutions</a>
+                <a href="{{ site.baseurl }}/" class="company-name">Heinrich Safety Solutions</a>
             </div>
 
             <!-- Mobile Menu Toggle -->
@@ -282,12 +282,14 @@
                 <!-- Navigation Menu -->
                 <nav>
                     <ul class="nav-menu">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact-us.html">Contact Us</a></li>
-                        <li><a href="promo-offers.html">Promo & Offers</a></li>
-                        <li><a href="career.html">Career</a></li>
+                        <li><a href="{{ site.baseurl }}/about.html">About Us</a></li>
+                        <li><a href="{{ site.baseurl }}/products.html">Products</a></li>
+                        <li><a href="{{ site.baseurl }}/services.html">Services</a></li>
+                        <li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
+                        <li><a href="{{ site.baseurl }}/faq.html">FAQ</a></li>
+                        <li><a href="{{ site.baseurl }}/contact-us.html">Contact Us</a></li>
+                        <li><a href="{{ site.baseurl }}/promo-offers.html">Promo & Offers</a></li>
+                        <li><a href="{{ site.baseurl }}/career.html">Career</a></li>
                     </ul>
                 </nav>
 
@@ -315,7 +317,7 @@
             
             if (searchTerm) {
                 // Redirect to search page with query parameter
-                window.location.href = `search.html?q=${encodeURIComponent(searchTerm)}`;
+                window.location.href = `{{ site.baseurl }}/search.html?q=${encodeURIComponent(searchTerm)}`;
             }
         }
 

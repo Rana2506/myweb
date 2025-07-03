@@ -1,0 +1,1043 @@
+---
+layout: default
+title: "Safety Equipment Blog | Industry Insights & Expert Tips | HSSPL"
+description: "Latest insights on industrial safety, fall protection, PPE compliance, and safety equipment maintenance in India. Expert tips from Heinrich Safety Solutions."
+keywords:
+  - "industrial safety blog"
+  - "fall protection tips"
+  - "PPE compliance India"
+  - "safety equipment maintenance"
+  - "height safety insights"
+  - "safety industry news"
+permalink: /blog/
+image: "/assets/images/blog-banner.jpg"
+---
+
+<style>
+/* Modern Blog Styles */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --accent-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --light-bg: #f8f9fa;
+  --dark-text: #343a40;
+  --muted-text: #6c757d;
+  --border-color: #dee2e6;
+  --shadow: 0 4px 15px rgba(0,0,0,0.1);
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Modern Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, rgba(0, 123, 255, 0.95), rgba(0, 86, 179, 0.95)), 
+              url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2076&q=80') center/cover;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hero-badge {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-badge:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Stats Section */
+.stats-section {
+  background: var(--light-bg);
+  padding: 3rem 0;
+  margin: 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  color: var(--muted-text);
+  font-weight: 500;
+}
+
+/* Blog Layout */
+.blog-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.blog-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.blog-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 1rem;
+}
+
+.blog-header p {
+  font-size: 1.1rem;
+  color: var(--muted-text);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Content Filters */
+.content-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.content-filter {
+  background: white;
+  border: 2px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.content-filter:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.content-filter.active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+/* Search and Sort */
+.blog-controls {
+  background: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.search-container {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 3rem;
+  border: 2px solid var(--border-color);
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted-text);
+}
+
+.sort-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 1rem;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.sort-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* Blog Posts Grid */
+.blog-posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.blog-post-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.blog-post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.blog-post-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.blog-post-card:hover .blog-post-image {
+  transform: scale(1.05);
+}
+
+.blog-post-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 200px);
+}
+
+.blog-post-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.category-badge {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.blog-post-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.blog-post-title a {
+  color: var(--dark-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.blog-post-title a:hover {
+  color: var(--primary-color);
+}
+
+.blog-post-excerpt {
+  color: var(--muted-text);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.blog-post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.blog-post-date {
+  font-size: 0.9rem;
+  color: var(--muted-text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.blog-post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag-badge {
+  background: var(--light-bg);
+  color: var(--muted-text);
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Sidebar */
+.blog-sidebar {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+.sidebar-card {
+  background: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.sidebar-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--dark-text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sidebar-filter {
+  display: inline-block;
+  background: var(--light-bg);
+  color: var(--dark-text);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.sidebar-filter:hover,
+.sidebar-filter.active {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.newsletter-form {
+  margin-top: 1rem;
+}
+
+.newsletter-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.newsletter-button {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.newsletter-button:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+.popular-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.popular-links li {
+  margin-bottom: 0.75rem;
+}
+
+.popular-links a {
+  color: var(--muted-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.popular-links a:hover {
+  color: var(--primary-color);
+}
+
+/* No Posts Message */
+.no-posts-message {
+  text-align: center;
+  padding: 3rem;
+  color: var(--muted-text);
+}
+
+.no-posts-message i {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .hero-badges {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .hero-badge {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+  
+  .blog-posts {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .blog-controls {
+    padding: 1rem;
+  }
+  
+  .content-filters {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .content-filter {
+    width: 100%;
+    max-width: 200px;
+    justify-content: center;
+  }
+  
+  .blog-sidebar {
+    position: static;
+    margin-top: 2rem;
+  }
+  
+  .blog-container {
+    padding: 1rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .stat-item {
+    padding: 1.5rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .blog-header h2 {
+    font-size: 2rem;
+  }
+  
+  .blog-post-content {
+    padding: 1rem;
+  }
+  
+  .sidebar-card {
+    padding: 1rem;
+  }
+  
+  .blog-posts {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .stats-section {
+    padding: 2rem 0;
+  }
+}
+</style>
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-10">
+        <h1 class="hero-title">Safety Excellence Hub</h1>
+        <p class="hero-subtitle">Your gateway to industrial safety insights, equipment installations, service updates, and industry events</p>
+        <div class="hero-badges">
+          <div class="hero-badge">
+            <i class="bi bi-shield-check"></i>
+            <span>Expert Guides</span>
+          </div>
+          <div class="hero-badge">
+            <i class="bi bi-tools"></i>
+            <span>Installation Updates</span>
+          </div>
+          <div class="hero-badge">
+            <i class="bi bi-gear"></i>
+            <span>Service News</span>
+          </div>
+          <div class="hero-badge">
+            <i class="bi bi-calendar-event"></i>
+            <span>Industry Events</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">{{ site.posts.size }}+</div>
+        <div class="stat-label">Expert Articles</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">15+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">1000+</div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Safety Support</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="blog-container">
+  <div class="row">
+    <div class="col-lg-9">
+      <div class="blog-header">
+        <h2>Latest Safety Insights</h2>
+        <p>Stay informed with comprehensive content covering safety guides, project installations, service updates, and industry participation</p>
+      </div>
+
+      <!-- Content Filters -->
+      <div class="content-filters">
+        <button class="content-filter active" data-type="all">
+          <i class="bi bi-grid"></i>
+          <span>All Content</span>
+        </button>
+        <button class="content-filter" data-type="guide">
+          <i class="bi bi-book"></i>
+          <span>Safety Guides</span>
+        </button>
+        <button class="content-filter" data-type="installation">
+          <i class="bi bi-tools"></i>
+          <span>Installations</span>
+        </button>
+        <button class="content-filter" data-type="service">
+          <i class="bi bi-gear"></i>
+          <span>Services</span>
+        </button>
+        <button class="content-filter" data-type="event">
+          <i class="bi bi-calendar-event"></i>
+          <span>Events</span>
+        </button>
+      </div>
+
+      <!-- Search and Sort Controls -->
+      <div class="blog-controls">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="search-container">
+              <i class="bi bi-search search-icon"></i>
+              <input type="text" class="search-input" id="blog-search" placeholder="Search articles, topics, or keywords...">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <select class="sort-select" id="sort-posts">
+              <option value="date-desc">Latest First</option>
+              <option value="date-asc">Oldest First</option>
+              <option value="title-asc">Title A-Z</option>
+              <option value="title-desc">Title Z-A</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog Posts Grid -->
+      <div class="blog-posts" id="blog-posts-container">
+        {% for post in site.posts limit: 12 %}
+        <article class="blog-post-card blog-post-item" 
+                 data-category="{% for category in post.categories %}{{ category | slugify }}{% unless forloop.last %},{% endunless %}{% endfor %}" 
+                 data-tags="{% for tag in post.tags %}{{ tag | slugify }}{% unless forloop.last %},{% endunless %}{% endfor %}"
+                 data-title="{{ post.title | downcase }}"
+                 data-description="{{ post.description | downcase }}"
+                 data-date="{{ post.date | date: '%Y-%m-%d' }}">
+          {% if post.image or post.featured_image %}
+          <img src="{{ post.image | default: post.featured_image | relative_url }}" 
+               class="blog-post-image" 
+               alt="{{ post.title }}">
+          {% endif %}
+          <div class="blog-post-content">
+            <div class="blog-post-categories">
+              {% for category in post.categories %}
+              <span class="category-badge">{{ category }}</span>
+              {% endfor %}
+            </div>
+            <h3 class="blog-post-title">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h3>
+            <p class="blog-post-excerpt">{{ post.description | truncate: 140 }}</p>
+            <div class="blog-post-meta">
+              <div class="blog-post-date">
+                <i class="bi bi-calendar-event"></i>
+                <span>{{ post.date | date: "%B %d, %Y" }}</span>
+              </div>
+              <div class="blog-post-tags">
+                {% for tag in post.tags limit: 3 %}
+                <span class="tag-badge">{{ tag }}</span>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+
+      {% if site.posts.size == 0 %}
+      <div class="no-posts-message">
+        <i class="bi bi-journal-text"></i>
+        <h3>Coming Soon</h3>
+        <p>We're preparing valuable safety insights and industry updates for you.</p>
+      </div>
+      {% endif %}
+    </div>
+
+    <div class="col-lg-3">
+      <div class="blog-sidebar">
+        <!-- Categories Widget -->
+        <div class="sidebar-card">
+          <h5 class="sidebar-title">
+            <i class="bi bi-tags"></i>
+            Categories
+          </h5>
+          {% assign all_categories = site.posts | map: 'categories' | join: ',' | split: ',' | compact | uniq | sort %}
+          {% if all_categories.size > 0 %}
+            <button class="sidebar-filter active" data-category="all">
+              All Posts ({{ site.posts.size }})
+            </button>
+            {% for category in all_categories %}
+              {% assign posts_in_category = site.posts | where_exp: "post", "post.categories contains category" %}
+              <button class="sidebar-filter" data-category="{{ category | slugify }}">
+                {{ category }} ({{ posts_in_category.size }})
+              </button>
+            {% endfor %}
+          {% else %}
+            <p class="text-muted">Categories will appear here once posts are published.</p>
+          {% endif %}
+        </div>
+
+        <!-- Popular Tags Widget -->
+        <div class="sidebar-card">
+          <h5 class="sidebar-title">
+            <i class="bi bi-tags-fill"></i>
+            Popular Topics
+          </h5>
+          {% assign all_tags = site.posts | map: 'tags' | join: ',' | split: ',' | compact | uniq | sort %}
+          {% if all_tags.size > 0 %}
+            {% for tag in all_tags limit: 12 %}
+              {% assign posts_with_tag = site.posts | where_exp: "post", "post.tags contains tag" %}
+              <button class="sidebar-filter" data-tag="{{ tag | slugify }}">
+                {{ tag }} ({{ posts_with_tag.size }})
+              </button>
+            {% endfor %}
+          {% else %}
+            <p class="text-muted">Topics will appear here once posts are published.</p>
+          {% endif %}
+        </div>
+
+        <!-- Newsletter Signup -->
+        <div class="sidebar-card">
+          <h5 class="sidebar-title">
+            <i class="bi bi-envelope"></i>
+            Safety Newsletter
+          </h5>
+          <p class="text-muted">Get monthly safety tips and industry updates delivered to your inbox.</p>
+          <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Your email address" required>
+            <button type="submit" class="newsletter-button">
+              <i class="bi bi-send"></i>
+              Subscribe Now
+            </button>
+          </form>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="sidebar-card">
+          <h5 class="sidebar-title">
+            <i class="bi bi-star"></i>
+            Quick Access
+          </h5>
+          <ul class="popular-links">
+            <li><a href="/fall-arrest-system.html"><i class="bi bi-chevron-right"></i> Fall Arrest Systems</a></li>
+            <li><a href="/horizontal-life-line-system.html"><i class="bi bi-chevron-right"></i> Horizontal Lifelines</a></li>
+            <li><a href="/vertical-life-line-system.html"><i class="bi bi-chevron-right"></i> Vertical Lifelines</a></li>
+            <li><a href="/ppe.html"><i class="bi bi-chevron-right"></i> PPE Selection Guide</a></li>
+            <li><a href="/services.html"><i class="bi bi-chevron-right"></i> Safety Services</a></li>
+            <li><a href="/products.html"><i class="bi bi-chevron-right"></i> Safety Products</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Schema markup for blog -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "HSSPL Safety Blog",
+  "description": "Industrial safety insights and fall protection expertise",
+  "url": "{{ site.url }}/blog/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Heinrich Safety Solutions Pvt. Ltd.",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.url }}/assets/images/logo.png"
+    }
+  }
+}
+</script>
+
+<!-- Blog Filtering JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get DOM elements
+    const categoryFilters = document.querySelectorAll('.sidebar-filter[data-category]');
+    const tagFilters = document.querySelectorAll('.sidebar-filter[data-tag]');
+    const blogPosts = document.querySelectorAll('.blog-post-item');
+    const searchInput = document.getElementById('blog-search');
+    const sortSelect = document.getElementById('sort-posts');
+    const postsContainer = document.getElementById('blog-posts-container');
+    const contentFilters = document.querySelectorAll('.content-filter');
+    
+    let currentFilter = { type: 'category', value: 'all' };
+    let currentContentType = 'all';
+    let currentSearch = '';
+    
+    // Content type detection function
+    function detectContentType(post) {
+        const title = post.querySelector('.blog-post-title a').textContent.toLowerCase();
+        const description = post.querySelector('.blog-post-excerpt').textContent.toLowerCase();
+        const tags = post.dataset.tags.toLowerCase();
+        const categories = post.dataset.category.toLowerCase();
+        
+        // Check for installation-related content
+        if (title.includes('installation') || title.includes('project') || title.includes('tower') || 
+            description.includes('installation') || description.includes('project') || description.includes('tower') ||
+            tags.includes('installation') || tags.includes('project') || categories.includes('installation')) {
+            return 'installation';
+        } 
+        // Check for service-related content
+        else if (title.includes('service') || title.includes('audit') || title.includes('consultation') ||
+                 description.includes('service') || description.includes('audit') || description.includes('consultation') ||
+                 tags.includes('service') || tags.includes('audit') || categories.includes('service')) {
+            return 'service';
+        } 
+        // Check for event-related content
+        else if (title.includes('event') || title.includes('fair') || title.includes('exhibition') || title.includes('conference') ||
+                 description.includes('event') || description.includes('fair') || description.includes('exhibition') || description.includes('conference') ||
+                 tags.includes('event') || tags.includes('fair') || categories.includes('event')) {
+            return 'event';
+        } 
+        // Default to guide for general content
+        else {
+            return 'guide';
+        }
+    }
+    
+    // Function to filter and search posts
+    function filterAndSearchPosts() {
+        let visibleCount = 0;
+        const searchTerm = currentSearch.toLowerCase();
+        
+        // Convert NodeList to Array for sorting
+        const postsArray = Array.from(blogPosts);
+        
+        postsArray.forEach(post => {
+            let shouldShow = false;
+            
+            // Apply content type filter first
+            const postContentType = detectContentType(post);
+            if (currentContentType !== 'all' && postContentType !== currentContentType) {
+                shouldShow = false;
+            } else {
+                // Apply category/tag filter
+                if (currentFilter.value === 'all') {
+                    shouldShow = true;
+                } else if (currentFilter.type === 'category') {
+                    shouldShow = post.dataset.category.includes(currentFilter.value);
+                } else if (currentFilter.type === 'tag') {
+                    shouldShow = post.dataset.tags.includes(currentFilter.value);
+                }
+            }
+            
+            // Apply search filter
+            if (shouldShow && searchTerm) {
+                const title = post.querySelector('.blog-post-title a').textContent.toLowerCase();
+                const description = post.querySelector('.blog-post-excerpt').textContent.toLowerCase();
+                const tags = post.dataset.tags.toLowerCase();
+                const category = post.dataset.category.toLowerCase();
+                
+                shouldShow = title.includes(searchTerm) || 
+                           description.includes(searchTerm) || 
+                           tags.includes(searchTerm) || 
+                           category.includes(searchTerm);
+            }
+            
+            if (shouldShow) {
+                post.style.display = 'block';
+                visibleCount++;
+            } else {
+                post.style.display = 'none';
+            }
+        });
+        
+        // Show/hide no posts message
+        updateNoPostsMessage(visibleCount);
+    }
+    
+    // Function to update no posts message
+    function updateNoPostsMessage(visibleCount) {
+        const existingMessage = document.getElementById('no-posts-message');
+        
+        if (visibleCount === 0) {
+            if (!existingMessage) {
+                const message = document.createElement('div');
+                message.id = 'no-posts-message';
+                message.className = 'no-posts-message';
+                message.innerHTML = `
+                    <i class="bi bi-search"></i>
+                    <h4>No posts found</h4>
+                    <p>Try adjusting your search terms or filters.</p>
+                    <button class="btn btn-outline-primary" onclick="clearAllFilters()">Clear All Filters</button>
+                `;
+                postsContainer.appendChild(message);
+            }
+        } else {
+            if (existingMessage) {
+                existingMessage.remove();
+            }
+        }
+    }
+    
+    // Clear all filters function
+    window.clearAllFilters = function() {
+        currentFilter = { type: 'category', value: 'all' };
+        currentContentType = 'all';
+        currentSearch = '';
+        searchInput.value = '';
+        sortSelect.value = 'date-desc';
+        
+        // Reset active states
+        categoryFilters.forEach(f => f.classList.remove('active'));
+        tagFilters.forEach(f => f.classList.remove('active'));
+        contentFilters.forEach(f => f.classList.remove('active'));
+        
+        const allCategoryBtn = document.querySelector('[data-category="all"]');
+        const allContentBtn = document.querySelector('[data-type="all"]');
+        if (allCategoryBtn) allCategoryBtn.classList.add('active');
+        if (allContentBtn) allContentBtn.classList.add('active');
+        
+        filterAndSearchPosts();
+    };
+    
+    // Search functionality
+    let searchTimeout;
+    searchInput.addEventListener('input', function() {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+            currentSearch = this.value.trim();
+            filterAndSearchPosts();
+        }, 300);
+    });
+    
+    // Sort functionality
+    sortSelect.addEventListener('change', filterAndSearchPosts);
+    
+    // Category filter event listeners
+    categoryFilters.forEach(filter => {
+        filter.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            categoryFilters.forEach(f => f.classList.remove('active'));
+            tagFilters.forEach(f => f.classList.remove('active'));
+            
+            this.classList.add('active');
+            currentFilter = { type: 'category', value: this.dataset.category };
+            filterAndSearchPosts();
+        });
+    });
+    
+    // Tag filter event listeners
+    tagFilters.forEach(filter => {
+        filter.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            categoryFilters.forEach(f => f.classList.remove('active'));
+            tagFilters.forEach(f => f.classList.remove('active'));
+            
+            this.classList.add('active');
+            currentFilter = { type: 'tag', value: this.dataset.tag };
+            filterAndSearchPosts();
+        });
+    });
+    
+    // Content type filter event listeners
+    contentFilters.forEach(filter => {
+        filter.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            contentFilters.forEach(f => f.classList.remove('active'));
+            this.classList.add('active');
+            
+            currentContentType = this.dataset.type;
+            filterAndSearchPosts();
+        });
+    });
+    
+    // Newsletter form submission
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing to our safety newsletter!');
+            this.reset();
+        });
+    }
+    
+    // Initialize with default filter
+    filterAndSearchPosts();
+});
+</script>

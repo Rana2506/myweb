@@ -1,0 +1,80 @@
+<!-- Customer Reviews Schema -->
+{% if include.reviews %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Heinrich Safety Solutions Pvt. Ltd.",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{ include.rating | default: '4.8' }}",
+    "reviewCount": "{{ include.review_count | default: '127' }}",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {% for review in include.reviews %}
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "{{ review.author }}"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "{{ review.rating }}",
+        "bestRating": "5"
+      },
+      "reviewBody": "{{ review.text }}",
+      "datePublished": "{{ review.date }}"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+<!-- Service Area Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Fall Protection Equipment Supply",
+  "provider": {
+    "@type": "Organization",
+    "name": "Heinrich Safety Solutions Pvt. Ltd.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    }
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Mumbai"
+    },
+    {
+      "@type": "City", 
+      "name": "Delhi"
+    },
+    {
+      "@type": "City",
+      "name": "Bangalore"
+    },
+    {
+      "@type": "City",
+      "name": "Chennai"
+    },
+    {
+      "@type": "City",
+      "name": "Pune"
+    },
+    {
+      "@type": "Country",
+      "name": "India"
+    }
+  ],
+  "serviceType": "Industrial Safety Equipment",
+  "description": "Professional fall protection equipment, PPE, and height safety solutions for industrial and construction applications"
+}
+</script>

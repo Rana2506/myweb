@@ -2,6 +2,81 @@
 <html lang="en" itemscope itemtype="https://schema.org/WebPage">
 <head>
   {% include head.html %}
+  
+  <!-- Universal Mobile Responsive CSS -->
+  <style>
+    /* Prevent horizontal scroll on all pages */
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+    
+    /* Ensure containers don't exceed viewport width */
+    .container, .container-fluid {
+      max-width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    
+    /* Mobile-first responsive adjustments */
+    @media (max-width: 768px) {
+      .container, .container-fluid {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      
+      .row {
+        margin-left: -5px;
+        margin-right: -5px;
+      }
+      
+      .row > * {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      
+      /* Prevent text overflow */
+      h1, h2, h3, h4, h5, h6, p, div, span {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+      
+      /* Responsive images */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      
+      /* Responsive tables */
+      .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      /* Fix for buttons that might be too wide */
+      .btn {
+        max-width: 100%;
+        word-wrap: break-word;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .container, .container-fluid {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+      
+      .row {
+        margin-left: -2px;
+        margin-right: -2px;
+      }
+      
+      .row > * {
+        padding-left: 2px;
+        padding-right: 2px;
+      }
+    }
+  </style>
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">
 

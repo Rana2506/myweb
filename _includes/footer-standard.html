@@ -28,6 +28,12 @@
             </div>
         </div>
     </div>
+    
+    <!-- Include review schema for homepage -->
+    {% if page.url == '/' %}
+        {% assign sample_reviews = site.data.sample_reviews %}
+        {% include review_schema.html reviews=sample_reviews rating="4.8" review_count="127" %}
+    {% endif %}
 </footer>
 
 <!-- Bootstrap JS and Icons -->
