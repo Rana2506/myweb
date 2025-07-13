@@ -138,6 +138,34 @@ permalink: /search.html
   .search-result-item {
     padding: 15px;
   }
+  
+  .search-container .input-group {
+    max-width: 400px !important;
+  }
+  
+  .search-container input {
+    font-size: 0.9rem !important;
+    padding: 8px 12px !important;
+  }
+  
+  .search-container button {
+    padding: 8px 15px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-container .input-group {
+    max-width: 320px !important;
+  }
+  
+  .search-container input {
+    font-size: 0.85rem !important;
+    padding: 8px 10px !important;
+  }
+  
+  .search-container button {
+    padding: 8px 12px !important;
+  }
 }
 
 /* Smooth scrolling for anchor links */
@@ -165,11 +193,11 @@ html {
         
         <!-- Enhanced Search Bar -->
         <div class="search-container">
-          <div class="input-group mb-3">
-            <input type="text" id="searchInput" class="form-control form-control-lg" 
+          <div class="input-group mb-3" style="max-width: 500px; margin: 0 auto;">
+            <input type="text" id="searchInput" class="form-control" 
                    placeholder="Search for products, categories, or features..." 
-                   aria-label="Search">
-            <button class="btn btn-light btn-lg" type="button" id="searchButton">
+                   aria-label="Search" style="font-size: 0.95rem; padding: 10px 15px;">
+            <button class="btn btn-light" type="button" id="searchButton" style="padding: 10px 20px;">
               <i class="fas fa-search"></i>
             </button>
           </div>

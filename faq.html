@@ -12,6 +12,9 @@ permalink: /faq.html
 image: "/assets/images/faq-banner.jpg"
 ---
 
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
 <style>
 body {
   overflow-x: hidden;
@@ -129,6 +132,7 @@ body {
   line-height: 1.4;
   box-shadow: none;
   width: 100%;
+  cursor: pointer;
 }
 
 .modern-accordion .accordion-button:not(.collapsed) {
@@ -416,14 +420,101 @@ html {
     <div class="col-12">
       
       <div class="accordion modern-accordion" id="faqAccordion">
-        <!-- Core Product & Service Questions -->
+        <!-- New Priority Questions -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingStandards">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStandards" aria-expanded="false" aria-controls="collapseStandards">
+              What standards do your products meet?
+            </button>
+          </h2>
+          <div id="collapseStandards" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              Heinrich Safety Solutions Pvt Ltd manufactures all safety equipment to meet or exceed Indian and international standards:
+              <ul>
+                <li><strong>Indian Standards (BIS):</strong> IS 3521:2021 for Full Body Harnesses, IS 4594 for Safety Helmets, IS 15298 for Safety Footwear</li>
+                <li><strong>International Standards:</strong> CE marking for European conformity, EN 361 for harnesses, EN 355 for shock absorbers, EN 362 for connectors</li>
+                <li><strong>ISO Certifications:</strong> ISO 9001:2015 for Quality Management, ISO 14001:2015 for Environmental Management</li>
+                <li><strong>ANSI Standards:</strong> ANSI Z359 series for fall protection systems (for export markets)</li>
+                <li><strong>Quality Assurance:</strong> All products undergo rigorous testing including dynamic load testing, corrosion resistance, and durability assessments</li>
+              </ul>
+              Our Kolkata-based manufacturing facility maintains strict quality controls to ensure consistent compliance across our Pan-India operations.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingInstallation">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstallation" aria-expanded="false" aria-controls="collapseInstallation">
+              Do you offer installation services?
+            </button>
+          </h2>
+          <div id="collapseInstallation" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              Yes, Heinrich Safety Solutions provides comprehensive installation services across India through our network of certified technicians:
+              <ul>
+                <li><strong>Professional Installation:</strong> Certified technicians for lifeline systems, anchor points, and complete fall protection systems</li>
+                <li><strong>Site Survey & Engineering:</strong> Pre-installation assessment and structural engineering calculations</li>
+                <li><strong>Testing & Certification:</strong> Post-installation load testing and compliance certification</li>
+                <li><strong>Pan-India Coverage:</strong> Installation services available in all major cities and industrial areas</li>
+                <li><strong>Training Included:</strong> User training and maintenance guidance provided with every installation</li>
+                <li><strong>Warranty Support:</strong> Installation warranty with ongoing maintenance support</li>
+              </ul>
+              Contact our technical team to schedule a site visit and receive a detailed installation proposal.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingMOQ">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMOQ" aria-expanded="false" aria-controls="collapseMOQ">
+              What is the minimum order quantity?
+            </button>
+          </h2>
+          <div id="collapseMOQ" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              Heinrich Safety Solutions offers flexible ordering options to meet diverse customer needs:
+              <ul>
+                <li><strong>Standard PPE Items:</strong> No minimum order quantity for harnesses, helmets, gloves, and basic safety equipment</li>
+                <li><strong>Fall Protection Systems:</strong> Minimum order of 5 units for lifeline systems and specialized equipment</li>
+                <li><strong>Custom Solutions:</strong> Project-based pricing with minimum order values starting from ₹50,000</li>
+                <li><strong>Bulk Orders:</strong> Attractive volume discounts available for orders above ₹2,00,000</li>
+                <li><strong>Trial Orders:</strong> Small sample quantities available for evaluation and testing</li>
+                <li><strong>Pan-India Flexibility:</strong> Same MOQ policies apply nationwide with regional distributor support</li>
+              </ul>
+              We understand that safety needs vary by project size and are committed to serving both small businesses and large enterprises across India.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingShipping">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseShipping" aria-expanded="false" aria-controls="collapseShipping">
+              What is the shipping timeline for your products?
+            </button>
+          </h2>
+          <div id="collapseShipping" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              Heinrich Safety Solutions ensures prompt delivery across India from our Kolkata manufacturing facility:
+              <ul>
+                <li><strong>Standard Stock Items:</strong> 2-5 business days to major cities, 5-7 days to remote locations</li>
+                <li><strong>Custom Products:</strong> 7-14 business days depending on specifications and complexity</li>
+                <li><strong>Bulk Orders:</strong> 10-21 business days for large quantities or specialized systems</li>
+                <li><strong>Express Delivery:</strong> Same-day or next-day delivery available in Kolkata and select metros</li>
+                <li><strong>Installation Projects:</strong> Coordinated delivery with installation schedule, typically 14-30 days</li>
+                <li><strong>Pan-India Network:</strong> Strategic warehouse locations ensure faster delivery to all regions</li>
+              </ul>
+              All shipments include tracking information and are fully insured. Emergency requirements are prioritized with expedited processing.
+            </div>
+          </div>
+        </div>
+
         <div class="accordion-item">
           <h2 class="accordion-header" id="heading1">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
               What are the different types of fall arrest systems offered by Heinrich Safety Solutions Pvt Ltd across Pan India?
             </button>
           </h2>
-          <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div id="collapse1" class="accordion-collapse collapse">
             <div class="accordion-body">
               Heinrich Safety Solutions Pvt Ltd offers a comprehensive range of fall arrest systems designed for diverse industrial and construction applications across Pan India. Manufactured in Kolkata, our systems include:
               <ul>
@@ -441,11 +532,11 @@ html {
 
         <div class="accordion-item">
           <h2 class="accordion-header" id="heading2">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
               How does Heinrich Safety Solutions help industries across India choose the right PPE?
             </button>
           </h2>
-          <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div id="collapse2" class="accordion-collapse collapse">
             <div class="accordion-body">
               Choosing the right Personal Protective Equipment (PPE) is critical for effective workplace safety. At Heinrich Safety Solutions, our experts, though based in Kolkata, work with industries across India by conducting thorough site assessments and risk analyses remotely or on-site where feasible. We then recommend tailored PPE solutions, considering factors like the nature of the work, specific hazards (e.g., falls, chemical exposure, head impact), environmental conditions, and compliance requirements for various regions. Our goal is to provide PPE that offers maximum protection without compromising comfort or productivity for your workforce.
             </div>
@@ -454,11 +545,11 @@ html {
 
         <div class="accordion-item">
           <h2 class="accordion-header" id="heading3">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
               What are the key features of Heinrich Safety Solutions' self-retracting lifelines (SRLs) compared to other brands?
             </button>
           </h2>
-          <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div id="collapse3" class="accordion-collapse collapse">
             <div class="accordion-body">
               Heinrich Safety Solutions' Self-Retracting Lifelines (SRLs) are engineered for superior safety and durability for use across diverse Indian environments. Key features include:
               <ul>
@@ -475,11 +566,11 @@ html {
 
         <div class="accordion-item">
           <h2 class="accordion-header" id="heading4">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
               What fall protection harnesses does Heinrich Safety Solutions Pvt Ltd manufacture that meet Indian safety standards (IS 3521)?
             </button>
           </h2>
-          <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div id="collapse4" class="accordion-collapse collapse">
             <div class="accordion-body">
               Heinrich Safety Solutions Pvt Ltd manufactures a comprehensive range of full-body fall protection harnesses, all rigorously tested and certified to meet the Indian Standard IS 3521:2021 (formerly IS 3521:1999) for Personal Fall Arrest Systems – Full Body Harnesses. Our harnesses feature:
               <ul>
@@ -496,11 +587,11 @@ html {
 
         <div class="accordion-item">
           <h2 class="accordion-header" id="heading5">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
               Does Heinrich Safety Solutions offer custom-designed fall arrest solutions for unique industrial applications across India?
             </button>
           </h2>
-          <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div id="collapse5" class="accordion-collapse collapse">
             <div class="accordion-body">
               Absolutely. Heinrich Safety Solutions understands that many industrial facilities across India have unique architectural features or operational requirements that standard fall protection solutions may not address. We specialize in providing custom-designed fall arrest solutions, including:
               <ul>
@@ -515,11 +606,11 @@ html {
 
         <div class="accordion-item">
           <h2 class="accordion-header" id="heading6">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
               How do Heinrich Safety Solutions' fall arrest systems differ from those offered by Karam or Udyogi?
             </button>
           </h2>
-          <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div id="collapse6" class="accordion-collapse collapse">
             <div class="accordion-body">
               While Karam and Udyogi are reputable brands in the Indian safety market, Heinrich Safety Solutions distinguishes itself through:
               <ul>
@@ -535,11 +626,11 @@ html {
         <!-- Problem/Solution & User Intent Questions -->
         <div class="accordion-item">
           <h2 class="accordion-header" id="heading7">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
               How can Heinrich Safety Solutions Pvt Ltd equipment help my company across India comply with BIS standards?
             </button>
           </h2>
-          <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div id="collapse7" class="accordion-collapse collapse">
             <div class="accordion-body">
               Heinrich Safety Solutions Pvt Ltd is committed to helping businesses across India achieve and maintain compliance with critical safety standards. Our equipment is designed and manufactured to meet or exceed relevant Bureau of Indian Standards (BIS) requirements, such as IS 3521 for harnesses and other applicable standards for fall arrest components. We also offer safety audits and consultancy services to identify compliance gaps and recommend appropriate solutions, helping you ensure regulatory adherence throughout your operations anywhere in India.
             </div>
@@ -548,11 +639,11 @@ html {
 
         <div class="accordion-item">
           <h2 class="accordion-header" id="heading8">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
               What are the common causes of falls from height in industrial settings and how can Heinrich Safety Solutions prevent them across India?
             </button>
           </h2>
-          <div id="collapse8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div id="collapse8" class="accordion-collapse collapse">
             <div class="accordion-body">
               Common causes of falls from height in industrial settings include unprotected edges, working on fragile surfaces, improper use of ladders/scaffolding, lack of fall protection equipment, or equipment failure. Heinrich Safety Solutions addresses these risks by:
               <ul>
@@ -568,11 +659,11 @@ html {
 
         <div class="accordion-item">
           <h2 class="accordion-header" id="heading9">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
               How do I properly inspect and maintain my Heinrich Safety Solutions fall arrest system for optimal performance?
             </button>
           </h2>
-          <div id="collapse9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div id="collapse9" class="accordion-collapse collapse">
             <div class="accordion-body">
               Proper inspection and maintenance are vital for the longevity and reliability of your Heinrich Safety Solutions fall arrest system. We recommend:
               <ul>
@@ -588,11 +679,11 @@ html {
 
         <div class="accordion-item">
           <h2 class="accordion-header" id="heading10">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
               What are the risks of using outdated or non-compliant PPE, and how can Heinrich Safety Solutions provide certified alternatives across India?
             </button>
           </h2>
-          <div id="collapse10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div id="collapse10" class="accordion-collapse collapse">
             <div class="accordion-body">
               Using outdated or non-compliant PPE carries significant risks, including:
               <ul>
@@ -608,11 +699,11 @@ html {
 
         <div class="accordion-item">
           <h2 class="accordion-header" id="heading11">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
               How can I ensure my employees across India are properly trained on using Heinrich Safety Solutions equipment?
             </button>
           </h2>
-          <div id="collapse11" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div id="collapse11" class="accordion-collapse collapse">
             <div class="accordion-body">
               Heinrich Safety Solutions Pvt Ltd provides comprehensive safety training programs for employees across India. Our training covers:
               <ul>
@@ -629,11 +720,11 @@ html {
 
         <div class="accordion-item">
           <h2 class="accordion-header" id="heading12">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
               Why choose Heinrich Safety Solutions Pvt Ltd for safety audits and consultancy services over other providers across India?
             </button>
           </h2>
-          <div id="collapse12" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div id="collapse12" class="accordion-collapse collapse">
             <div class="accordion-body">
               Choosing Heinrich Safety Solutions for safety audits and consultancy services means partnering with a company that offers:
               <ul>
@@ -709,4 +800,56 @@ html {
     }
   ]
 }
+</script>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" 
+        crossorigin="anonymous"></script>
+
+<!-- Custom Accordion Behavior -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const accordionButtons = document.querySelectorAll('.accordion-button');
+  
+  accordionButtons.forEach(function(button) {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('data-bs-target');
+      const targetCollapse = document.querySelector(targetId);
+      const isCurrentlyOpen = targetCollapse.classList.contains('show');
+      
+      // Close all other accordion items first
+      const allCollapses = document.querySelectorAll('.accordion-collapse');
+      allCollapses.forEach(function(collapse) {
+        if (collapse !== targetCollapse && collapse.classList.contains('show')) {
+          const bsCollapse = bootstrap.Collapse.getInstance(collapse);
+          if (bsCollapse) {
+            bsCollapse.hide();
+          } else {
+            new bootstrap.Collapse(collapse, { toggle: false }).hide();
+          }
+        }
+      });
+      
+      // Toggle the current accordion item
+      const bsCollapse = bootstrap.Collapse.getInstance(targetCollapse);
+      if (bsCollapse) {
+        if (isCurrentlyOpen) {
+          bsCollapse.hide();
+        } else {
+          bsCollapse.show();
+        }
+      } else {
+        const newCollapse = new bootstrap.Collapse(targetCollapse, { toggle: false });
+        if (isCurrentlyOpen) {
+          newCollapse.hide();
+        } else {
+          newCollapse.show();
+        }
+      }
+    });
+  });
+});
 </script>

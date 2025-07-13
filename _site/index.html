@@ -273,14 +273,14 @@
         }
 
         .search-input {
-            padding: 8px 15px;
+            padding: 6px 12px;
             border: 2px solid #e0e0e0;
             border-radius: 20px 0 0 20px;
             outline: none;
-            font-size: 13px;
-            width: 200px;
+            font-size: 12px;
+            width: 160px;
             transition: border-color 0.3s ease;
-            height: 36px;
+            height: 32px;
         }
 
         .search-input:focus {
@@ -288,16 +288,16 @@
         }
 
         .search-button {
-            padding: 8px 15px;
+            padding: 6px 12px;
             background-color: #e30613;
             color: white;
             border: none;
             border-radius: 0 20px 20px 0;
             cursor: pointer;
-            font-size: 13px;
+            font-size: 12px;
             transition: background-color 0.3s ease;
             font-weight: 500;
-            height: 36px;
+            height: 32px;
         }
 
         .search-button:hover {
@@ -329,7 +329,7 @@
             }
             
             .search-input {
-                width: 160px;
+                width: 130px;
             }
             
             .company-name {
@@ -390,7 +390,7 @@
             }
 
             .search-input {
-                width: 180px;
+                width: 150px;
             }
 
             .mobile-menu-toggle {
@@ -414,13 +414,13 @@
             }
 
             .search-input {
-                width: 140px;
-                font-size: 12px;
+                width: 120px;
+                font-size: 11px;
             }
 
             .search-button {
-                font-size: 12px;
-                padding: 8px 12px;
+                font-size: 11px;
+                padding: 6px 10px;
             }
             
             .logo-section img {
@@ -899,7 +899,8 @@
     .card {
         border: none;
         transition: transform .3s ease;
-        background: transparent;
+        background: #fff;
+        min-height: 350px; /* Ensures service cards have consistent height */
     }
     .card:hover {
         transform: translateY(-5px);
@@ -937,22 +938,7 @@
         width: 100%;
         box-sizing: border-box;
     }
-    /* About Section Title Style */
-    .about-title {
-        color: #22325a;
-        font-size: 2.2rem;
-        font-weight: 800;
-        letter-spacing: 1px;
-        margin-bottom: 0.5rem;
-        font-family: 'Segoe UI', Arial, sans-serif;
-    }
-    .about-underline {
-        width: 60px;
-        height: 6px;
-        background: #22325a;
-        border-radius: 3px;
-        margin-bottom: 1.5rem;
-    }
+    /* About Section Description Style */
     .about-desc {
         color: #22325a;
         font-size: 1.08rem;
@@ -1002,7 +988,7 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(70deg, rgba(255, 87, 34, 0.6) 0%, rgba(255, 193, 7, 0.3) 100%);
-  z-index: -1;
+  z-index: 0;
   min-height: 100vh;
 }
 
@@ -1060,7 +1046,8 @@ img[src*=""] {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem 1.5rem;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: stretch;
 }
 .product-card-modern {
   background: #fff;
@@ -1069,8 +1056,9 @@ img[src*=""] {
   overflow: hidden;
   transition: transform 0.25s, box-shadow 0.25s;
   border: none;
-  width: 356px;
-  max-width: 100%;
+  flex: 0 1 calc(33.333% - 1rem);
+  max-width: calc(33.333% - 1rem);
+  min-height: 500px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -1159,14 +1147,77 @@ img[src*=""] {
 .product-card-modern .btn-joinnow:hover {
   background: #157347;
 }
-@media (max-width: 600px) {
-  .products-modern-row { gap: 1.2rem 0.5rem; }
-  .product-card-modern { width: 100%; }
+/* Mobile Product Section Improvements */
+@media (max-width: 768px) {
+  .products-modern-row { 
+    gap: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 15px;
+  }
+  
+  .product-card-modern { 
+    width: 100% !important; 
+    max-width: 100% !important;
+    margin-right: 0 !important;
+    min-height: auto;
+    box-shadow: 0 4px 15px rgba(0,86,210,0.12);
+  }
+  
   .product-card-modern .product-img { 
-    height: 180px;
+    height: 200px;
     object-fit: contain;
     background: #f8f9fa;
     image-rendering: auto;
+    padding: 1rem;
+  }
+  
+  .product-card-modern .product-body {
+    padding: 1.5rem;
+  }
+  
+  .product-card-modern .product-title {
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .product-card-modern .product-desc {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    min-height: auto;
+    margin-bottom: 1.5rem;
+  }
+  
+  .product-card-modern .product-btns {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .product-card-modern .btn-readmore,
+  .product-card-modern .btn-joinnow {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    border-radius: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card-modern .product-img { 
+    height: 160px;
+    padding: 0.75rem;
+  }
+  
+  .product-card-modern .product-body {
+    padding: 1.25rem;
+  }
+  
+  .product-card-modern .product-title {
+    font-size: 1.1rem;
+  }
+  
+  .product-card-modern .product-desc {
+    font-size: 0.9rem;
   }
 }
 
@@ -1176,525 +1227,379 @@ img[src*=""] {
     padding: 60px 0;
 }
 
-.service-icon {
-    font-size: 2.5rem;
-
-    margin-bottom: 1rem;
+/* Blog Section Styles - Matching blog page structure */
+.blog-posts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.card {
-    border: none;
-    border-radius: 1rem;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    background: #fff;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+/* Featured article (first card) - spans 2 rows on left */
+.blog-post-card.featured-post {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 400px;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+.blog-post-card.featured-post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
 }
 
-.card h5 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-    color: #22325a;
-}
-
-.card p {
-    color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 0;
-}
-
-/* Responsive adjustments for service cards */
-@media (max-width: 768px) {
-    .service-icon {
-        font-size: 2rem;
-    }
-
-    .card h5 {
-        font-size: 1.1rem;
-    }
-
-    .card p {
-        font-size: 0.85rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .service-header-title {
-        font-size: 2rem;
-    }
-    .service-header-desc {
-        font-size: 0.98rem;
-    }
-}
-.hero.hero-slide-2 {
-  background: linear-gradient(70deg, rgba(20, 20, 20, 0.7) 0%, rgba(0, 196, 180, 0.35) 100%),
-    url('assets/images/hero_image_final_2.png'); /* hero slide 2 */
-  background-size: cover;
-  background-position: center;
-}
-.hero.hero-slide-3 {
-  background: linear-gradient(70deg, rgba(255, 87, 34, 0.8) 0%, rgba(255, 193, 7, 0.4) 100%),
-    url('assets/images/hero_image_final_3.png'); /* Worker with PPE gear */
-  background-size: cover;
-  background-position: center;
-}
-
-/* Video background styles for third slide */
-.hero-video {
+/* Featured article image as background */
+.blog-post-card.featured-post .blog-post-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -2;
-  min-height: 100vh;
+  object-position: center;
+  z-index: 1;
 }
 
-.hero-video-overlay {
+.blog-post-card.featured-post::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.1), rgba(0,0,0,0.7));
+  z-index: 2;
+}
+
+/* Featured article content overlay */
+.blog-post-card.featured-post .blog-post-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+}
+
+.blog-post-card.featured-post .blog-post-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.blog-post-card.featured-post .blog-post-date {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.blog-post-card.featured-post .blog-post-title {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: white;
+  margin: 0;
+}
+
+.blog-post-card.featured-post .blog-post-title a {
+  color: white;
+  text-decoration: none;
+}
+
+.blog-post-card.featured-post .blog-post-footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.blog-post-card.featured-post .read-more-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.blog-post-card.featured-post .read-more-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* Side layout articles (2nd & 3rd) - Image on left, content on right */
+.blog-post-card.side-post {
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: stretch;
+  min-height: 180px;
+}
+
+.blog-post-card.side-post:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+}
+
+.blog-post-card.side-post .blog-post-image {
+  width: 45%;
   height: 100%;
-  background: linear-gradient(70deg, rgba(255, 87, 34, 0.6) 0%, rgba(255, 193, 7, 0.3) 100%);
-  z-index: -1;
-  min-height: 100vh;
+  flex-shrink: 0;
+  object-fit: contain;
+  object-position: center;
+  background: #f8f9fa;
+  padding: 0.75rem;
+  box-sizing: border-box;
 }
 
-/* Ensure hero section maintains height with video */
-.hero.hero-slide-3.video-active {
-  background-image: none;
-  height: 100vh;
-  min-height: 700px;
+.blog-post-card.side-post .blog-post-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
 }
 
-/* Responsive hero height fixes */
+.blog-post-card.side-post .blog-post-date {
+  color: #6c757d;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.blog-post-card.side-post .blog-post-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #22325a;
+  margin: 0 0 1rem 0;
+}
+
+.blog-post-card.side-post .blog-post-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.blog-post-card.side-post .blog-post-title a:hover {
+  color: #0056D2;
+}
+
+.blog-post-card.side-post .read-more-btn {
+  background: transparent;
+  color: #dc3545;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.blog-post-card.side-post .read-more-btn:after {
+  content: '→';
+  margin-left: 0.3rem;
+  transition: transform 0.3s ease;
+}
+
+.blog-post-card.side-post .read-more-btn:hover {
+  color: #dc3545;
+  text-decoration: none;
+}
+
+.blog-post-card.side-post .read-more-btn:hover:after {
+  transform: translateX(3px);
+}
+
+/* Blog Section Mobile Improvements */
 @media (max-width: 768px) {
-  .hero {
-    height: 100vh;
-    min-height: 600px;
+  .blog-posts {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 15px;
   }
   
-  .hero-video,
-  .hero-video-overlay {
-    min-height: 100vh;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    height: 100vh;
-    min-height: 500px;
-  }
-}
-
-.hero-content {
-  transition: opacity 0.7s cubic-bezier(.4,2,.6,1), transform 0.7s cubic-bezier(.4,2,.6,1);
-}
-.hero-content.hide {
-  opacity: 0;
-  transform: translateX(-60px);
-  pointer-events: none;
-}
-.hero-content.show {
-  opacity: 1;
-  transform: translateX(0);
-  pointer-events: auto;
-}
-
-/* Specific style for the skylight cover image to fix the blurry issue */
-
-/* Remove any blurriness from Jekyll processed images */
-img[src*=""] {
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-}
-
-/* Modern Product Card Styles */
-.products-modern-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem 1.5rem;
-  justify-content: center;
-}
-.product-card-modern {
-  background: #fff;
-  border-radius: 1.1rem;
-  box-shadow: 0 6px 24px rgba(0,86,210,0.10);
-  overflow: hidden;
-  transition: transform 0.25s, box-shadow 0.25s;
-  border: none;
-  width: 356px;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  position: relative;
-  will-change: transform;
-  -webkit-perspective: 1000;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  perspective: 1000;
-}
-.product-card-modern:hover {
-  transform: translateY(-7px) scale(1.03);
-  box-shadow: 0 12px 36px rgba(0,86,210,0.18);
-}
-.product-card-modern .product-img {
-  width: 100%;
-  height: 220px;
-  object-fit: contain;
-  border-top-left-radius: 0 !important;
-  border-top-right-radius: 0 !important;
-  border-radius: 0 !important;
-  background: #f8f9fa;
-  display: block;
-  image-rendering: auto;
-  transition: all 0.3s ease;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.product-card-modern .product-body {
-  padding: 1.1rem 1.1rem 1.1rem 1.1rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  height: 100%;
-}
-.product-card-modern .product-title {
-  color: #22325a;
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  text-align: center;
-}
-.product-card-modern .product-desc {
-  color: #5a5a5a;
-  font-size: 1.01rem;
-  margin-bottom: 1.1rem;
-  text-align: center;
-  min-height: 48px;
-}
-.product-card-modern .product-btns {
-  display: flex;
-  gap: 0.5rem;
-  width: 100%;
-  margin-top: auto;
-}
-.product-card-modern .btn-readmore {
-  background: linear-gradient(90deg, #0056D2 0%, #00C4B4 100%);
-  color: #fff;
-  border: none;
-  border-radius: 1.5rem;
-  font-weight: 600;
-  padding: 0.45rem 1.2rem;
-  font-size: 0.98rem;
-  transition: background 0.2s;
-  text-transform: uppercase;
-  text-decoration: none !important;
-}
-.product-card-modern .btn-readmore:hover {
-  background: #333;
-}
-.product-card-modern .btn-joinnow {
-  background: linear-gradient(90deg, #09853c 0%, #0056D2 100%);
-  color: #fff;
-  border: none;
-  border-radius: 1.5rem;
-  font-weight: 600;
-  padding: 0.45rem 1.2rem;
-  font-size: 0.98rem;
-  transition: background 0.2s;
-  text-transform: uppercase;
-  text-decoration: none !important;
-}
-.product-card-modern .btn-joinnow:hover {
-  background: #157347;
-}
-@media (max-width: 600px) {
-  .products-modern-row { gap: 1.2rem 0.5rem; }
-  .product-card-modern { width: 100%; }
-  .product-card-modern .product-img { 
-    height: 180px;
-    object-fit: contain;
-    background: #f8f9fa;
-    image-rendering: auto;
-  }
-}
-
-/* Service Section Styles */
-#services {
-    background: #f8f9fa;
-    padding: 60px 0;
-}
-
-.service-icon {
-    font-size: 2.5rem;
-
-    margin-bottom: 1rem;
-}
-
-.card {
-    border: none;
+  /* Featured card maintains overlay style but adjusts for mobile */
+  .blog-post-card.featured-post {
+    grid-column: span 1;
+    grid-row: span 1;
+    min-height: 280px;
     border-radius: 1rem;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    background: #fff;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-}
-
-.card h5 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-    color: #22325a;
-}
-
-.card p {
-    color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 0;
-}
-
-/* Responsive adjustments for service cards */
-@media (max-width: 768px) {
-    .service-icon {
-        font-size: 2rem;
-    }
-
-    .card h5 {
-        font-size: 1.1rem;
-    }
-
-    .card p {
-        font-size: 0.85rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .service-header-title {
-        font-size: 2rem;
-    }
-    .service-header-desc {
-        font-size: 0.98rem;
-    }
-}
-.hero.hero-slide-2 {
-  background: linear-gradient(70deg, rgba(20, 20, 20, 0.7) 0%, rgba(0, 196, 180, 0.35) 100%),
-    url('assets/images/hero_image_final_2.png'); /* hero slide 2 */
-  background-size: cover;
-  background-position: center;
-}
-.hero.hero-slide-3 {
-  background: linear-gradient(70deg, rgba(255, 87, 34, 0.8) 0%, rgba(255, 193, 7, 0.4) 100%),
-    url('assets/images/hero_image_final_3.png'); /* Worker with PPE gear */
-  background-size: cover;
-  background-position: center;
-}
-
-/* Video background styles for third slide */
-.hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
-  min-height: 100vh;
-}
-
-.hero-video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(70deg, rgba(255, 87, 34, 0.6) 0%, rgba(255, 193, 7, 0.3) 100%);
-  z-index: -1;
-  min-height: 100vh;
-}
-
-/* Ensure hero section maintains height with video */
-.hero.hero-slide-3.video-active {
-  background-image: none;
-  height: 100vh;
-  min-height: 700px;
-}
-
-/* Responsive hero height fixes */
-@media (max-width: 768px) {
-  .hero {
-    height: 100vh;
-    min-height: 600px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.15);
   }
   
-  .hero-video,
-  .hero-video-overlay {
-    min-height: 100vh;
+  .blog-post-card.featured-post .blog-post-content {
+    padding: 1.75rem;
+  }
+  
+  .blog-post-card.featured-post .blog-post-title {
+    font-size: 1.4rem;
+    line-height: 1.3;
+  }
+  
+  .blog-post-card.featured-post .blog-post-date {
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .blog-post-card.featured-post .read-more-btn {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.85rem;
+    border-radius: 20px;
+  }
+  
+  /* Side cards maintain horizontal layout on tablet */
+  .blog-post-card.side-post {
+    flex-direction: row;
+    min-height: 160px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+  }
+  
+  .blog-post-card.side-post .blog-post-image {
+    width: 40%;
+    height: 100%;
+    flex-shrink: 0;
+    object-fit: contain;
+    background: #f8f9fa;
+    padding: 0.75rem;
+    box-sizing: border-box;
+  }
+  
+  .blog-post-card.side-post .blog-post-content {
+    padding: 1.25rem;
+    width: 60%;
+  }
+  
+  .blog-post-card.side-post .blog-post-title {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+  }
+  
+  .blog-post-card.side-post .blog-post-date {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Container padding adjustments */
+  .container-fluid[style*="padding-left: 100px"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  
+  .blog-posts {
+    padding: 0 10px;
+  }
+  
+  /* Blog header responsive */
+  .d-flex.justify-content-between.align-items-end {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    gap: 1rem;
+  }
+  
+  .blog-header-left {
+    text-align: left !important;
+  }
+  
+  .blog-header-left h2,
+  .blog-header-left p,
+  .blog-header-left span {
+    text-align: left !important;
+  }
+  
+  .blog-section-title {
+    font-size: 1.8rem !important;
+    text-align: left !important;
+  }
+  
+  /* Featured card for small mobile */
+  .blog-post-card.featured-post {
+    min-height: 260px;
+  }
+  
+  .blog-post-card.featured-post .blog-post-content {
+    padding: 1.5rem;
+  }
+  
+  .blog-post-card.featured-post .blog-post-title {
+    font-size: 1.25rem;
   }
 }
 
 @media (max-width: 480px) {
-  .hero {
-    height: 100vh;
-    min-height: 500px;
+  /* Stack side cards vertically on small screens */
+  .blog-post-card.side-post {
+    flex-direction: column;
+    min-height: auto;
   }
-}
-
-.hero-content {
-  transition: opacity 0.7s cubic-bezier(.4,2,.6,1), transform 0.7s cubic-bezier(.4,2,.6,1);
-}
-.hero-content.hide {
-  opacity: 0;
-  transform: translateX(-60px);
-  pointer-events: none;
-}
-.hero-content.show {
-  opacity: 1;
-  transform: translateX(0);
-  pointer-events: auto;
-}
-
-/* Specific style for the skylight cover image to fix the blurry issue */
-
-/* Remove any blurriness from Jekyll processed images */
-img[src*=""] {
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-}
-
-/* Modern Product Card Styles */
-.products-modern-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem 1.5rem;
-  justify-content: center;
-}
-.product-card-modern {
-  background: #fff;
-  border-radius: 1.1rem;
-  box-shadow: 0 6px 24px rgba(0,86,210,0.10);
-  overflow: hidden;
-  transition: transform 0.25s, box-shadow 0.25s;
-  border: none;
-  width: 356px;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  position: relative;
-  will-change: transform;
-  -webkit-perspective: 1000;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  perspective: 1000;
-}
-.product-card-modern:hover {
-  transform: translateY(-7px) scale(1.03);
-  box-shadow: 0 12px 36px rgba(0,86,210,0.18);
-}
-.product-card-modern .product-img {
-  width: 100%;
-  height: 220px;
-  object-fit: contain;
-  border-top-left-radius: 0 !important;
-  border-top-right-radius: 0 !important;
-  border-radius: 0 !important;
-  background: #f8f9fa;
-  display: block;
-  image-rendering: auto;
-  transition: all 0.3s ease;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.product-card-modern .product-body {
-  padding: 1.1rem 1.1rem 1.1rem 1.1rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  height: 100%;
-}
-.product-card-modern .product-title {
-  color: #22325a;
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.4rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  text-align: center;
-}
-.product-card-modern .product-desc {
-  color: #5a5a5a;
-  font-size: 1.01rem;
-  margin-bottom: 1.1rem;
-  text-align: center;
-  min-height: 48px;
-}
-.product-card-modern .product-btns {
-  display: flex;
-  gap: 0.5rem;
-  width: 100%;
-  margin-top: auto;
-}
-.product-card-modern .btn-readmore {
-  background: linear-gradient(90deg, #0056D2 0%, #00C4B4 100%);
-  color: #fff;
-  border: none;
-  border-radius: 1.5rem;
-  font-weight: 600;
-  padding: 0.45rem 1.2rem;
-  font-size: 0.98rem;
-  transition: background 0.2s;
-  text-transform: uppercase;
-  text-decoration: none !important;
-}
-.product-card-modern .btn-readmore:hover {
-  background: #333;
-}
-.product-card-modern .btn-joinnow {
-  background: linear-gradient(90deg, #09853c 0%, #0056D2 100%);
-  color: #fff;
-  border: none;
-  border-radius: 1.5rem;
-  font-weight: 600;
-  padding: 0.45rem 1.2rem;
-  font-size: 0.98rem;
-  transition: background 0.2s;
-  text-transform: uppercase;
-  text-decoration: none !important;
-}
-.product-card-modern .btn-joinnow:hover {
-  background: #157347;
-}
-@media (max-width: 600px) {
-  .products-modern-row { gap: 1.2rem 0.5rem; }
-  .product-card-modern { width: 100%; }
-  .product-card-modern .product-img { 
+  
+  .blog-post-card.side-post .blog-post-image {
+    width: 100%;
     height: 180px;
+    flex-shrink: 0;
     object-fit: contain;
     background: #f8f9fa;
-    image-rendering: auto;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .blog-post-card.side-post .blog-post-content {
+    padding: 1.25rem;
+    width: 100%;
+  }
+  
+  .blog-post-card.side-post .blog-post-title {
+    font-size: 1.05rem;
+  }
+  
+  .blog-post-card.featured-post .blog-post-title {
+    font-size: 1.15rem;
+  }
+  
+  .blog-post-card.featured-post .blog-post-content {
+    padding: 1.25rem;
+  }
+  
+  .blog-section-title {
+    font-size: 1.6rem !important;
   }
 }
-
-/* Mobile optimizations for older devices */
+    /* Mobile optimizations for older devices */
     @media screen and (max-width: 768px) {
         .preloader {
             /* Simplify for mobile performance */
@@ -1783,6 +1688,309 @@ img[src*=""] {
     html {
         overflow-x: hidden;
     }
+
+    /* Footer full width fix - override layout container padding */
+    footer .container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+    }
+
+    /* Ensure footer itself has no margin/padding */
+    footer {
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    /* Override any Bootstrap container defaults for footer */
+    footer.footer .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    /* Product Section Mobile Container Improvements */
+@media (max-width: 768px) {
+  .container-fluid[style*="padding-left: 120px"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  
+  .section-heading-modern {
+    margin-bottom: 2rem;
+    padding: 0 10px;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .section-label {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-fluid[style*="padding-left: 120px"] {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-label {
+    font-size: 0.9rem;
+  }
+}
+
+/* Modern button hover effects */
+.blog-header-right .btn:hover {
+  background: linear-gradient(90deg, #003d99 0%, #008a7a 100%) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,86,210,0.3) !important;
+}
+
+/* Why Heinrich Safety Solutions Section Styles */
+.value-prop-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  height: 100%;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.value-prop-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.value-icon {
+  margin-bottom: 1rem;
+}
+
+.value-title {
+  color: #22325a;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.value-desc {
+  color: #5a5a5a;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+/* Custom grid for 5 columns */
+.col-lg-2-4 {
+  flex: 0 0 20%;
+  max-width: 20%;
+}
+
+/* CTA Section Styles */
+.cta-section {
+  margin-top: 3rem;
+  padding: 2rem 1rem;
+}
+
+.cta-headline {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.2;
+}
+
+.cta-subheadline {
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.cta-buttons {
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cta-btn {
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  min-width: 160px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cta-btn-call {
+  background: linear-gradient(90deg, #dc3545 0%, #fd7e14 100%);
+  color: white;
+}
+
+.cta-btn-call:hover {
+  background: linear-gradient(90deg, #c82333 0%, #e8690b 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220,53,69,0.3);
+}
+
+.cta-btn-whatsapp {
+  background: linear-gradient(90deg, #25d366 0%, #128c7e 100%);
+  color: white;
+}
+
+.cta-btn-whatsapp:hover {
+  background: linear-gradient(90deg, #20ba5a 0%, #0e6b5d 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37,211,102,0.3);
+}
+
+.cta-btn-email {
+  background: linear-gradient(90deg, #0056D2 0%, #00C4B4 100%);
+  color: white;
+}
+
+.cta-btn-email:hover {
+  background: linear-gradient(90deg, #004bb5 0%, #00a69b 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,86,210,0.3);
+}
+
+/* Mobile Responsive Styles for Why Choose Us Section */
+@media (max-width: 1200px) {
+  .col-lg-2-4 {
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-fluid[style*="padding-left: 100px"] {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  
+  .col-lg-2-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .value-prop-card {
+    margin-bottom: 1.5rem;
+    min-height: 240px;
+  }
+  
+  .value-icon i {
+    font-size: 2.5rem !important;
+  }
+  
+  .value-title {
+    font-size: 1.1rem;
+  }
+  
+  .value-desc {
+    font-size: 0.9rem;
+  }
+  
+  .cta-headline {
+    font-size: 2rem !important;
+  }
+  
+  .cta-subheadline {
+    font-size: 1.1rem !important;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 1rem 2rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Why Choose Us header responsive - matching blog section */
+  .d-flex.justify-content-between.align-items-end {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    gap: 1rem;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  
+  .why-header-left {
+    text-align: left !important;
+  }
+  
+  .why-header-left h2,
+  .why-header-left p,
+  .why-header-left span {
+    text-align: left !important;
+  }
+  
+  .why-section-title {
+    font-size: 1.8rem !important;
+    text-align: left !important;
+  }
+  
+  /* Value propositions grid padding */
+  .row.g-4.mb-5 {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-fluid[style*="padding-left: 100px"] {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  
+  .value-prop-card {
+    padding: 1.5rem !important;
+    min-height: 220px;
+  }
+  
+  .cta-headline {
+    font-size: 1.8rem !important;
+  }
+  
+  .cta-subheadline {
+    font-size: 1rem !important;
+  }
+  
+  .cta-btn {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.5rem;
+  }
+  
+  .why-section-title {
+    font-size: 1.6rem !important;
+  }
+}
 </style>
 
 <body>
@@ -1865,30 +2073,30 @@ img[src*=""] {
   </section>
 
   <!-- About Section -->
-  <section class="py-5" id="about" style="background: #f8f9fa;">
-    <div class="container">
+  <section class="py-4" id="about" style="background: #f8f9fa;">
+    <div class="container-fluid" style="padding-left: 10px; padding-right: 10px;">
       <!-- Modern About Us Section Header -->
-      <div class="section-heading-modern text-center mb-5" data-aos="fade-up" data-aos-duration="1000">
+      <div class="section-heading-modern text-center mb-4" data-aos="fade-up" data-aos-duration="1000">
         <span class="section-label">About Us</span>
         <h2 class="section-title">Innovating the Future of Safety</h2>
         <div class="section-underline mx-auto"><span class="moving-dot"></span></div>
       </div>
 
-      <div class="row g-4 align-items-stretch">
+      <div class="row g-3 align-items-stretch">
         <!-- Left Column: Image Gallery -->
         <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
-          <div class="h-100">          <!-- Main Image -->          <div class="mb-4">
-            <img src="assets/images/welcome.png" alt="About Us Main" class="img-fluid w-100">
+          <div class="h-100 d-flex flex-column">          <!-- Main Image -->          <div class="mb-3 flex-grow-1">
+            <img src="assets/images/welcome.png" alt="About Us Main" class="img-fluid w-100 h-100" style="object-fit: cover; border-radius: 0.5rem;">
           </div>
           <!-- Small Images Grid -->
-          <div class="row g-3">            <div class="col-6">
+          <div class="row g-2">            <div class="col-6">
               <div>
-                <img src="assets/images/about_us_landscape_01.png" alt="Creative Workspace" class="img-fluid w-100">
+                <img src="assets/images/about_us_landscape_01.png" alt="Creative Workspace" class="img-fluid w-100" style="border-radius: 0.25rem;">
               </div>
             </div>
             <div class="col-6">
               <div>
-                <img src="assets/images/about_us_landscape_02.png" alt="Global Connections" class="img-fluid w-100">
+                <img src="assets/images/about_us_landscape_02.png" alt="Global Connections" class="img-fluid w-100" style="border-radius: 0.25rem;">
               </div>
             </div>
           </div>
@@ -1897,44 +2105,43 @@ img[src*=""] {
 
         <!-- Right Column: Content -->
         <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
-          <div class="h-100 p-4 bg-white rounded-3 shadow-sm">
-            <div class="about-title">INNOVATING THE FUTURE</div>
-            <div class="about-underline"></div>
-            <div class="about-desc mb-4">
-              We are a passionate team dedicated to delivering innovative safety solutions for a rapidly changing world. Our commitment to excellence, creativity, and collaboration drives us to set new standards in the industry. From concept to execution, we ensure every project is handled with expertise and care, building lasting relationships with our clients. <br> <br>
-              Our company draws its core inspiration from the Heinrich Safety Pyramid, a foundational principle in occupational safety that underscores the importance of proactive risk management and incident prevention. At Heinrich Safety Solutions, we believe that every near miss is a warning, every hazard is preventable, and every life matters. This philosophy shapes our approach to safety — focusing on early interventions and rigorous system reliability to prevent serious incidents before they happen.
+          <div class="h-100 p-3 bg-white rounded-3 shadow-sm d-flex flex-column">
+            <div class="about-desc mb-3 flex-grow-1">
+              Heinrich Safety Solutions is a trusted provider of engineered safety systems, specializing in the supply of certified Personal Protective Equipment (PPE), fall arrest systems, and industrial safety lifeline solutions. Our offerings are designed to meet rigorous industry standards and support safety-critical operations across sectors such as construction, manufacturing, logistics, and infrastructure.<br><br>
+              
+              Rooted in the principles of the Heinrich Safety Pyramid, our approach prioritizes proactive risk management, system reliability, and incident prevention. We combine product expertise with end-to-end services — including site assessment, system design, professional installation, compliance training, and safety consultancy — to deliver fully integrated safety solutions.<br><br>
+              
+              Our goal is to help organizations minimize operational risk, meet regulatory compliance, and protect what matters most: their people.
             </div>
-            <a href="/about.html" class="btn btn-primary btn-lg rounded-pill px-4">
-              Read More
-              <i class="bi bi-arrow-right ms-2"></i>
-            </a>
+            <div class="mb-5">
+              <a href="/about.html" class="btn btn-primary btn-lg rounded-pill px-4">
+                Read More
+                <i class="bi bi-arrow-right ms-2"></i>
+              </a>
+            </div>
 
             <!-- Features Cards -->
-            <div class="row g-4 mt-4">
+            <div class="row g-3">
               <!-- Dedicated Team Support -->
-              <div class="col-md-6">
-                <div class="p-4 rounded-3" style="background-color: rgba(0, 86, 210, 0.1);">
+              <div class="col-md-6 d-flex">
+                <div class="p-4 rounded-3 h-100 w-100" style="background-color: rgba(0, 86, 210, 0.1); min-height: 140px;">
                   <div class="d-flex align-items-center mb-3">
-                    <i class="bi bi-people-fill fs-4 text-primary me-2"></i>
-                    <h5 class="fw-bold mb-0 text-primary">Dedicated Team Support</h5>
+                    <i class="bi bi-people-fill fs-4 text-primary me-3"></i>
+                    <h6 class="fw-bold mb-0 text-primary" style="font-size: 1rem;">Dedicated Team Support</h6>
                   </div>
-                  <p class="mb-0 text-secondary">Our highly skilled professionals are committed to providing personalized and reliable safety solutions for every engagement.</p>
+                  <p class="mb-0 text-secondary small">Our highly skilled professionals are committed to providing personalized and reliable safety solutions for every engagement.</p>
                 </div>
               </div>
               <!-- Forward-Thinking Approach -->
-              <div class="col-md-6">
-                <div class="p-4 rounded-3" style="background-color: rgba(255, 179, 143, 0.3);">
+              <div class="col-md-6 d-flex">
+                <div class="p-4 rounded-3 h-100 w-100" style="background-color: rgba(255, 179, 143, 0.3); min-height: 140px;">
                   <div class="d-flex align-items-center mb-3">
-                    <i class="bi bi-lightbulb-fill fs-4 text-primary me-2"></i>
-                    <h5 class="fw-bold mb-0 text-primary">Forward-Thinking Approach</h5>
+                    <i class="bi bi-lightbulb-fill fs-4 text-primary me-3"></i>
+                    <h6 class="fw-bold mb-0 text-primary" style="font-size: 1rem;">Forward-Thinking Approach</h6>
                   </div>
-                  <p class="mb-0 text-secondary">We embrace innovative methodologies to develop strategic solutions that drive lasting success.</p>
+                  <p class="mb-0 text-secondary small">We embrace innovative methodologies to develop strategic solutions that drive lasting success.</p>
                 </div>
               </div>
-            </div>
-            <!-- Our Services Button -->
-            <div class="mt-4 text-center">
-              <a href="#services" class="btn btn-accent btn-lg" style="background: var(--accent); color: #fff; font-weight: 600; border-radius: 2rem; padding: 0.75rem 2.5rem;">Our Services</a>
             </div>
           </div>
         </div>
@@ -1943,8 +2150,8 @@ img[src*=""] {
   </section>
 
   <!-- Service Section Start -->
-<section id="services" style="background: #f8f9fa; padding: 60px 0;">
-  <div class="container">
+<section id="services" style="background: #f8f9fa; padding: 80px 30px;">
+  <div class="container-fluid" style="padding-left: 30px; padding-right: 30px;">
     <div class="section-heading-modern text-center mb-5" data-aos="fade-up" data-aos-duration="1000">
       <span class="section-label">Our Services</span>
       <h2 class="service-section-title">Discover our comprehensive range of professional services designed to ensure safety, efficiency, and expert support for your projects.</h2>
@@ -1991,9 +2198,9 @@ See our safety solutions in action through live, on-site or virtual demonstratio
 <!-- Service Section End -->
 
 <!-- Our Products Section Start -->
-<section class="py-5" id="products" style="background-color: #f8f9fa;">
-  <div class="container">
-    <div class="section-heading-modern text-center mb-5" data-aos="fade-up" data-aos-duration="1000">
+<section class="py-4" id="products" style="background-color: #f8f9fa;">
+  <div class="container-fluid" style="padding-left: 120px; padding-right: 120px;">
+    <div class="section-heading-modern text-center mb-4" data-aos="fade-up" data-aos-duration="1000">
       <span class="section-label">Our Products</span>
       <h2 class="section-title">Our Popular Products</h2>
       <div class="section-underline mx-auto"><span class="moving-dot"></span></div>
@@ -2024,7 +2231,7 @@ Our Lifeline Systems are engineered for secure movement across elevated work are
         </div>
       </div>
       <!-- Product 3 -->
-      <div class="product-card-modern" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600" style="background-color: azure">
+      <div class="product-card-modern" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600" style="background-color: azure;">
         <img src="/assets/images/fall_protection_system.png" class="product-img" alt="Fall Arrest System" loading="lazy" width="356" height="220" decoding="async">
         <div class="product-body">
           <div class="product-title">Fall Arrest System</div>
@@ -2035,7 +2242,12 @@ Stay protected during unexpected falls with our robust Fall Arrest Systems. Feat
             <a href="/products/arrest.html" class="btn-joinnow">Get a Quote</a>
           </div>
         </div>
-      </div>      <!-- Product 4: Rooftop Guardrail -->
+      </div>
+    </div>
+    
+    <!-- Second Row of Products -->
+    <div class="products-modern-row mt-4" style="justify-content: center;">
+      <!-- Product 4: Rooftop Guardrail -->
       <div class="product-card-modern" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800" style="background-color: aliceblue;">
         <img src="/assets/images/rooftop_guardrail.png" class="product-img" alt="Rooftop Guardrail" loading="lazy" width="356" height="220" decoding="async">
         <div class="product-body">
@@ -2047,7 +2259,8 @@ Safeguard roof edges with our freestanding guardrail systems—no drilling requi
             <a href="/roof-top-guardrail.html" class="btn-joinnow">Get a Quote</a>
           </div>
         </div>
-      </div>      <!-- Product 5: Skylight Cover -->
+      </div>
+      <!-- Product 5: Skylight Cover -->
       <div class="product-card-modern" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000" style="background-color: azure;">
         <img src="/assets/images/skylight_protection_cover.png" class="product-img" alt="Skylight Cover" loading="lazy" width="356" height="220" decoding="async">
         <div class="product-body">
@@ -2066,10 +2279,205 @@ Prevent accidental falls through skylights with our heavy-duty protection covers
 
 <!-- Our Products Section End -->
 
+<!-- Blog Section Start -->
+<section class="py-4" id="blog" style="background: #f8f9fa;">
+  <div class="container-fluid" style="padding-left: 100px; padding-right: 50px;">
+    <div class="d-flex justify-content-between align-items-end mb-4" data-aos="fade-up" data-aos-duration="1000" style="max-width: 1200px; margin: 0 auto; padding-left: 0; padding-right: 0;">
+      <div class="blog-header-left" style="text-align: left;">
+        <span class="blog-section-label" style="color: var(--accent); font-size: 0.9rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.25rem; display: block; background: linear-gradient(90deg, #00C4B4 0%, #0056D2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Blog</span>
+        <h2 class="blog-section-title" style="font-size: 2.2rem; font-weight: 700; color: #22325a; margin: 0; font-family: 'Segoe UI', Arial, sans-serif; text-align: left;">Safety Knowledge Hub</h2>
+        <p style="color: #6c757d; font-size: 1.1rem; margin: 0.5rem 0 0 0; font-weight: 400; text-align: left;">Stay up to date with the latest news, guides and events</p>
+      </div>
+      <div class="blog-header-right">
+        <a href="/blog/" class="btn btn-primary rounded-pill px-4" style="font-size: 0.9rem; font-weight: 600; background: linear-gradient(90deg, #0056D2 0%, #00C4B4 100%); border: none; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,86,210,0.2);">
+          Explore All Articles
+          <i class="bi bi-arrow-right ms-1"></i>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Blog Posts Grid matching blog page structure -->
+    <div class="blog-posts" style="max-width: 1200px; margin: 0 auto;">
+      <!-- Featured Article (Large Left Card) -->
+      <article class="blog-post-card blog-post-item featured-post" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+        <img src="/assets/images/blog/falling_hazards_in_construction.png" 
+             class="blog-post-image" 
+             alt="Falling Hazards in Construction"
+             loading="lazy"
+             decoding="async">
+        <div class="blog-post-content">
+          <div class="blog-post-header">
+            <div class="blog-post-date">
+              <i class="bi bi-calendar3"></i>
+              <span>Jul 01, 2025</span>
+            </div>
+            <h3 class="blog-post-title">
+              <a href="/safety/construction/fall-protection/2025/07/01/falling-hazards-construction-safety-guide.html">
+                Falling Hazards in Construction: A Complete Safety Guide.
+              </a>
+            </h3>
+          </div>
+          <div class="blog-post-footer">
+            <a href="/safety/construction/fall-protection/2025/07/01/falling-hazards-construction-safety-guide.html" class="read-more-btn">
+              Read More
+              <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+      
+      <!-- Side Layout Article 1 -->
+      <article class="blog-post-card blog-post-item side-post" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+        <img src="/assets/images/blog/fall_protection_compliance_guide.png" 
+             class="blog-post-image" 
+             alt="Fall Protection Compliance"
+             loading="lazy"
+             decoding="async">
+        <div class="blog-post-content">
+          <div>
+            <div class="blog-post-date">
+              <span>06/29/2025</span>
+            </div>
+            <h3 class="blog-post-title">
+              <a href="/safety/compliance/fall-protection/2025/06/29/fall-protection-compliance-india.html">
+                Fall Protection Compliance Guide for Indian Industries - Safety Standards 2025
+              </a>
+            </h3>
+          </div>
+          <a href="/safety/compliance/fall-protection/2025/06/29/fall-protection-compliance-india.html" class="read-more-btn">
+            Read More
+          </a>
+        </div>
+      </article>
+      
+      <!-- Side Layout Article 2 -->
+      <article class="blog-post-card blog-post-item side-post" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+        <img src="/assets/images/blog/ppe-selection-guide.png" 
+             class="blog-post-image" 
+             alt="PPE Selection Guide"
+             loading="lazy"
+             decoding="async">
+        <div class="blog-post-content">
+          <div>
+            <div class="blog-post-date">
+              <span>06/28/2025</span>
+            </div>
+            <h3 class="blog-post-title">
+              <a href="/ppe/construction/safety-guide/2025/06/28/ppe-selection-guide-construction.html">
+                PPE Selection Guide for Construction Workers - Complete Safety Checklist 2025
+              </a>
+            </h3>
+          </div>
+          <a href="/ppe/construction/safety-guide/2025/06/28/ppe-selection-guide-construction.html" class="read-more-btn">
+            Read More
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- Blog Section End -->
+
+<!-- Why Heinrich Safety Solutions Section Start -->
+<section class="py-5" id="why-choose-us" style="background: #f8f9fa;">
+  <div class="container-fluid" style="padding-left: 100px; padding-right: 50px;">
+    <div class="row">
+      <div class="col-12">
+        <div class="d-flex justify-content-between align-items-end mb-4" style="padding-left: 40px; padding-right: 40px;">
+          <div class="why-header-left" style="text-align: left;">
+            <span class="why-section-label" style="color: var(--accent); font-size: 0.9rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.25rem; display: block; background: linear-gradient(90deg, #00C4B4 0%, #0056D2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Why Choose Us</span>
+            <h2 class="why-section-title" style="font-size: 2.2rem; font-weight: 700; color: #22325a; margin: 0; font-family: 'Segoe UI', Arial, sans-serif; text-align: left;">Why Heinrich Safety Solutions?</h2>
+            <p style="color: #6c757d; font-size: 1.1rem; margin: 0.5rem 0 0 0; font-weight: 400; text-align: left;">Your trusted partner for comprehensive industrial safety solutions</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Value Propositions Grid -->
+    <div class="row g-4 mb-5" style="padding-left: 40px; padding-right: 40px;">
+      <!-- Certified Products -->
+      <div class="col-md-6 col-lg-2-4 d-flex">
+        <div class="value-prop-card h-100 text-center p-4">
+          <div class="value-icon mb-3">
+            <i class="fas fa-shield-alt fa-3x" style="color: #0056D2;"></i>
+          </div>
+          <h5 class="value-title mb-3">Certified Products</h5>
+          <p class="value-desc">All our safety equipment meets international standards and certifications, ensuring maximum protection and compliance.</p>
+        </div>
+      </div>
+      
+      <!-- Tech-Driven Solutions -->
+      <div class="col-md-6 col-lg-2-4 d-flex">
+        <div class="value-prop-card h-100 text-center p-4">
+          <div class="value-icon mb-3">
+            <i class="fas fa-cogs fa-3x" style="color: #00C4B4;"></i>
+          </div>
+          <h5 class="value-title mb-3">Tech-Driven Solutions</h5>
+          <p class="value-desc">Advanced engineering and innovative technology drive our safety systems for optimal performance and reliability.</p>
+        </div>
+      </div>
+      
+      <!-- Custom Safety Systems -->
+      <div class="col-md-6 col-lg-2-4 d-flex">
+        <div class="value-prop-card h-100 text-center p-4">
+          <div class="value-icon mb-3">
+            <i class="fas fa-tools fa-3x" style="color: #dc3545;"></i>
+          </div>
+          <h5 class="value-title mb-3">Custom Safety Systems</h5>
+          <p class="value-desc">Tailored safety solutions designed specifically for your unique workplace requirements and industry needs.</p>
+        </div>
+      </div>
+      
+      <!-- Fast Turnaround -->
+      <div class="col-md-6 col-lg-2-4 d-flex">
+        <div class="value-prop-card h-100 text-center p-4">
+          <div class="value-icon mb-3">
+            <i class="fas fa-clock fa-3x" style="color: #ffc107;"></i>
+          </div>
+          <h5 class="value-title mb-3">Fast Turnaround</h5>
+          <p class="value-desc">Quick delivery and installation services to minimize downtime and get your safety systems operational rapidly.</p>
+        </div>
+      </div>
+      
+      <!-- Expert Consultation -->
+      <div class="col-md-6 col-lg-2-4 d-flex">
+        <div class="value-prop-card h-100 text-center p-4">
+          <div class="value-icon mb-3">
+            <i class="fas fa-user-tie fa-3x" style="color: #157347;"></i>
+          </div>
+          <h5 class="value-title mb-3">Expert Consultation</h5>
+          <p class="value-desc">Professional guidance from experienced safety consultants to help you make informed decisions and ensure compliance.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Call-to-Action Section -->
+    <div class="cta-section text-center py-4">
+      <h2 class="cta-headline mb-3" style="font-size: 2.5rem; font-weight: 700; color: #22325a;">Need a Custom Lifeline system?</h2>
+      <p class="cta-subheadline mb-4" style="font-size: 1.3rem; color: #6c757d; font-weight: 500;">Talk to Our Safety Experts</p>
+      
+      <div class="cta-buttons d-flex justify-content-center flex-wrap gap-3">
+        <a href="tel:+918981840013" class="btn cta-btn cta-btn-call">
+          <i class="fas fa-phone me-2"></i>
+          Call Now
+        </a>
+        <a href="https://wa.me/+918981840013" class="btn cta-btn cta-btn-whatsapp" target="_blank">
+          <i class="fab fa-whatsapp me-2"></i>
+          WhatsApp
+        </a>
+        <a href="/contact-us.html" class="btn cta-btn cta-btn-email">
+          <i class="fas fa-envelope me-2"></i>
+          Send Inquiry
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Why Heinrich Safety Solutions Section End -->
+
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>        <!-- JavaScript Libraries -->
+        <!-- JavaScript Libraries -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -2151,6 +2559,7 @@ Prevent accidental falls through skylights with our heavy-duty protection covers
                 heroVideo3.style.display = 'none';
                 heroVideo3.pause();
               }
+
               if (heroOverlay3) {
                 heroOverlay3.style.display = 'none';
               }
@@ -2253,7 +2662,8 @@ Prevent accidental falls through skylights with our heavy-duty protection covers
             // Run optimizations
             document.addEventListener('DOMContentLoaded', optimizeImages);
         </script>
-</script>
+</body>
+</html>
   </main>
 
   
@@ -2265,7 +2675,7 @@ Prevent accidental falls through skylights with our heavy-duty protection covers
             <div class="col-md-4 mb-4 h-100 d-flex flex-column">
                 <h5 class="fw-bold mb-3">CONTACT US</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><i class="bi bi-geo-alt"></i> Shreebhumi, Laketown, Kolkata, India</li>
+                    <li class="mb-2"><i class="bi bi-geo-alt"></i> 120 Canal St Road, Shreebhumi, Laketown, Kolkata, India-700048</li>
                     <li class="mb-2"><i class="bi bi-telephone"></i> +91 8981 840 013 / +91 8981 840 014 </li>
                     <li class="mb-2"><i class="bi bi-envelope"></i> info@hsspl.in</li>
                     <li class="mb-3"><i class="bi bi-clock"></i> Mon-Sat: 10.00 AM – 7.00 PM</li>
@@ -2412,7 +2822,9 @@ Prevent accidental falls through skylights with our heavy-duty protection covers
             </div>
         </div>
         <div class="text-center mt-4 small">
-            &copy; 2024 Heinrich Safety Solutions Private Limited (HSSPL). All rights reserved.
+            &copy; 2025 Heinrich Safety Solutions Private Limited (HSSPL). All rights reserved.
+            <br>
+            Designed with <i class="fas fa-heart" style="color: #e57200;"></i> for workplace safety
         </div>
     </div>
 </footer>

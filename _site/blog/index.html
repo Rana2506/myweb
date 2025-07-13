@@ -273,14 +273,14 @@
         }
 
         .search-input {
-            padding: 8px 15px;
+            padding: 6px 12px;
             border: 2px solid #e0e0e0;
             border-radius: 20px 0 0 20px;
             outline: none;
-            font-size: 13px;
-            width: 200px;
+            font-size: 12px;
+            width: 160px;
             transition: border-color 0.3s ease;
-            height: 36px;
+            height: 32px;
         }
 
         .search-input:focus {
@@ -288,16 +288,16 @@
         }
 
         .search-button {
-            padding: 8px 15px;
+            padding: 6px 12px;
             background-color: #e30613;
             color: white;
             border: none;
             border-radius: 0 20px 20px 0;
             cursor: pointer;
-            font-size: 13px;
+            font-size: 12px;
             transition: background-color 0.3s ease;
             font-weight: 500;
-            height: 36px;
+            height: 32px;
         }
 
         .search-button:hover {
@@ -329,7 +329,7 @@
             }
             
             .search-input {
-                width: 160px;
+                width: 130px;
             }
             
             .company-name {
@@ -390,7 +390,7 @@
             }
 
             .search-input {
-                width: 180px;
+                width: 150px;
             }
 
             .mobile-menu-toggle {
@@ -414,13 +414,13 @@
             }
 
             .search-input {
-                width: 140px;
-                font-size: 12px;
+                width: 120px;
+                font-size: 11px;
             }
 
             .search-button {
-                font-size: 12px;
-                padding: 8px 12px;
+                font-size: 11px;
+                padding: 6px 10px;
             }
             
             .logo-section img {
@@ -725,30 +725,64 @@ img {
 /* Blog Posts Grid */
 .blog-posts {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(180px, auto);
+  gap: 1.5rem;
   margin-bottom: 3rem;
+}
+
+/* First article - Large featured with overlay content */
+.blog-post-card:nth-child(1) {
+  grid-column: span 6;
+  grid-row: span 2;
+  position: relative;
+}
+
+/* Second and third articles - Stacked layout in right column */
+.blog-post-card:nth-child(2) {
+  grid-column: span 6;
+  grid-row: span 1;
+  display: flex;
+  flex-direction: row;
+  aspect-ratio: 2.5/1;
+  height: auto;
+}
+
+.blog-post-card:nth-child(3) {
+  grid-column: span 6;
+  grid-row: span 1;
+  display: flex;
+  flex-direction: row;
+  aspect-ratio: 2.5/1;
+  height: auto;
+}
+
+/* Remaining articles - Standard vertical layout */
+.blog-post-card:nth-child(n+4) {
+  grid-column: span 4;
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
 }
 
 .blog-post-card {
   background: white;
-  border-radius: 15px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   transition: all 0.3s ease;
-  height: 100%;
   will-change: transform;
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
 .blog-post-card:hover {
-  transform: translateY(-5px) translateZ(0);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transform: translateY(-8px) translateZ(0);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
 
 .blog-post-image {
   width: 100%;
-  height: 200px;
-  object-fit: fill;
+  object-fit: cover;
   object-position: center;
   transition: all 0.3s ease;
   image-rendering: -webkit-optimize-contrast;
@@ -758,43 +792,269 @@ img {
   transform: translateZ(0);
 }
 
-.blog-post-card:hover .blog-post-image {
-  transform: scale(1.02) translateZ(0);
-  filter: brightness(1.05);
+/* Featured article (1st) - Full background with overlay */
+.blog-post-card:nth-child(1) .blog-post-image {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
-.blog-post-content {
-  padding: 1.5rem;
+.blog-post-card:nth-child(1)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.1), rgba(0,0,0,0.7));
+  z-index: 2;
+}
+
+/* Side layout articles (2nd & 3rd) - Image on left */
+.blog-post-card:nth-child(2) .blog-post-image,
+.blog-post-card:nth-child(3) .blog-post-image {
+  width: 45%;
+  height: 100%;
+  flex-shrink: 0;
+  border-radius: 0;
+  object-fit: contain;
+  object-position: center;
+  padding: 0.75rem;
+  box-sizing: border-box;
+}
+
+/* Standard articles (4th+) - Image on top */
+.blog-post-card:nth-child(n+4) .blog-post-image {
+  height: 200px;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+  padding: 0.75rem;
+  box-sizing: border-box;
+}
+
+.blog-post-card:hover .blog-post-image {
+  transform: scale(1.05) translateZ(0);
+  filter: brightness(1.1);
+}
+
+/* Featured article content overlay */
+.blog-post-card:nth-child(1) .blog-post-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  height: calc(100% - 200px);
-}
-
-.blog-post-categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.category-badge {
-  background: var(--primary-color);
+  justify-content: space-between;
   color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 15px;
-  font-size: 0.8rem;
+}
+
+.blog-post-card:nth-child(1) .blog-post-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.blog-post-card:nth-child(1) .blog-post-date {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
   font-weight: 500;
 }
 
-.blog-post-title {
-  font-size: 1.25rem;
+.blog-post-card:nth-child(1) .blog-post-title {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: white;
+  margin: 0;
+}
+
+.blog-post-card:nth-child(1) .blog-post-title a {
+  color: white;
+}
+
+.blog-post-card:nth-child(1) .blog-post-footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.blog-post-card:nth-child(1) .read-more-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
   font-weight: 600;
-  margin-bottom: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.blog-post-card:nth-child(1) .read-more-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Side layout articles content (2nd & 3rd) */
+.blog-post-card:nth-child(2) .blog-post-content,
+.blog-post-card:nth-child(3) .blog-post-content {
+  width: 55%;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.75rem;
+}
+
+.blog-post-card:nth-child(2) .blog-post-date,
+.blog-post-card:nth-child(3) .blog-post-date {
+  font-size: 0.8rem;
+  color: #8e9297;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.blog-post-card:nth-child(2) .blog-post-date i,
+.blog-post-card:nth-child(3) .blog-post-date i {
+  display: none;
+}
+
+.blog-post-card:nth-child(2) .blog-post-title,
+.blog-post-card:nth-child(3) .blog-post-title {
+  font-size: 1.1rem;
+  font-weight: 700;
   line-height: 1.3;
+  color: #2c3e50;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.blog-post-card:nth-child(2) .blog-post-title a,
+.blog-post-card:nth-child(3) .blog-post-title a {
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+.blog-post-card:nth-child(2) .blog-post-title a:hover,
+.blog-post-card:nth-child(3) .blog-post-title a:hover {
+  color: var(--primary-color);
+}
+
+.blog-post-card:nth-child(2) .read-more-btn,
+.blog-post-card:nth-child(3) .read-more-btn {
+  align-self: flex-start;
+  margin-top: auto;
+  background: transparent;
+  color: #e30213;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.blog-post-card:nth-child(2) .read-more-btn:hover,
+.blog-post-card:nth-child(3) .read-more-btn:hover {
+  color: #b8020f;
+  transform: translateX(3px);
+}
+
+.blog-post-card:nth-child(2) .read-more-btn i,
+.blog-post-card:nth-child(3) .read-more-btn i {
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.blog-post-card:nth-child(2) .read-more-btn:hover i,
+.blog-post-card:nth-child(3) .read-more-btn:hover i {
+  transform: translateX(2px);
+}
+
+/* Standard articles content (4th+) */
+.blog-post-card:nth-child(n+4) .blog-post-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.blog-post-card:nth-child(n+4) .blog-post-date {
+  font-size: 0.85rem;
+  color: #8e9297;
+  margin-bottom: 0.75rem;
+}
+
+.blog-post-card:nth-child(n+4) .blog-post-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #2c3e50;
+  margin: 0 0 1rem 0;
+}
+
+.blog-post-card:nth-child(n+4) .blog-post-excerpt {
+  color: #6c757d;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  font-size: 0.9rem;
+}
+
+.blog-post-card:nth-child(n+4) .read-more-btn {
+  align-self: flex-start;
+  margin-top: auto;
+  background: transparent;
+  color: #e30213;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.blog-post-card:nth-child(n+4) .read-more-btn:hover {
+  color: #b8020f;
+  transform: translateX(3px);
+}
+
+.blog-post-card:nth-child(n+4) .read-more-btn i {
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.blog-post-card:nth-child(n+4) .read-more-btn:hover i {
+  transform: translateX(2px);
+}
+
+.blog-post-categories {
+  display: none; /* Hidden for new layout */
+}
+
+.category-badge {
+  display: none; /* Hidden for new layout */
 }
 
 .blog-post-title a {
-  color: var(--dark-text);
+  color: inherit;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -803,45 +1063,45 @@ img {
   color: var(--primary-color);
 }
 
+/* Hide unused elements */
 .blog-post-excerpt {
-  color: var(--muted-text);
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  flex-grow: 1;
+  display: none;
 }
 
 .blog-post-meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: auto;
-  padding-top: 1rem;
-  border-top: 1px solid var(--border-color);
-}
-
-.blog-post-date {
-  font-size: 0.9rem;
-  color: var(--muted-text);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  display: none;
 }
 
 .blog-post-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  display: none;
 }
 
 .tag-badge {
-  background: var(--light-bg);
-  color: var(--muted-text);
-  padding: 0.2rem 0.5rem;
-  border-radius: 10px;
-  font-size: 0.75rem;
-  font-weight: 500;
+  display: none;
+}
+
+/* Common read more button styles */
+.read-more-btn {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.read-more-btn i {
+  transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover i {
+  transform: translateX(3px);
 }
 
 /* Sidebar */
@@ -984,13 +1244,145 @@ img {
     justify-content: center;
   }
   
+  /* Mobile grid layout - maintain structure but adjust layout */
   .blog-posts {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
   
-  .blog-post-image {
-    height: 180px;
+  /* First card - featured, maintain overlay style but adjust */
+  .blog-post-card:nth-child(1) {
+    grid-column: span 1;
+    grid-row: span 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+  }
+  
+  .blog-post-card:nth-child(1) .blog-post-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+  }
+  
+  .blog-post-card:nth-child(1)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.1), rgba(0,0,0,0.7));
+    z-index: 2;
+  }
+  
+  .blog-post-card:nth-child(1) .blog-post-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+  }
+  
+  .blog-post-card:nth-child(1) .blog-post-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .blog-post-card:nth-child(1) .blog-post-date {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  
+  .blog-post-card:nth-child(1) .blog-post-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: white;
+    margin: 0;
+  }
+  
+  .blog-post-card:nth-child(1) .blog-post-title a {
+    color: white;
+  }
+  
+  .blog-post-card:nth-child(1) .blog-post-footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+  
+  .blog-post-card:nth-child(1) .read-more-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1.25rem;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  
+  /* Second and third cards - horizontal layout, stacked vertically */
+  .blog-post-card:nth-child(2),
+  .blog-post-card:nth-child(3) {
+    grid-column: span 1;
+    grid-row: span 1;
+    display: flex;
+    flex-direction: row;
+    aspect-ratio: 2.8/1;
+    height: auto;
+  }
+  
+  .blog-post-card:nth-child(2) .blog-post-image,
+  .blog-post-card:nth-child(3) .blog-post-image {
+    width: 40%;
+    height: 100%;
+    flex-shrink: 0;
+    object-fit: contain;
+    object-position: center;
+    padding: 0.5rem;
+    box-sizing: border-box;
+  }
+  
+  .blog-post-card:nth-child(2) .blog-post-content,
+  .blog-post-card:nth-child(3) .blog-post-content {
+    width: 60%;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+  
+  /* Fourth+ cards - standard mobile layout */
+  .blog-post-card:nth-child(n+4) {
+    grid-column: span 1;
+    grid-row: span 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .blog-post-card:nth-child(n+4) .blog-post-image {
+    height: 200px;
+  }
+  
+  .blog-post-card:nth-child(n+4) .blog-post-content {
+    padding: 1.25rem;
   }
   
   .blog-controls {
@@ -1016,18 +1408,48 @@ img {
   .blog-container {
     padding: 1rem;
   }
-  
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+}
+
+/* Tablet responsive design */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .blog-posts {
+    grid-template-columns: repeat(8, 1fr);
   }
   
-  .stat-item {
-    padding: 1.5rem;
+  .blog-post-card:nth-child(1) {
+    grid-column: span 4;
+    grid-row: span 2;
   }
   
-  .stat-number {
-    font-size: 2rem;
+  .blog-post-card:nth-child(2),
+  .blog-post-card:nth-child(3) {
+    grid-column: span 4;
+    grid-row: span 2;
+    aspect-ratio: 3/1;
+    height: auto;
+  }
+  
+  .blog-post-card:nth-child(n+4) {
+    grid-column: span 4;
+    grid-row: span 2;
+  }
+  
+  .blog-post-card:nth-child(1) .blog-post-title {
+    font-size: 1.6rem;
+  }
+  
+  .blog-post-card:nth-child(2) .blog-post-image,
+  .blog-post-card:nth-child(3) .blog-post-image {
+    width: 45%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .blog-post-card:nth-child(2) .blog-post-content,
+  .blog-post-card:nth-child(3) .blog-post-content {
+    width: 55%;
+    padding: 1.25rem;
   }
 }
 
@@ -1070,24 +1492,6 @@ img {
       <div class="col-lg-10">
         <h1 class="hero-title">Safety Excellence Hub</h1>
         <p class="hero-subtitle">Your gateway to industrial safety insights, equipment installations, service updates, and industry events</p>
-        <div class="hero-badges">
-          <div class="hero-badge">
-            <i class="bi bi-shield-check"></i>
-            <span>Expert Guides</span>
-          </div>
-          <div class="hero-badge">
-            <i class="bi bi-tools"></i>
-            <span>Installation Updates</span>
-          </div>
-          <div class="hero-badge">
-            <i class="bi bi-gear"></i>
-            <span>Service News</span>
-          </div>
-          <div class="hero-badge">
-            <i class="bi bi-calendar-event"></i>
-            <span>Industry Events</span>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -1101,49 +1505,7 @@ img {
         <p>Stay informed with comprehensive content covering safety guides, project installations, service updates, and industry participation</p>
       </div>
 
-      <!-- Content Filters -->
-      <div class="content-filters">
-        <button class="content-filter active" data-type="all">
-          <i class="bi bi-grid"></i>
-          <span>All Content</span>
-        </button>
-        <button class="content-filter" data-type="guide">
-          <i class="bi bi-book"></i>
-          <span>Safety Guides</span>
-        </button>
-        <button class="content-filter" data-type="installation">
-          <i class="bi bi-tools"></i>
-          <span>Installations</span>
-        </button>
-        <button class="content-filter" data-type="service">
-          <i class="bi bi-gear"></i>
-          <span>Services</span>
-        </button>
-        <button class="content-filter" data-type="event">
-          <i class="bi bi-calendar-event"></i>
-          <span>Events</span>
-        </button>
-      </div>
 
-      <!-- Search and Sort Controls -->
-      <div class="blog-controls">
-        <div class="row">
-          <div class="col-md-8">
-            <div class="search-container">
-              <i class="bi bi-search search-icon"></i>
-              <input type="text" class="search-input" id="blog-search" placeholder="Search articles, topics, or keywords...">
-            </div>
-          </div>
-          <div class="col-md-4">
-            <select class="sort-select" id="sort-posts">
-              <option value="date-desc">Latest First</option>
-              <option value="date-asc">Oldest First</option>
-              <option value="title-asc">Title A-Z</option>
-              <option value="title-desc">Title Z-A</option>
-            </select>
-          </div>
-        </div>
-      </div>
 
       <!-- Blog Posts Grid -->
       <div class="blog-posts" id="blog-posts-container">
@@ -1155,44 +1517,34 @@ img {
                  data-description="learn how to prevent fall accidents on construction sites. discover key safety systems, osha guidelines, and expert tips to reduce falling hazards in the workplace."
                  data-date="2025-07-01">
           
-          <img src="/assets/images/blog/falling_hazards_in_construction.png" 
-               class="blog-post-image" 
-               alt="Falling Hazards in Construction: A Complete Safety Guide"
-               loading="lazy"
-               decoding="async"
-               width="350"
-               height="200">
           
-          <div class="blog-post-content">
-            <div class="blog-post-categories">
-              
-              <span class="category-badge">safety</span>
-              
-              <span class="category-badge">construction</span>
-              
-              <span class="category-badge">fall-protection</span>
-              
-            </div>
-            <h3 class="blog-post-title">
-              <a href="/safety/construction/fall-protection/2025/07/01/falling-hazards-construction-safety-guide.html">Falling Hazards in Construction: A Complete Safety Guide</a>
-            </h3>
-            <p class="blog-post-excerpt">Learn how to prevent fall accidents on construction sites. Discover key safety systems, OSHA guidelines, and expert tips to reduce fallin...</p>
-            <div class="blog-post-meta">
-              <div class="blog-post-date">
-                <i class="bi bi-calendar-event"></i>
-                <span>July 01, 2025</span>
+            <!-- Featured Article Layout -->
+            
+            <img src="/assets/images/blog/falling_hazards_in_construction.png" 
+                 class="blog-post-image" 
+                 alt="Falling Hazards in Construction: A Complete Safety Guide"
+                 loading="lazy"
+                 decoding="async">
+            
+            <div class="blog-post-content">
+              <div class="blog-post-header">
+                <div class="blog-post-date">
+                  <i class="bi bi-calendar3"></i>
+                  <span>Jul 01, 2025</span>
+                </div>
+                <h3 class="blog-post-title">
+                  <a href="/safety/construction/fall-protection/2025/07/01/falling-hazards-construction-safety-guide.html">Falling Hazards in Construction: A Complete Safety Guide</a>
+                </h3>
               </div>
-              <div class="blog-post-tags">
-                
-                <span class="tag-badge">fall-protection</span>
-                
-                <span class="tag-badge">construction-safety</span>
-                
-                <span class="tag-badge">OSHA</span>
-                
+              <div class="blog-post-footer">
+                <a href="/safety/construction/fall-protection/2025/07/01/falling-hazards-construction-safety-guide.html" class="read-more-btn">
+                  Read More
+                  <i class="bi bi-arrow-right"></i>
+                </a>
               </div>
             </div>
-          </div>
+          
+          
         </article>
         
         <article class="blog-post-card blog-post-item" 
@@ -1202,44 +1554,31 @@ img {
                  data-description="complete guide to fall protection compliance in india. learn about is 3521, osha standards, and safety regulations for construction and industrial sites."
                  data-date="2025-06-29">
           
-          <img src="/assets/images/blog/fall_protection_compliance_guide.png" 
-               class="blog-post-image" 
-               alt="Fall Protection Compliance Guide for Indian Industries - Safety Standards 2025"
-               loading="lazy"
-               decoding="async"
-               width="350"
-               height="200">
           
-          <div class="blog-post-content">
-            <div class="blog-post-categories">
-              
-              <span class="category-badge">safety</span>
-              
-              <span class="category-badge">compliance</span>
-              
-              <span class="category-badge">fall-protection</span>
-              
-            </div>
-            <h3 class="blog-post-title">
-              <a href="/safety/compliance/fall-protection/2025/06/29/fall-protection-compliance-india.html">Fall Protection Compliance Guide for Indian Industries - Safety Standards 2025</a>
-            </h3>
-            <p class="blog-post-excerpt">Complete guide to fall protection compliance in India. Learn about IS 3521, OSHA standards, and safety regulations for construction and i...</p>
-            <div class="blog-post-meta">
-              <div class="blog-post-date">
-                <i class="bi bi-calendar-event"></i>
-                <span>June 29, 2025</span>
+            <!-- Side Layout Articles -->
+            
+            <img src="/assets/images/blog/fall_protection_compliance_guide.png" 
+                 class="blog-post-image" 
+                 alt="Fall Protection Compliance Guide for Indian Industries - Safety Standards 2025"
+                 loading="lazy"
+                 decoding="async">
+            
+            <div class="blog-post-content">
+              <div>
+                <div class="blog-post-date">
+                  <span>06/29/2025</span>
+                </div>
+                <h3 class="blog-post-title">
+                  <a href="/safety/compliance/fall-protection/2025/06/29/fall-protection-compliance-india.html">Fall Protection Compliance Guide for Indian Industries - Safety Standards 2025</a>
+                </h3>
               </div>
-              <div class="blog-post-tags">
-                
-                <span class="tag-badge">fall-protection</span>
-                
-                <span class="tag-badge">safety-compliance</span>
-                
-                <span class="tag-badge">indian-standards</span>
-                
-              </div>
+              <a href="/safety/compliance/fall-protection/2025/06/29/fall-protection-compliance-india.html" class="read-more-btn">
+                Read More
+                <i class="bi bi-arrow-right"></i>
+              </a>
             </div>
-          </div>
+          
+          
         </article>
         
         <article class="blog-post-card blog-post-item" 
@@ -1249,44 +1588,31 @@ img {
                  data-description="comprehensive ppe selection guide for construction sites in india. learn about helmet, harness, footwear, and protective equipment standards and requirements."
                  data-date="2025-06-28">
           
-          <img src="/assets/images/blog/ppe-selection-guide.png" 
-               class="blog-post-image" 
-               alt="PPE Selection Guide for Construction Workers - Complete Safety Checklist 2025"
-               loading="lazy"
-               decoding="async"
-               width="350"
-               height="200">
           
-          <div class="blog-post-content">
-            <div class="blog-post-categories">
-              
-              <span class="category-badge">ppe</span>
-              
-              <span class="category-badge">construction</span>
-              
-              <span class="category-badge">safety-guide</span>
-              
-            </div>
-            <h3 class="blog-post-title">
-              <a href="/ppe/construction/safety-guide/2025/06/28/ppe-selection-guide-construction.html">PPE Selection Guide for Construction Workers - Complete Safety Checklist 2025</a>
-            </h3>
-            <p class="blog-post-excerpt">Comprehensive PPE selection guide for construction sites in India. Learn about helmet, harness, footwear, and protective equipment standa...</p>
-            <div class="blog-post-meta">
-              <div class="blog-post-date">
-                <i class="bi bi-calendar-event"></i>
-                <span>June 28, 2025</span>
+            <!-- Side Layout Articles -->
+            
+            <img src="/assets/images/blog/ppe-selection-guide.png" 
+                 class="blog-post-image" 
+                 alt="PPE Selection Guide for Construction Workers - Complete Safety Checklist 2025"
+                 loading="lazy"
+                 decoding="async">
+            
+            <div class="blog-post-content">
+              <div>
+                <div class="blog-post-date">
+                  <span>06/28/2025</span>
+                </div>
+                <h3 class="blog-post-title">
+                  <a href="/ppe/construction/safety-guide/2025/06/28/ppe-selection-guide-construction.html">PPE Selection Guide for Construction Workers - Complete Safety Checklist 2025</a>
+                </h3>
               </div>
-              <div class="blog-post-tags">
-                
-                <span class="tag-badge">ppe-selection</span>
-                
-                <span class="tag-badge">construction-safety</span>
-                
-                <span class="tag-badge">safety-equipment</span>
-                
-              </div>
+              <a href="/ppe/construction/safety-guide/2025/06/28/ppe-selection-guide-construction.html" class="read-more-btn">
+                Read More
+                <i class="bi bi-arrow-right"></i>
+              </a>
             </div>
-          </div>
+          
+          
         </article>
         
         <article class="blog-post-card blog-post-item" 
@@ -1296,44 +1622,29 @@ img {
                  data-description="essential safety equipment for monsoon season work in india. waterproof ppe, slip-resistant gear, and electrical safety equipment for rainy season construction."
                  data-date="2025-06-27">
           
-          <img src="/assets/images/blog/monsoon-safety-equipment.png" 
-               class="blog-post-image" 
-               alt="Monsoon Safety Equipment Essentials - Rainy Season Protection Guide 2025"
-               loading="lazy"
-               decoding="async"
-               width="350"
-               height="200">
           
-          <div class="blog-post-content">
-            <div class="blog-post-categories">
-              
-              <span class="category-badge">seasonal-safety</span>
-              
-              <span class="category-badge">monsoon</span>
-              
-              <span class="category-badge">ppe</span>
-              
-            </div>
-            <h3 class="blog-post-title">
-              <a href="/seasonal-safety/monsoon/ppe/2025/06/27/monsoon-safety-equipment-essentials.html">Monsoon Safety Equipment Essentials - Rainy Season Protection Guide 2025</a>
-            </h3>
-            <p class="blog-post-excerpt">Essential safety equipment for monsoon season work in India. Waterproof PPE, slip-resistant gear, and electrical safety equipment for rai...</p>
-            <div class="blog-post-meta">
+            <!-- Standard Articles Layout -->
+            
+            <img src="/assets/images/blog/monsoon-safety-equipment.png" 
+                 class="blog-post-image" 
+                 alt="Monsoon Safety Equipment Essentials - Rainy Season Protection Guide 2025"
+                 loading="lazy"
+                 decoding="async">
+            
+            <div class="blog-post-content">
               <div class="blog-post-date">
-                <i class="bi bi-calendar-event"></i>
-                <span>June 27, 2025</span>
+                <span>Jun 27, 2025</span>
               </div>
-              <div class="blog-post-tags">
-                
-                <span class="tag-badge">monsoon-safety</span>
-                
-                <span class="tag-badge">waterproof-ppe</span>
-                
-                <span class="tag-badge">rainy-season</span>
-                
-              </div>
+              <h3 class="blog-post-title">
+                <a href="/seasonal-safety/monsoon/ppe/2025/06/27/monsoon-safety-equipment-essentials.html">Monsoon Safety Equipment Essentials - Rainy Season Protection Guide 2025</a>
+              </h3>
+              <p class="blog-post-excerpt">Essential safety equipment for monsoon season work in India. Waterproof PPE, slip-resistant gear,...</p>
+              <a href="/seasonal-safety/monsoon/ppe/2025/06/27/monsoon-safety-equipment-essentials.html" class="read-more-btn">
+                Read More
+                <i class="bi bi-arrow-right"></i>
+              </a>
             </div>
-          </div>
+          
         </article>
         
         <article class="blog-post-card blog-post-item" 
@@ -1343,44 +1654,29 @@ img {
                  data-description="comprehensive guide to horizontal lifeline systems for rooftop and industrial safety. learn about installation, components, standards, and maintenance requirements."
                  data-date="2025-06-26">
           
-          <img src="/assets/images/blog/horizontal-lifeline-guide.png" 
-               class="blog-post-image" 
-               alt="Horizontal Lifeline System Installation & Components Guide - Complete Safety Setup"
-               loading="lazy"
-               decoding="async"
-               width="350"
-               height="200">
           
-          <div class="blog-post-content">
-            <div class="blog-post-categories">
-              
-              <span class="category-badge">fall-protection</span>
-              
-              <span class="category-badge">lifeline-systems</span>
-              
-              <span class="category-badge">installation-guide</span>
-              
-            </div>
-            <h3 class="blog-post-title">
-              <a href="/fall-protection/lifeline-systems/installation-guide/2025/06/26/horizontal-lifeline-system-guide.html">Horizontal Lifeline System Installation & Components Guide - Complete Safety Setup</a>
-            </h3>
-            <p class="blog-post-excerpt">Comprehensive guide to horizontal lifeline systems for rooftop and industrial safety. Learn about installation, components, standards, an...</p>
-            <div class="blog-post-meta">
+            <!-- Standard Articles Layout -->
+            
+            <img src="/assets/images/blog/horizontal-lifeline-guide.png" 
+                 class="blog-post-image" 
+                 alt="Horizontal Lifeline System Installation & Components Guide - Complete Safety Setup"
+                 loading="lazy"
+                 decoding="async">
+            
+            <div class="blog-post-content">
               <div class="blog-post-date">
-                <i class="bi bi-calendar-event"></i>
-                <span>June 26, 2025</span>
+                <span>Jun 26, 2025</span>
               </div>
-              <div class="blog-post-tags">
-                
-                <span class="tag-badge">horizontal-lifeline</span>
-                
-                <span class="tag-badge">rooftop-safety</span>
-                
-                <span class="tag-badge">fall-protection-system</span>
-                
-              </div>
+              <h3 class="blog-post-title">
+                <a href="/fall-protection/lifeline-systems/installation-guide/2025/06/26/horizontal-lifeline-system-guide.html">Horizontal Lifeline System Installation & Components Guide - Complete Safety Setup</a>
+              </h3>
+              <p class="blog-post-excerpt">Comprehensive guide to horizontal lifeline systems for rooftop and industrial safety. Learn about...</p>
+              <a href="/fall-protection/lifeline-systems/installation-guide/2025/06/26/horizontal-lifeline-system-guide.html" class="read-more-btn">
+                Read More
+                <i class="bi bi-arrow-right"></i>
+              </a>
             </div>
-          </div>
+          
         </article>
         
         <article class="blog-post-card blog-post-item" 
@@ -1390,40 +1686,29 @@ img {
                  data-description="comprehensive guide to vertical lifeline systems for construction and industrial safety. learn about installation, components, regulations, and maintenance for optimal fall protection."
                  data-date="2025-06-25">
           
-          <img src="/assets/images/blog/vertical-lifeline-guide.png" 
-               class="blog-post-image" 
-               alt="Complete Guide to Vertical Lifeline Systems: Installation and Safety Best Practices"
-               loading="lazy"
-               decoding="async"
-               width="350"
-               height="200">
           
-          <div class="blog-post-content">
-            <div class="blog-post-categories">
-              
-              <span class="category-badge">Safety Systems</span>
-              
-            </div>
-            <h3 class="blog-post-title">
-              <a href="/safety%20systems/2025/06/25/vertical-lifeline-system-guide.html">Complete Guide to Vertical Lifeline Systems: Installation and Safety Best Practices</a>
-            </h3>
-            <p class="blog-post-excerpt">Comprehensive guide to vertical lifeline systems for construction and industrial safety. Learn about installation, components, regulation...</p>
-            <div class="blog-post-meta">
+            <!-- Standard Articles Layout -->
+            
+            <img src="/assets/images/blog/vertical-lifeline-guide.png" 
+                 class="blog-post-image" 
+                 alt="Complete Guide to Vertical Lifeline Systems: Installation and Safety Best Practices"
+                 loading="lazy"
+                 decoding="async">
+            
+            <div class="blog-post-content">
               <div class="blog-post-date">
-                <i class="bi bi-calendar-event"></i>
-                <span>June 25, 2025</span>
+                <span>Jun 25, 2025</span>
               </div>
-              <div class="blog-post-tags">
-                
-                <span class="tag-badge">Vertical Lifeline</span>
-                
-                <span class="tag-badge">Fall Protection</span>
-                
-                <span class="tag-badge">Construction Safety</span>
-                
-              </div>
+              <h3 class="blog-post-title">
+                <a href="/safety%20systems/2025/06/25/vertical-lifeline-system-guide.html">Complete Guide to Vertical Lifeline Systems: Installation and Safety Best Practices</a>
+              </h3>
+              <p class="blog-post-excerpt">Comprehensive guide to vertical lifeline systems for construction and industrial safety. Learn ab...</p>
+              <a href="/safety%20systems/2025/06/25/vertical-lifeline-system-guide.html" class="read-more-btn">
+                Read More
+                <i class="bi bi-arrow-right"></i>
+              </a>
             </div>
-          </div>
+          
         </article>
         
         <article class="blog-post-card blog-post-item" 
@@ -1433,40 +1718,29 @@ img {
                  data-description="comprehensive guide to overhead lifeline systems for industrial safety. learn about horizontal fall protection, installation requirements, and maintenance best practices."
                  data-date="2025-06-24">
           
-          <img src="/assets/images/blog/overhead-lifeline-guide.png" 
-               class="blog-post-image" 
-               alt="Overhead Lifeline Systems: Complete Installation and Safety Guide for Industrial Applications"
-               loading="lazy"
-               decoding="async"
-               width="350"
-               height="200">
           
-          <div class="blog-post-content">
-            <div class="blog-post-categories">
-              
-              <span class="category-badge">Safety Systems</span>
-              
-            </div>
-            <h3 class="blog-post-title">
-              <a href="/safety%20systems/2025/06/24/overhead-lifeline-system-guide.html">Overhead Lifeline Systems: Complete Installation and Safety Guide for Industrial Applications</a>
-            </h3>
-            <p class="blog-post-excerpt">Comprehensive guide to overhead lifeline systems for industrial safety. Learn about horizontal fall protection, installation requirements...</p>
-            <div class="blog-post-meta">
+            <!-- Standard Articles Layout -->
+            
+            <img src="/assets/images/blog/overhead-lifeline-guide.png" 
+                 class="blog-post-image" 
+                 alt="Overhead Lifeline Systems: Complete Installation and Safety Guide for Industrial Applications"
+                 loading="lazy"
+                 decoding="async">
+            
+            <div class="blog-post-content">
               <div class="blog-post-date">
-                <i class="bi bi-calendar-event"></i>
-                <span>June 24, 2025</span>
+                <span>Jun 24, 2025</span>
               </div>
-              <div class="blog-post-tags">
-                
-                <span class="tag-badge">Overhead Lifeline</span>
-                
-                <span class="tag-badge">Fall Protection</span>
-                
-                <span class="tag-badge">Industrial Safety</span>
-                
-              </div>
+              <h3 class="blog-post-title">
+                <a href="/safety%20systems/2025/06/24/overhead-lifeline-system-guide.html">Overhead Lifeline Systems: Complete Installation and Safety Guide for Industrial Applications</a>
+              </h3>
+              <p class="blog-post-excerpt">Comprehensive guide to overhead lifeline systems for industrial safety. Learn about horizontal fa...</p>
+              <a href="/safety%20systems/2025/06/24/overhead-lifeline-system-guide.html" class="read-more-btn">
+                Read More
+                <i class="bi bi-arrow-right"></i>
+              </a>
             </div>
-          </div>
+          
         </article>
         
         <article class="blog-post-card blog-post-item" 
@@ -1476,44 +1750,29 @@ img {
                  data-description="discover the heinrich safety pyramid model for workplace accident prevention. learn how the 1:29:300 ratio helps reduce industrial accidents through proactive safety management."
                  data-date="2025-04-30">
           
-          <img src="/assets/images/blog/heinrich_pyramid_diagram.png" 
-               class="blog-post-image" 
-               alt="Heinrich Safety Pyramid: A Proven Framework for Accident Prevention in Indian Industries"
-               loading="lazy"
-               decoding="async"
-               width="350"
-               height="200">
           
-          <div class="blog-post-content">
-            <div class="blog-post-categories">
-              
-              <span class="category-badge">safety</span>
-              
-              <span class="category-badge">accident-prevention</span>
-              
-              <span class="category-badge">industrial-safety</span>
-              
-            </div>
-            <h3 class="blog-post-title">
-              <a href="/safety/accident-prevention/industrial-safety/2025/04/30/heinrich-safety-pyramid-accident-prevention.html">Heinrich Safety Pyramid: A Proven Framework for Accident Prevention in Indian Industries</a>
-            </h3>
-            <p class="blog-post-excerpt">Discover the Heinrich Safety Pyramid model for workplace accident prevention. Learn how the 1:29:300 ratio helps reduce industrial accide...</p>
-            <div class="blog-post-meta">
+            <!-- Standard Articles Layout -->
+            
+            <img src="/assets/images/blog/heinrich_pyramid_diagram.png" 
+                 class="blog-post-image" 
+                 alt="Heinrich Safety Pyramid: A Proven Framework for Accident Prevention in Indian Industries"
+                 loading="lazy"
+                 decoding="async">
+            
+            <div class="blog-post-content">
               <div class="blog-post-date">
-                <i class="bi bi-calendar-event"></i>
-                <span>April 30, 2025</span>
+                <span>Apr 30, 2025</span>
               </div>
-              <div class="blog-post-tags">
-                
-                <span class="tag-badge">heinrich-pyramid</span>
-                
-                <span class="tag-badge">accident-prevention</span>
-                
-                <span class="tag-badge">safety-management</span>
-                
-              </div>
+              <h3 class="blog-post-title">
+                <a href="/safety/accident-prevention/industrial-safety/2025/04/30/heinrich-safety-pyramid-accident-prevention.html">Heinrich Safety Pyramid: A Proven Framework for Accident Prevention in Indian Industries</a>
+              </h3>
+              <p class="blog-post-excerpt">Discover the Heinrich Safety Pyramid model for workplace accident prevention. Learn how the 1:29:...</p>
+              <a href="/safety/accident-prevention/industrial-safety/2025/04/30/heinrich-safety-pyramid-accident-prevention.html" class="read-more-btn">
+                Read More
+                <i class="bi bi-arrow-right"></i>
+              </a>
             </div>
-          </div>
+          
         </article>
         
       </div>
@@ -1523,158 +1782,6 @@ img {
 
     <div class="col-lg-3">
       <div class="blog-sidebar">
-        <!-- Categories Widget -->
-        <div class="sidebar-card">
-          <h5 class="sidebar-title">
-            <i class="bi bi-tags"></i>
-            Categories
-          </h5>
-          
-          
-            <button class="sidebar-filter active" data-category="all">
-              All Posts (8)
-            </button>
-            
-              
-              <button class="sidebar-filter" data-category="safety-systems">
-                Safety Systems (2)
-              </button>
-            
-              
-              <button class="sidebar-filter" data-category="accident-prevention">
-                accident-prevention (1)
-              </button>
-            
-              
-              <button class="sidebar-filter" data-category="compliance">
-                compliance (1)
-              </button>
-            
-              
-              <button class="sidebar-filter" data-category="construction">
-                construction (2)
-              </button>
-            
-              
-              <button class="sidebar-filter" data-category="fall-protection">
-                fall-protection (3)
-              </button>
-            
-              
-              <button class="sidebar-filter" data-category="industrial-safety">
-                industrial-safety (1)
-              </button>
-            
-              
-              <button class="sidebar-filter" data-category="installation-guide">
-                installation-guide (1)
-              </button>
-            
-              
-              <button class="sidebar-filter" data-category="lifeline-systems">
-                lifeline-systems (1)
-              </button>
-            
-              
-              <button class="sidebar-filter" data-category="monsoon">
-                monsoon (1)
-              </button>
-            
-              
-              <button class="sidebar-filter" data-category="ppe">
-                ppe (2)
-              </button>
-            
-              
-              <button class="sidebar-filter" data-category="safety">
-                safety (3)
-              </button>
-            
-              
-              <button class="sidebar-filter" data-category="safety-guide">
-                safety-guide (1)
-              </button>
-            
-              
-              <button class="sidebar-filter" data-category="seasonal-safety">
-                seasonal-safety (1)
-              </button>
-            
-          
-        </div>
-
-        <!-- Popular Tags Widget -->
-        <div class="sidebar-card">
-          <h5 class="sidebar-title">
-            <i class="bi bi-tags-fill"></i>
-            Popular Topics
-          </h5>
-          
-          
-            
-              
-              <button class="sidebar-filter" data-tag="construction-safety">
-                Construction Safety (1)
-              </button>
-            
-              
-              <button class="sidebar-filter" data-tag="fall-protection">
-                Fall Protection (2)
-              </button>
-            
-              
-              <button class="sidebar-filter" data-tag="horizontal-systems">
-                Horizontal Systems (1)
-              </button>
-            
-              
-              <button class="sidebar-filter" data-tag="industrial-safety">
-                Industrial Safety (2)
-              </button>
-            
-              
-              <button class="sidebar-filter" data-tag="osha">
-                OSHA (1)
-              </button>
-            
-              
-              <button class="sidebar-filter" data-tag="overhead-lifeline">
-                Overhead Lifeline (1)
-              </button>
-            
-              
-              <button class="sidebar-filter" data-tag="safety-systems">
-                Safety Systems (1)
-              </button>
-            
-              
-              <button class="sidebar-filter" data-tag="vertical-lifeline">
-                Vertical Lifeline (1)
-              </button>
-            
-              
-              <button class="sidebar-filter" data-tag="workplace-safety">
-                Workplace Safety (1)
-              </button>
-            
-              
-              <button class="sidebar-filter" data-tag="accident-prevention">
-                accident-prevention (1)
-              </button>
-            
-              
-              <button class="sidebar-filter" data-tag="anchor-points">
-                anchor-points (1)
-              </button>
-            
-              
-              <button class="sidebar-filter" data-tag="behavioral-safety">
-                behavioral-safety (1)
-              </button>
-            
-          
-        </div>
-
         <!-- Newsletter Signup -->
         <div class="sidebar-card">
           <h5 class="sidebar-title">
@@ -2019,12 +2126,12 @@ body {
     flex-shrink: 0;
   }
   
-  .d-flex.justify-content-center.gap-3 {
+  .blog-container .d-flex.justify-content-center.gap-3 {
     flex-direction: column;
     gap: 0.5rem !important;
   }
   
-  .d-flex.justify-content-center.gap-3 .btn {
+  .blog-container .d-flex.justify-content-center.gap-3 .btn {
     width: 100%;
   }
 }
@@ -2039,7 +2146,7 @@ body {
             <!-- Copyright Section -->
             <div class="mb-3">
                 <p class="mb-1 text-warning">
-                    &copy; 2024 Heinrich Safety Solutions Private Limited (HSSPL). All rights reserved.
+                    &copy; 2025 Heinrich Safety Solutions Private Limited (HSSPL). All rights reserved.
                 </p>
                 <p class="mb-0 small text-light">
                     Designed with <i class="fas fa-heart" style="color: #e57200;"></i> for workplace safety
