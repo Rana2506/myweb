@@ -163,6 +163,182 @@
         padding-right: 2px;
       }
     }
+    
+    /* Floating Scroll Arrow Styles */
+    .scroll-arrow {
+      position: fixed;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1000;
+      background: none;
+      border: none;
+      border-radius: 0;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      box-shadow: none;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      outline: none;
+    }
+    
+    .scroll-arrow:hover {
+      transform: translateY(-50%) scale(1.2);
+      background: none;
+      box-shadow: none;
+    }
+    
+    .scroll-arrow:active {
+      transform: translateY(-50%) scale(1.1);
+      transition: all 0.1s ease;
+      background: none;
+      box-shadow: none;
+    }
+    
+    .arrow-icon {
+      transition: all 0.3s ease;
+      transform-origin: center;
+      width: 40px;
+      height: 48px;
+      position: absolute;
+    }
+    
+    /* Single color for all arrow paths */
+    .arrow-path.a1,
+    .arrow-path.a2,
+    .arrow-path.a3 {
+      stroke: #1976d2;  /* Single blue color */
+      animation: arrowFade 2s infinite;
+      -webkit-animation: arrowFade 2s infinite;
+    }
+    
+    .arrow-path.a1 {
+      animation-delay: -1s;
+      -webkit-animation-delay: -1s;
+    }
+    
+    .arrow-path.a2 {
+      animation-delay: -0.5s;
+      -webkit-animation-delay: -0.5s;
+    }
+    
+    .arrow-path.a3 {
+      animation-delay: 0s;
+      -webkit-animation-delay: 0s;
+    }
+    
+    /* Default state - show down arrow */
+    .arrow-icon.down {
+      display: block !important;
+    }
+    
+    .arrow-icon.up {
+      display: none !important;
+    }
+    
+    /* When at bottom - show up arrow */
+    .scroll-arrow.show-up .arrow-icon.down {
+      display: none !important;
+    }
+    
+    .scroll-arrow.show-up .arrow-icon.up {
+      display: block !important;
+    }
+    
+    /* Arrow path fade animations */
+    @keyframes arrowFade {
+      0% { opacity: 0; }
+      40% { opacity: 1; }
+      80% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    
+    @-webkit-keyframes arrowFade {
+      0% { opacity: 0; }
+      40% { opacity: 1; }
+      80% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+    
+    /* Stop animation on hover and show single color */
+    .scroll-arrow:hover .arrow-path {
+      animation: none;
+      opacity: 1;
+      stroke: #1976d2;
+    }
+    
+    /* Mobile responsiveness for scroll arrow */
+    @media (max-width: 768px) {
+      .scroll-arrow {
+        right: 20px;
+        width: 44px;
+        height: 44px;
+      }
+      
+      .arrow-icon {
+        width: 32px;
+        height: 38px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .scroll-arrow {
+        right: 15px;
+        width: 40px;
+        height: 40px;
+      }
+      
+      .arrow-icon {
+        width: 28px;
+        height: 34px;
+      }
+    }
+    
+    /* Dark theme - enhance multicolor glow */
+    @media (prefers-color-scheme: dark) {
+      .arrow-icon {
+        filter: drop-shadow(0 2px 12px rgba(255, 0, 150, 0.4)) 
+                drop-shadow(0 0 16px rgba(0, 255, 255, 0.3))
+                drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
+      }
+      
+      /* Brighter colors for dark mode */
+      .arrow-path.a1 {
+        stroke: #ff40a0;
+      }
+      
+      .arrow-path.a2 {
+        stroke: #40ffa0;
+      }
+      
+      .arrow-path.a3 {
+        stroke: #a040ff;
+      }
+      
+      @keyframes colorShift1 {
+        0% { stroke: #ff40a0; }
+        33% { stroke: #ffa040; }
+        66% { stroke: #40a0ff; }
+        100% { stroke: #ff40a0; }
+      }
+      
+      @keyframes colorShift2 {
+        0% { stroke: #40ffa0; }
+        33% { stroke: #a040ff; }
+        66% { stroke: #ff4060; }
+        100% { stroke: #40ffa0; }
+      }
+      
+      @keyframes colorShift3 {
+        0% { stroke: #a040ff; }
+        33% { stroke: #40ffff; }
+        66% { stroke: #ffa040; }
+        100% { stroke: #a040ff; }
+      }
+    }
   </style>
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">
@@ -611,8 +787,8 @@
         background-position: center;
         position: relative;
         color: #fff;
-        height: 100vh;
-        min-height: 700px;
+        height: calc(100vh - 60px);
+        min-height: none;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -621,7 +797,7 @@
     }
     .hero-content {
         position: relative;
-        z-index: 1;
+        z-index: 2;
     }
     .hero h1 {
         font-size: 3.15rem;
@@ -701,6 +877,10 @@
 
     /* Responsive button sizing */
     @media (max-width: 768px) {
+        .hero {
+            height: calc(70vh - 50px);
+            min-height: none;
+        }
         .hero .btn {
             padding: 12px 25px;
             font-size: 14px;
@@ -812,11 +992,33 @@
             margin-right: auto !important;
             text-align: center !important;
         }
-        
         /* Override inline styles for mobile */
         .hero .btn-lg[style*="margin-right"] {
             margin-right: auto !important;
         }
+    }
+    /* Hero navigation dots */
+    .hero-nav-dots {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+        z-index: 2;
+    }
+    .hero-dot {
+        width: 12px;
+        height: 12px;
+        border: 2px solid rgba(255,255,255,0.7);
+        border-radius: 50%;
+        background: transparent;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.3s;
+    }
+    .hero-dot.active {
+        background: rgba(255,255,255,0.9);
+        transform: scale(1.2);
     }
 
     /* Section headings */
@@ -976,9 +1178,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1;
-  min-height: 100vh;
-  
+  z-index: 0;
 }
 
 .hero-video-overlay {
@@ -987,23 +1187,22 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(70deg, rgba(255, 87, 34, 0.6) 0%, rgba(255, 193, 7, 0.3) 100%);
-  z-index: 0;
-  min-height: 100vh;
+  background: linear-gradient(135deg, rgba(0, 86, 210, 0.6) 0%, rgba(0, 196, 180, 0.4) 50%, rgba(23, 23, 59, 0.5) 100%);
+  z-index: 1;
 }
 
 /* Ensure hero section maintains height with video */
 .hero.hero-slide-3.video-active {
   background-image: none;
-  height: 100vh;
-  min-height: 700px;
+  height: calc(100vh - 60px);
+  min-height: none;
 }
 
 /* Responsive hero height fixes */
 @media (max-width: 768px) {
   .hero {
-    height: 100vh;
-    min-height: 600px;
+    height: calc(70vh - 50px);
+    min-height: none;
   }
   
   .hero-video,
@@ -1992,6 +2191,27 @@ img[src*=""] {
   }
 }
 </style>
+<!-- Add video sizing and overlay styles -->
+<style>
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+.hero-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 86, 210, 0.6) 0%, rgba(0, 196, 180, 0.4) 50%, rgba(23, 23, 59, 0.5) 100%);
+    z-index: 1;
+}
+</style>
 
 <body>
   <!-- Preloader with fallback -->
@@ -2069,6 +2289,12 @@ img[src*=""] {
         <a href="/ppe.html" class="btn btn-warning btn-lg" style="font-weight: 600; border-radius: 2rem; padding: 0.75rem 2.5rem;">Learn More</a>
         <a href="/contact-us.html" class="btn btn-light btn-lg" style="font-weight: 600; border-radius: 2rem; padding: 0.75rem 2.5rem;">Get Quote</a>
       </div>
+    </div>
+    <!-- Hero navigation dots -->
+    <div class="hero-nav-dots">
+      <span class="hero-dot active" data-slide="1"></span>
+      <span class="hero-dot" data-slide="2"></span>
+      <span class="hero-dot" data-slide="3"></span>
     </div>
   </section>
 
@@ -2661,6 +2887,28 @@ Prevent accidental falls through skylights with our heavy-duty protection covers
             
             // Run optimizations
             document.addEventListener('DOMContentLoaded', optimizeImages);
+            // Hero navigation functionality
+            const heroDots = document.querySelectorAll('.hero-dot');
+            heroDots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const slide = parseInt(dot.getAttribute('data-slide'));
+                    currentHero = slide;
+                    showHeroSlide(slide);
+                });
+            });
+            function updateHeroDots(slide) {
+                heroDots.forEach(dot => {
+                    dot.classList.toggle('active', parseInt(dot.getAttribute('data-slide')) === slide);
+                });
+            }
+            // Monkey-patch showHeroSlide to update dots
+            const originalShowHeroSlide = showHeroSlide;
+            showHeroSlide = function(slide) {
+                originalShowHeroSlide(slide);
+                updateHeroDots(slide);
+            };
+            // Initialize dots
+            updateHeroDots(currentHero);
         </script>
 </body>
 </html>
@@ -2836,10 +3084,109 @@ Prevent accidental falls through skylights with our heavy-duty protection covers
 
   
 
+  <!-- Floating Scroll Arrow -->
+  <!-- Floating Scroll Arrow Button -->
+<button id="scrollArrow" class="scroll-arrow" aria-label="Scroll to bottom">
+  <svg class="arrow-icon down" width="60" height="72" viewBox="0 0 60 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Down arrows -->
+    <path class="arrow-path a1" d="M0 0 L30 32 L60 0" stroke="currentColor" fill="transparent" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path class="arrow-path a2" d="M0 20 L30 52 L60 20" stroke="currentColor" fill="transparent" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path class="arrow-path a3" d="M0 40 L30 72 L60 40" stroke="currentColor" fill="transparent" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <svg class="arrow-icon up" width="60" height="72" viewBox="0 0 60 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Up arrows -->
+    <path class="arrow-path a1" d="M0 72 L30 40 L60 72" stroke="currentColor" fill="transparent" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path class="arrow-path a2" d="M0 52 L30 20 L60 52" stroke="currentColor" fill="transparent" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path class="arrow-path a3" d="M0 32 L30 0 L60 32" stroke="currentColor" fill="transparent" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+
   <!-- Product Schema if applicable -->
   
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   
+
+  <!-- Floating Scroll Arrow JavaScript -->
+  <script>
+    (function() {
+      const scrollArrow = document.getElementById('scrollArrow');
+      const arrowIcon = scrollArrow.querySelector('.arrow-icon');
+      let isAtBottom = false;
+
+      // Smooth scroll function
+      function smoothScrollTo(target) {
+        const startPosition = window.pageYOffset;
+        const targetPosition = target === 'top' ? 0 : document.documentElement.scrollHeight - window.innerHeight;
+        const distance = targetPosition - startPosition;
+        const duration = Math.min(Math.abs(distance) / 2, 1000); // Max 1 second
+        let start = null;
+
+        function animation(currentTime) {
+          if (start === null) start = currentTime;
+          const timeElapsed = currentTime - start;
+          const run = ease(timeElapsed, startPosition, distance, duration);
+          window.scrollTo(0, run);
+          if (timeElapsed < duration) requestAnimationFrame(animation);
+        }
+
+        function ease(t, b, c, d) {
+          t /= d / 2;
+          if (t < 1) return c / 2 * t * t + b;
+          t--;
+          return -c / 2 * (t * (t - 2) - 1) + b;
+        }
+
+        requestAnimationFrame(animation);
+      }
+
+      // Check scroll position and update arrow accordingly
+      function checkScrollPosition() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        
+        // Consider "top" when within 50px of actual top
+        const nearTop = scrollTop <= 50;
+        // Consider "bottom" when within 50px of actual bottom
+        const nearBottom = scrollTop + windowHeight >= documentHeight - 50;
+        
+        if (nearBottom && !isAtBottom) {
+          // Switch to up arrow when at bottom
+          isAtBottom = true;
+          scrollArrow.classList.add('show-up');
+          scrollArrow.setAttribute('aria-label', 'Scroll to top');
+        } else if (nearTop && isAtBottom) {
+          // Switch to down arrow only when back at top
+          isAtBottom = false;
+          scrollArrow.classList.remove('show-up');
+          scrollArrow.setAttribute('aria-label', 'Scroll to bottom');
+        }
+        // If user is in the middle (not at top and not at bottom), maintain current arrow state
+      }
+
+      // Handle arrow click
+      scrollArrow.addEventListener('click', function() {
+        if (isAtBottom) {
+          smoothScrollTo('top');
+        } else {
+          smoothScrollTo('bottom');
+        }
+      });
+
+      // Listen for scroll events with throttling
+      let scrollTimeout;
+      window.addEventListener('scroll', function() {
+        if (scrollTimeout) {
+          clearTimeout(scrollTimeout);
+        }
+        scrollTimeout = setTimeout(checkScrollPosition, 10);
+      });
+
+      // Initial check
+      checkScrollPosition();
+    })();
+  </script>
 </body>
 </html>

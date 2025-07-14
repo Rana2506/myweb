@@ -112,8 +112,8 @@ image: "/assets/images/hsspl-homepage-banner.jpg"
         background-position: center;
         position: relative;
         color: #fff;
-        height: 100vh;
-        min-height: 700px;
+        height: calc(100vh - 60px);
+        min-height: none;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -122,7 +122,7 @@ image: "/assets/images/hsspl-homepage-banner.jpg"
     }
     .hero-content {
         position: relative;
-        z-index: 1;
+        z-index: 2;
     }
     .hero h1 {
         font-size: 3.15rem;
@@ -202,6 +202,10 @@ image: "/assets/images/hsspl-homepage-banner.jpg"
 
     /* Responsive button sizing */
     @media (max-width: 768px) {
+        .hero {
+            height: calc(70vh - 50px);
+            min-height: none;
+        }
         .hero .btn {
             padding: 12px 25px;
             font-size: 14px;
@@ -313,11 +317,33 @@ image: "/assets/images/hsspl-homepage-banner.jpg"
             margin-right: auto !important;
             text-align: center !important;
         }
-        
         /* Override inline styles for mobile */
         .hero .btn-lg[style*="margin-right"] {
             margin-right: auto !important;
         }
+    }
+    /* Hero navigation dots */
+    .hero-nav-dots {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+        z-index: 2;
+    }
+    .hero-dot {
+        width: 12px;
+        height: 12px;
+        border: 2px solid rgba(255,255,255,0.7);
+        border-radius: 50%;
+        background: transparent;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.3s;
+    }
+    .hero-dot.active {
+        background: rgba(255,255,255,0.9);
+        transform: scale(1.2);
     }
 
     /* Section headings */
@@ -477,9 +503,7 @@ image: "/assets/images/hsspl-homepage-banner.jpg"
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1;
-  min-height: 100vh;
-  
+  z-index: 0;
 }
 
 .hero-video-overlay {
@@ -488,23 +512,22 @@ image: "/assets/images/hsspl-homepage-banner.jpg"
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(70deg, rgba(255, 87, 34, 0.6) 0%, rgba(255, 193, 7, 0.3) 100%);
-  z-index: 0;
-  min-height: 100vh;
+  background: linear-gradient(135deg, rgba(0, 86, 210, 0.6) 0%, rgba(0, 196, 180, 0.4) 50%, rgba(23, 23, 59, 0.5) 100%);
+  z-index: 1;
 }
 
 /* Ensure hero section maintains height with video */
 .hero.hero-slide-3.video-active {
   background-image: none;
-  height: 100vh;
-  min-height: 700px;
+  height: calc(100vh - 60px);
+  min-height: none;
 }
 
 /* Responsive hero height fixes */
 @media (max-width: 768px) {
   .hero {
-    height: 100vh;
-    min-height: 600px;
+    height: calc(70vh - 50px);
+    min-height: none;
   }
   
   .hero-video,
@@ -1493,6 +1516,27 @@ img[src*="{{ site.baseurl }}"] {
   }
 }
 </style>
+<!-- Add video sizing and overlay styles -->
+<style>
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+.hero-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 86, 210, 0.6) 0%, rgba(0, 196, 180, 0.4) 50%, rgba(23, 23, 59, 0.5) 100%);
+    z-index: 1;
+}
+</style>
 
 <body>
   <!-- Preloader with fallback -->
@@ -1570,6 +1614,12 @@ img[src*="{{ site.baseurl }}"] {
         <a href="{{ site.baseurl }}/ppe.html" class="btn btn-warning btn-lg" style="font-weight: 600; border-radius: 2rem; padding: 0.75rem 2.5rem;">Learn More</a>
         <a href="{{ site.baseurl }}/contact-us.html" class="btn btn-light btn-lg" style="font-weight: 600; border-radius: 2rem; padding: 0.75rem 2.5rem;">Get Quote</a>
       </div>
+    </div>
+    <!-- Hero navigation dots -->
+    <div class="hero-nav-dots">
+      <span class="hero-dot active" data-slide="1"></span>
+      <span class="hero-dot" data-slide="2"></span>
+      <span class="hero-dot" data-slide="3"></span>
     </div>
   </section>
 
@@ -2162,6 +2212,28 @@ Prevent accidental falls through skylights with our heavy-duty protection covers
             
             // Run optimizations
             document.addEventListener('DOMContentLoaded', optimizeImages);
+            // Hero navigation functionality
+            const heroDots = document.querySelectorAll('.hero-dot');
+            heroDots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const slide = parseInt(dot.getAttribute('data-slide'));
+                    currentHero = slide;
+                    showHeroSlide(slide);
+                });
+            });
+            function updateHeroDots(slide) {
+                heroDots.forEach(dot => {
+                    dot.classList.toggle('active', parseInt(dot.getAttribute('data-slide')) === slide);
+                });
+            }
+            // Monkey-patch showHeroSlide to update dots
+            const originalShowHeroSlide = showHeroSlide;
+            showHeroSlide = function(slide) {
+                originalShowHeroSlide(slide);
+                updateHeroDots(slide);
+            };
+            // Initialize dots
+            updateHeroDots(currentHero);
         </script>
 </body>
 </html>

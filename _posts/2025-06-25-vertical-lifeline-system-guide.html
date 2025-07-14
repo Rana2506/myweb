@@ -252,12 +252,7 @@ image: "/assets/images/blog/vertical-lifeline-guide.png"
                     </div>
                 </div>
 
-                <div class="blog-tags mt-4">
-                    <strong>Tags:</strong>
-                    {% for tag in page.tags %}
-                        <span class="badge badge-secondary mr-1">{{ tag }}</span>
-                    {% endfor %}
-                </div>
+                {% include blog-tags.html %}
             </article>
         </div>
     </div>

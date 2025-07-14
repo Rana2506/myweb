@@ -6,7 +6,7 @@ keywords: "overhead lifeline system, horizontal fall protection, industrial safe
 author: "HSSPL Safety Team"
 date: 2025-06-24
 categories: ["Safety Systems"]
-tags: ["Overhead Lifeline", "Fall Protection", "Industrial Safety", "Horizontal Systems", "Workplace Safety"]
+tags: ["Overhead Lifeline", "Fall Protection", "Industrial Safety", "Overhead Systems", "Workplace Safety"]
 image: "/assets/images/blog/overhead-lifeline-guide.png"
 ---
 
@@ -410,12 +410,7 @@ image: "/assets/images/blog/overhead-lifeline-guide.png"
                     </div>
                 </div>
 
-                <div class="blog-tags mt-4">
-                    <strong>Tags:</strong>
-                    {% for tag in page.tags %}
-                        <span class="badge badge-secondary mr-1">{{ tag }}</span>
-                    {% endfor %}
-                </div>
+                {% include blog-tags.html %}
             </article>
         </div>
     </div>

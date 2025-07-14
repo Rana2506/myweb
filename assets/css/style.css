@@ -1,4 +1,40 @@
 /* --- Global Responsive Fixes --- */
+
+/* Fix for textarea resize handle across all forms */
+textarea,
+textarea.form-control,
+.form-control[rows],
+#footerContactMessage,
+#contactMessage {
+    resize: none !important;
+}
+
+/* Blog Tags Styling */
+.blog-tags {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.blog-tags .badge {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.7rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 50px;
+    display: inline-block;
+    background-color: #6c757d;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.blog-tags .badge:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
 /* Prevent horizontal overflow on all pages */
 html, body {
     overflow-x: hidden;

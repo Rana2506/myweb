@@ -1,0 +1,8 @@
+{% if page.tags and page.tags.size > 0 %}
+<div class="blog-tags mt-4">
+    <strong>Tags:</strong>
+    {% for tag in page.tags %}
+        <span class="badge bg-secondary me-1">{{ tag }}</span>
+    {% endfor %}
+</div>
+{% endif %}
