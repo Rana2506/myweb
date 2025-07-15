@@ -7,24 +7,24 @@
 <meta name="robots" content="index, follow">
 
 <!-- SEO Meta Tags -->
-<title>HSSPL - Leading Fall Protection & PPE Manufacturer in India - myweb</title>
-<meta name="description" content="Heinrich Safety Solutions - Premier manufacturer of fall protection equipment, PPE, life line systems & height safety solutions. ISO certified with 15+ years experience in industrial safety.">
+<title>HSSPL - Leading Lifeline System, Fall Protection & PPE Manufacturer in India - myweb</title>
+<meta name="description" content="Heinrich Safety Solutions - Premier manufacturer of fall protection equipment, PPE, life line systems & height safety solutions.">
 <meta name="keywords" content="fall protection equipment manufacturerPPE supplier Indiaheight safety solutionslife line systemsindustrial safety equipmentsafety harness manufactureranchor points Indiarooftop safety systems">
 <meta name="author" content="">
 
 <!-- Open Graph Meta Tags -->
-<meta property="og:title" content="HSSPL - Leading Fall Protection & PPE Manufacturer in India - myweb">
-<meta property="og:description" content="Heinrich Safety Solutions - Premier manufacturer of fall protection equipment, PPE, life line systems & height safety solutions. ISO certified with 15+ years experience in industrial safety.">
+<meta property="og:title" content="HSSPL - Leading Lifeline System, Fall Protection & PPE Manufacturer in India - myweb">
+<meta property="og:description" content="Heinrich Safety Solutions - Premier manufacturer of fall protection equipment, PPE, life line systems & height safety solutions.">
 <meta property="og:url" content="http://localhost:4000/">
 <meta property="og:site_name" content="myweb">
 <meta property="og:type" content="website">
 <meta property="og:image" content="http://localhost:4000/assets/images/hsspl-homepage-banner.jpg">
-<meta property="og:image:alt" content="HSSPL - Leading Fall Protection & PPE Manufacturer in India">
+<meta property="og:image:alt" content="HSSPL - Leading Lifeline System, Fall Protection & PPE Manufacturer in India">
 
 <!-- Twitter Card Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="HSSPL - Leading Fall Protection & PPE Manufacturer in India - myweb">
-<meta name="twitter:description" content="Heinrich Safety Solutions - Premier manufacturer of fall protection equipment, PPE, life line systems & height safety solutions. ISO certified with 15+ years experience in industrial safety.">
+<meta name="twitter:title" content="HSSPL - Leading Lifeline System, Fall Protection & PPE Manufacturer in India - myweb">
+<meta name="twitter:description" content="Heinrich Safety Solutions - Premier manufacturer of fall protection equipment, PPE, life line systems & height safety solutions.">
 <meta name="twitter:image" content="http://localhost:4000/assets/images/hsspl-homepage-banner.jpg">
 
 <!-- Canonical URL -->
@@ -1563,6 +1563,29 @@
         border-color: #475569;
         transform: translateY(-1px);
         text-decoration: none;
+    }
+    
+    /* Accent button for hero sections */
+    .hero .btn-accent {
+        background: linear-gradient(135deg, #00C4B4 0%, #00a693 100%);
+        color: white;
+        border: 2px solid #00C4B4;
+        border-radius: 8px;
+    }
+
+    .hero .btn-accent:hover {
+        background: linear-gradient(135deg, #00a693 0%, #008a7a 100%);
+        border-color: #00a693;
+        color: white;
+        transform: translateY(-1px);
+        text-decoration: none;
+    }
+    
+    /* Large button variant */
+    .hero .btn-lg {
+        padding: 14px 32px;
+        font-size: 15px;
+        min-width: 160px;
     }    /* Hero buttons container */
     .hero-buttons {
         display: flex;
@@ -1579,14 +1602,25 @@
             height: 60vh;
             min-height: 300px;
             margin-top: -55px; /* Offset mobile header */
-            padding-top: 55px; /* Add padding for mobile header */
+            padding-top: 80px; /* Increased top padding for mobile */
         }
         .hero .btn {
-            padding: 8px 16px;
-            font-size: 12px;
-            margin: 5px;
-            min-width: 120px;
+            padding: 10px 20px;
+            font-size: 13px;
+            margin: 6px 4px;
+            min-width: 130px;
             flex: 0 1 auto;
+            border-radius: 25px !important; /* Modern consistent rounded buttons */
+            font-weight: 600;
+            text-transform: none;
+            letter-spacing: 0.3px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .hero .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
         }
         
         .hero-buttons {
@@ -1594,28 +1628,65 @@
             justify-content: center;
         }
         
-        /* Fix border radius conflicts on tablet */
+        /* Modern button styles for mobile */
         .hero .btn-primary {
-            border-radius: 25px;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            border: none;
+            color: white;
         }
         
         .hero .btn-warning {
-            border-radius: 25px;
+            background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+            border: none;
+            color: #1f2937;
+        }
+        
+        .hero .btn-light {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+        
+        .hero .btn-accent {
+            background: linear-gradient(135deg, #00C4B4 0%, #00a693 100%);
+            border: none;
+            color: white;
+        }
+        
+        /* Large buttons on mobile - smaller than desktop but still prominent */
+        .hero .btn-lg {
+            padding: 12px 28px;
+            font-size: 14px;
+            min-width: 140px;
         }
     }
 
     @media (max-width: 480px) {
+        .hero {
+            padding-top: 100px; /* Extra top padding for small screens */
+        }
+        
         .hero .btn {
-            padding: 8px 16px;
-            font-size: 12px;
-            margin: 6px 0;
-            display: block;
-            width: 100%;
-            max-width: 220px;
-            margin-left: auto;
-            margin-right: auto;
+            padding: 12px 24px;
+            font-size: 14px;
+            margin: 8px 4px;
+            display: inline-block;
+            width: auto;
+            min-width: 140px;
+            max-width: 200px;
             text-align: center;
-            border-radius: 20px !important;
+            border-radius: 30px !important;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Large buttons on small screens */
+        .hero .btn-lg {
+            padding: 14px 30px;
+            font-size: 15px;
+            min-width: 160px;
+            max-width: 220px;
         }
         
         .hero-buttons {
@@ -1904,7 +1975,7 @@
     height: 60vh !important;
     min-height: 300px !important;
     margin-top: -55px;
-    padding-top: 55px;
+    padding-top: 80px; /* Match increased padding */
   }
 }
 
@@ -1913,7 +1984,7 @@
     height: 60vh !important;
     min-height: 300px !important;
     margin-top: -55px;
-    padding-top: 55px;
+    padding-top: 100px; /* Match extra padding for small screens */
   }
 }
 
@@ -1923,7 +1994,7 @@
     height: 60vh;
     min-height: 300px;
     margin-top: -55px;
-    padding-top: 55px;
+    padding-top: 80px; /* Increased top padding for better mobile viewing */
   }
   
   .hero-video,
@@ -1938,7 +2009,7 @@
     height: 60vh;
     min-height: 300px;
     margin-top: -55px;
-    padding-top: 55px;
+    padding-top: 100px; /* Extra padding for small screens */
   }
   
   .hero-video,
@@ -3008,16 +3079,16 @@ img[src*=""] {
       <h1 id="hero-title-2" style="color: var(--accent);">Premium Life Line System</h1>
       <p id="hero-desc-2" style="color: #fd3a3a;">Secure every steps - Advanced Lifeline Safety Solutions</p>      
       <div class="hero-buttons">
-        <a href="/life-line-system.html" class="btn btn-light btn-lg" style="background: transparent; color: #fff; border: 2px solid #fff; font-weight: 600; border-radius: 2rem; padding: 0.75rem 2.5rem;">Learn More</a>
-        <a href="/life-line-system.html" class="btn btn-accent btn-lg" style="background: #ffc107; color: #000; font-weight: 600; border-radius: 2rem; padding: 0.75rem 2.5rem;">Get Quote</a>
+        <a href="/life-line-system.html" class="btn btn-light btn-lg">Learn More</a>
+        <a href="/life-line-system.html" class="btn btn-accent btn-lg">Get Quote</a>
       </div>
     </div>
     <div class="hero-content" id="hero-content-3" style="display:none">
       <h1 id="hero-title-3" style="color: white;">Personal Protection Equipment</h1>
       <p id="hero-desc-3" style="color: #fff;">Comprehensive PPE solutions designed to keep you safe in any workplace environment.</p>      
       <div class="hero-buttons">
-        <a href="/ppe.html" class="btn btn-warning btn-lg" style="font-weight: 600; border-radius: 2rem; padding: 0.75rem 2.5rem;">Learn More</a>
-        <a href="/contact-us.html" class="btn btn-light btn-lg" style="font-weight: 600; border-radius: 2rem; padding: 0.75rem 2.5rem;">Get Quote</a>
+        <a href="/ppe.html" class="btn btn-warning btn-lg">Learn More</a>
+        <a href="/contact-us.html" class="btn btn-light btn-lg">Get Quote</a>
       </div>
     </div>
     <!-- Hero navigation dots -->
