@@ -112,13 +112,15 @@ image: "/assets/images/hsspl-homepage-banner.jpg"
         background-position: center;
         position: relative;
         color: #fff;
-        height: calc(100vh - 60px);
-        min-height: none;
+        height: 100vh;
+        min-height: 500px;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
         overflow: hidden;
+        margin-top: -60px; /* Offset fixed header */
+        padding-top: 60px; /* Add padding to prevent content overlap */
     }
     .hero-content {
         position: relative;
@@ -203,14 +205,16 @@ image: "/assets/images/hsspl-homepage-banner.jpg"
     /* Responsive button sizing */
     @media (max-width: 768px) {
         .hero {
-            height: calc(70vh - 50px);
-            min-height: none;
+            height: 60vh;
+            min-height: 300px;
+            margin-top: -55px; /* Offset mobile header */
+            padding-top: 55px; /* Add padding for mobile header */
         }
         .hero .btn {
-            padding: 12px 25px;
-            font-size: 14px;
+            padding: 8px 16px;
+            font-size: 12px;
             margin: 5px;
-            min-width: 140px;
+            min-width: 120px;
             flex: 0 1 auto;
         }
         
@@ -231,30 +235,30 @@ image: "/assets/images/hsspl-homepage-banner.jpg"
 
     @media (max-width: 480px) {
         .hero .btn {
-            padding: 12px 20px;
-            font-size: 14px;
-            margin: 8px 0;
+            padding: 8px 16px;
+            font-size: 12px;
+            margin: 6px 0;
             display: block;
             width: 100%;
-            max-width: 280px;
+            max-width: 220px;
             margin-left: auto;
             margin-right: auto;
             text-align: center;
-            border-radius: 25px !important;
+            border-radius: 20px !important;
         }
         
         .hero-buttons {
             flex-direction: column;
-            gap: 8px;
+            gap: 6px;
             width: 100%;
-            padding: 0 20px;
+            padding: 0 30px;
         }
         
         /* Override specific button styles for mobile */
         .hero .btn-primary,
         .hero .btn-warning,
         .hero .btn-light {
-            border-radius: 25px !important;
+            border-radius: 20px !important;
             min-width: auto;
         }
         
@@ -273,9 +277,9 @@ image: "/assets/images/hsspl-homepage-banner.jpg"
         
         .hero .btn,
         .hero .btn-lg {
-            max-width: 260px !important;
-            font-size: 0.85rem !important;
-            padding: 0.65rem 1.25rem !important;
+            max-width: 200px !important;
+            font-size: 0.75rem !important;
+            padding: 0.5rem 1rem !important;
         }
         
         .hero h1 {
@@ -519,27 +523,57 @@ image: "/assets/images/hsspl-homepage-banner.jpg"
 /* Ensure hero section maintains height with video */
 .hero.hero-slide-3.video-active {
   background-image: none;
-  height: calc(100vh - 60px);
-  min-height: none;
+  height: 100vh;
+  min-height: 500px;
+}
+
+/* Responsive adjustments for video slide */
+@media (max-width: 768px) {
+  .hero.hero-slide-3.video-active {
+    height: 60vh !important;
+    min-height: 300px !important;
+    margin-top: -55px;
+    padding-top: 55px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero.hero-slide-3.video-active {
+    height: 60vh !important;
+    min-height: 300px !important;
+    margin-top: -55px;
+    padding-top: 55px;
+  }
 }
 
 /* Responsive hero height fixes */
 @media (max-width: 768px) {
   .hero {
-    height: calc(70vh - 50px);
-    min-height: none;
+    height: 60vh;
+    min-height: 300px;
+    margin-top: -55px;
+    padding-top: 55px;
   }
   
   .hero-video,
   .hero-video-overlay {
-    min-height: 100vh;
+    height: 60vh !important;
+    min-height: 300px !important;
   }
 }
 
 @media (max-width: 480px) {
   .hero {
-    height: 100vh;
-    min-height: 500px;
+    height: 60vh;
+    min-height: 300px;
+    margin-top: -55px;
+    padding-top: 55px;
+  }
+  
+  .hero-video,
+  .hero-video-overlay {
+    height: 60vh !important;
+    min-height: 300px !important;
   }
 }
 
