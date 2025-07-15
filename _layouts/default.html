@@ -80,9 +80,9 @@
     /* Floating Scroll Arrow Styles */
     .scroll-arrow {
       position: fixed;
-      right: 30px;
-      top: 50%;
-      transform: translateY(-50%);
+      right: 5px;
+      bottom: 5px;
+      transform: none;
       z-index: 1000;
       background: none;
       border: none;
@@ -99,13 +99,13 @@
     }
     
     .scroll-arrow:hover {
-      transform: translateY(-50%) scale(1.2);
+      transform: scale(1.2);
       background: none;
       box-shadow: none;
     }
     
     .scroll-arrow:active {
-      transform: translateY(-50%) scale(1.1);
+      transform: scale(1.1);
       transition: all 0.1s ease;
       background: none;
       box-shadow: none;
@@ -124,6 +124,7 @@
     .arrow-path.a2,
     .arrow-path.a3 {
       stroke: #1976d2;  /* Single blue color */
+      stroke-width: 3;  /* Increased stroke weight */
       animation: arrowFade 2s infinite;
       -webkit-animation: arrowFade 2s infinite;
     }
@@ -186,7 +187,8 @@
     /* Mobile responsiveness for scroll arrow */
     @media (max-width: 768px) {
       .scroll-arrow {
-        right: 20px;
+        right: 3px;
+        bottom: 3px;
         width: 44px;
         height: 44px;
       }
@@ -199,7 +201,8 @@
     
     @media (max-width: 576px) {
       .scroll-arrow {
-        right: 15px;
+        right: 2px;
+        bottom: 2px;
         width: 40px;
         height: 40px;
       }
