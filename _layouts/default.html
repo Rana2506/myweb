@@ -3,6 +3,127 @@
 <head>
   {% include head.html %}
   
+  <!-- Loader -->
+  <style>
+    .loader-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease-out;
+    }
+
+    .loader-wrapper.fade-out {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .loader {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .loader-image {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 6px;
+    }
+
+    .loader img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .loading-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .loading-text {
+        color: #e30613;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    .loading-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+        background: #e30613;
+        border-radius: 50%;
+        animation: dot-animation 1s infinite;
+    }
+
+    .dot:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .dot:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+
+    @keyframes dot-animation {
+        0%, 100% {
+            transform: scale(0.5);
+            opacity: 0.5;
+        }
+        50% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+  </style>
+
+  <div class="loader-wrapper">
+    <div class="loader">
+      <div class="loader-image">
+        <img src="{{ site.baseurl }}/assets/images/logo.png" alt="{{ site.title }} Loading">
+      </div>
+      <div class="loading-container">
+        <div class="loading-text">Loading</div>
+        <div class="loading-dots">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const loader = document.querySelector('.loader-wrapper');
+        if (loader) {
+            window.addEventListener('load', function() {
+                setTimeout(() => {
+                    loader.classList.add('fade-out');
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                    }, 500);
+                }, 500);
+            });
+        }
+    });
+  </script>
+  
   <!-- Universal Mobile Responsive CSS -->
   <style>
     /* Prevent horizontal scroll on all pages */
@@ -266,7 +387,7 @@
   </main>
 
   {% if page.url == "/" %}
-    {% include footer-home.html %}
+    {% include footer-temp.html %}
   {% else %}
     {% include footer-standard.html %}
   {% endif %}

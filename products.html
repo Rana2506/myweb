@@ -57,10 +57,12 @@ permalink: /products.html
 
 /* Modern Product Card Styles */
 .products-modern-row {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem 1.5rem;
-  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 .product-card-modern {
   background: #fff;
@@ -69,8 +71,7 @@ permalink: /products.html
   overflow: hidden;
   transition: transform 0.25s, box-shadow 0.25s;
   border: none;
-  width: 356px; /* 16:9 aspect ratio for 200px height: 356px width */
-  max-width: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -159,9 +160,17 @@ permalink: /products.html
 .product-card-modern .btn-joinnow:hover {
   background: #157347;
 }
+@media (max-width: 992px) {
+  .products-modern-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
+  }
+}
 @media (max-width: 600px) {
-  .products-modern-row { gap: 1.2rem 0.5rem; }
-  .product-card-modern { width: 100%; }
+  .products-modern-row {
+    grid-template-columns: 1fr;
+    gap: 1.2rem 0.5rem;
+  }
   .product-card-modern .product-img { 
     height: 180px;
     object-fit: contain;
