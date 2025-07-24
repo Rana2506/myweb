@@ -721,30 +721,53 @@ image: "/assets/images/hsspl-homepage-banner.jpg"
 @media (max-width: 768px) {
   .hero {
     height: 60vh;
-    min-height: 300px;
+    min-height: 400px;
     margin-top: -55px;
-    padding-top: 80px; /* Increased top padding for better mobile viewing */
+    padding-top: 60px;
+    padding-bottom: 40px;
+    display: flex;
+    align-items: center;
   }
   
   .hero-video,
   .hero-video-overlay {
     height: 60vh !important;
-    min-height: 300px !important;
+    min-height: 400px !important;
+  }
+
+  .hero-content {
+    padding: 20px;
+    width: 100%;
+    max-width: 100%;
   }
 }
 
 @media (max-width: 480px) {
   .hero {
-    height: 60vh;
-    min-height: 300px;
+    height: 65vh;
+    min-height: 450px;
+    max-height: 500px;
     margin-top: -55px;
-    padding-top: 100px; /* Extra padding for small screens */
+    padding-top: 60px;
+    padding-bottom: 40px;
   }
   
   .hero-video,
   .hero-video-overlay {
-    height: 60vh !important;
-    min-height: 300px !important;
+    height: 65vh !important;
+    min-height: 450px !important;
+    max-height: 500px !important;
+  }
+
+  .hero-content {
+    padding: 15px;
+  }
+
+  .hero.hero-slide-1,
+  .hero.hero-slide-2,
+  .hero.hero-slide-3 {
+    background-position: center center;
+    background-size: cover;
   }
 }
 
